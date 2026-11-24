@@ -1,0 +1,15 @@
+{
+ "actualizado": "2026-11-24",
+ "habitaciones": {
+  "una": {
+   "total": 4,
+   "precio": 1500
+  },
+  "dos": {
+   "total": 5,
+   "precio": 2000
+  }
+ },
+ "ocupadas": {},
+ "reservas": []
+}
