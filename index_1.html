@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotel Las Cañitas</title>
+<meta name="description" content="Hotel Las Cañitas en Los Ríos, Neyba (Bahoruco), República Dominicana. Habitaciones con aire acondicionado junto al Lago Enriquillo. Reservas: 809-817-0798 y 829-814-4348.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Pacifico&family=Nunito+Sans:opsz,wght@6..12,400;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<style>
+/* VOICE: cálido, directo, hospitalario; un hotel de pueblo orgulloso y cuidado.
+   IDEA: la página se comporta como el letrero rojo pintado a mano del hotel, junto a una postal del Lago Enriquillo.
+   PICTURE: escena SVG del lago al atardecer con la Sierra de Neyba y cañitas en primer plano, bajo el letrero.
+   COLOUR and TYPE: rojo letrero dominante, amarillo mango de las habitaciones, turquesa del lago; Anton + Pacifico (como el letrero) + Nunito Sans.
+   LAYOUT: letrero a ancho completo, barra de reserva, habitaciones, galería deslizable, la zona, formulario, pie. */
+:root{color-scheme:light dark;
+--red:#d0182b;--red2:#a40f1f;--mango:#f5c84b;--lake:#0e8f97;
+--bg:light-dark(#fffaf0,#16100e);--card:light-dark(#ffffff,#241a17);--ink:light-dark(#2a1512,#f8ece4);
+--soft:light-dark(#6b4a42,#cdb5ab);--line:light-dark(#efdccb,#3b2b26);--sun:light-dark(#fdf0c6,#2a2114)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 "Nunito Sans",system-ui,sans-serif;overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.band{padding:clamp(40px,6vw,88px) max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+h1,h2,h3{margin:0;line-height:1.05;text-wrap:balance}
+h2{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(32px,4.4vw,50px);letter-spacing:.01em}
+h3{font-size:20px;font-weight:800}
+p{margin:0}
+.lead{color:var(--soft);max-width:62ch;margin-top:12px;font-size:17px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;font-weight:800;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:16px;font-family:inherit;white-space:nowrap}
+.btn svg{width:20px;height:20px;flex:none}
+.b-wa{background:#1f9d55;color:#fff}.b-wa:hover{background:#178246}
+.b-call{background:#fff;color:var(--red2)}.b-call:hover{background:var(--mango);color:#2a1512}
+.b-red{background:var(--red);color:#fff}.b-red:hover{background:var(--red2)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid var(--mango);outline-offset:3px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:var(--red);color:#fff;box-shadow:0 2px 0 var(--red2)}
+nav .wrap{display:flex;align-items:center;gap:18px;padding:10px max(5vw,16px);flex-wrap:wrap}
+.logo{font-family:Pacifico,cursive;font-size:24px;text-decoration:none;line-height:1}
+.logo small{font-family:Anton,sans-serif;font-size:13px;letter-spacing:.2em;display:block;opacity:.85}
+.links{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+.links a{text-decoration:none;font-weight:700;padding:10px 12px;border-radius:8px}
+.links a:hover{background:var(--red2)}
+.navcall{background:#fff;color:var(--red2);padding:8px 16px;border-radius:999px;font-weight:800;text-decoration:none;white-space:nowrap}
+.menu{display:none;width:44px;height:44px;border-radius:10px;border:2px solid rgba(255,255,255,.5);background:transparent;color:#fff;cursor:pointer;place-items:center}
+.menu svg{width:22px;height:22px}
+.logo{min-height:44px;display:flex;flex-direction:column;justify-content:center}
+.mbar{display:none}
+
+
+/* hero = el letrero */
+.hero{background:var(--red);color:#fff;position:relative;padding:clamp(28px,5vw,64px) max(5vw,16px) 0}
+.sign{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:auto minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(18px,3vw,44px);align-items:center}
+.hotel{font-family:Anton,sans-serif;font-size:clamp(40px,6vw,78px);line-height:.92;display:flex;flex-direction:column;align-items:center;padding-right:clamp(14px,2vw,28px);border-right:3px solid rgba(255,255,255,.35)}
+.name{font-family:Pacifico,cursive;font-weight:400;font-size:clamp(46px,7.4vw,96px);line-height:1.15;text-shadow:3px 4px 0 var(--red2)}
+.msg{font-size:clamp(19px,2vw,23px);font-weight:700;margin-top:10px;max-width:30ch}
+.where{margin-top:8px;opacity:.9;display:flex;gap:8px;align-items:center}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.phone{font-family:Anton,sans-serif;font-size:clamp(28px,3.4vw,40px);letter-spacing:.03em;margin-top:18px;display:block;text-decoration:none}
+.postal{background:#fff;padding:10px 10px 40px;border-radius:4px;transform:rotate(2.5deg);box-shadow:0 18px 40px rgba(60,0,8,.45);position:relative}
+.postal img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.postal span{position:absolute;bottom:8px;left:14px;color:var(--red2);font-family:Pacifico,cursive;font-size:18px}
+.scene{display:block;width:calc(100% + 2*max(5vw,16px));margin:clamp(20px,3vw,40px) calc(-1*max(5vw,16px)) 0;height:clamp(130px,16vw,220px)}
+@media(max-width:900px){.sign{grid-template-columns:auto minmax(0,1fr)}.postal{grid-column:1/-1;max-width:460px;justify-self:center;transform:rotate(1.5deg)}}
+@media(max-width:600px){.postal{max-width:300px}.sign{grid-template-columns:1fr}.hotel{flex-direction:row;gap:.12em;border:0;padding:0;justify-content:flex-start;font-size:34px}.ctas .btn{flex:1 1 100%;justify-content:center}}
+
+/* barra de reserva rápida */
+.quick{max-width:1240px;margin:-34px auto 0;position:relative;z-index:12;padding:0 max(5vw,16px)}
+.quick form{background:var(--card);border-radius:18px;box-shadow:0 14px 40px rgba(60,10,0,.18);padding:16px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:12px;align-items:end;border:1px solid var(--line)}
+@media(max-width:780px){.quick form{grid-template-columns:repeat(2,minmax(0,1fr))}.quick .btn{grid-column:1/-1;justify-content:center}}
+label,.lbl{display:block;font-weight:800;font-size:14px;margin-bottom:6px}
+/* calendario */
+.dbtn{width:100%;min-height:56px;text-align:left;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:12px;padding:8px 14px;font:inherit;cursor:pointer;display:flex;flex-direction:column;justify-content:center}
+.dbtn .dl{font-size:13px;font-weight:800;color:var(--soft)}.dbtn b{font-size:16px}
+.dbtn.on{border-color:var(--red);box-shadow:0 0 0 3px color-mix(in srgb,var(--red) 18%,transparent)}
+.pop{position:absolute;left:max(5vw,16px);right:max(5vw,16px);top:calc(100% + 10px);z-index:15;display:flex;justify-content:flex-start}
+.pop[hidden]{display:none}
+.pop .cal{width:min(720px,100%);box-shadow:0 24px 60px rgba(40,5,0,.28)}
+.cal{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:clamp(14px,2.4vw,22px);--band:light-dark(#fde9ad,#4a3a16)}
+.c-sum{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:center;margin-bottom:16px}
+.c-chip{background:var(--sun);border-radius:14px;padding:8px 14px;border:2px solid transparent}
+.c-chip.act{border-color:var(--red)}
+.c-chip span{display:block;font-size:13px;font-weight:800;color:var(--soft)}.c-chip b{font-size:16px;white-space:nowrap}
+.c-n{font-family:Anton,sans-serif;background:var(--red);color:#fff;border-radius:999px;padding:6px 14px;font-size:17px;white-space:nowrap;text-align:center;line-height:1.2}
+.c-n small{display:block;font-family:"Nunito Sans",sans-serif;font-size:13px;font-weight:700;opacity:.9}
+.c-months{display:grid;grid-template-columns:repeat(var(--mc,1),minmax(0,1fr));gap:clamp(18px,3vw,34px);position:relative}
+.c-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px}
+.c-head h4{margin:0;font-family:Anton,sans-serif;font-weight:400;font-size:24px;letter-spacing:.02em}
+.c-head h4 span{color:var(--soft);font-family:"Nunito Sans",sans-serif;font-size:15px;font-weight:700;margin-left:6px}
+.c-nav{width:44px;height:44px;border-radius:50%;border:0;background:var(--sun);color:var(--ink);font-size:20px;cursor:pointer;flex:none}
+.c-nav:hover{background:var(--red);color:#fff}.c-nav:disabled{opacity:.3;cursor:default;background:var(--sun);color:var(--ink)}
+.c-nav.ghost{visibility:hidden}
+.c-wd,.c-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+.c-wd span{text-align:center;font-size:13px;font-weight:800;color:var(--soft);padding:4px 0}
+.c-wd span:nth-child(n+6){color:var(--red)}
+.d{aspect-ratio:1;min-height:40px;border:0;background:transparent;color:var(--ink);font:700 15px/1 "Nunito Sans",sans-serif;cursor:pointer;border-radius:12px;position:relative;margin:2px 0;transition:background .15s,transform .15s}
+.d:hover:not(:disabled){background:var(--sun);transform:translateY(-2px)}
+.d:disabled{opacity:.28;cursor:default;text-decoration:line-through}
+.d.today{box-shadow:inset 0 0 0 2px var(--lake)}
+.d.few::before{content:"";position:absolute;left:50%;bottom:5px;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:#f08a24}
+.d.lleno,.d.llenook{background:repeating-linear-gradient(135deg,transparent 0 5px,color-mix(in srgb,var(--red) 16%,transparent) 5px 7px);color:var(--red)}
+.d.lleno:disabled{opacity:.75}
+.d.inr,.d.prv{background:var(--band);border-radius:0}
+.d.prv{background:color-mix(in srgb,var(--band) 55%,transparent)}
+.d.s-in,.d.s-out{background:var(--red)!important;color:#fff;transform:none!important;box-shadow:0 6px 14px color-mix(in srgb,var(--red) 35%,transparent)}
+.d.s-in{border-radius:14px 4px 4px 14px}.d.s-out{border-radius:4px 14px 14px 4px}.d.s-in.solo{border-radius:14px}
+.c-type{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--sun);padding:4px;border-radius:14px;margin-bottom:14px}
+.c-type button{min-height:50px;border:0;border-radius:11px;background:transparent;font:800 15px/1.2 "Nunito Sans",sans-serif;color:var(--ink);cursor:pointer}
+.c-type button small{display:block;font-weight:700;font-size:13px;color:var(--soft);margin-top:2px}
+.c-type button[aria-pressed=true]{background:var(--card);color:var(--red2);box-shadow:0 2px 10px rgba(60,10,0,.14)}
+.c-leg{display:flex;gap:6px 16px;flex-wrap:wrap;font-size:13px;color:var(--soft);margin:10px 0 0}
+.c-leg i{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:6px}
+.lg-few{background:radial-gradient(circle,#f08a24 3px,transparent 4px)}
+.lg-full{background:repeating-linear-gradient(135deg,transparent 0 3px,color-mix(in srgb,var(--red) 35%,transparent) 3px 5px);border:1px solid color-mix(in srgb,var(--red) 40%,transparent)}
+.lg-today{box-shadow:inset 0 0 0 2px var(--lake)}
+.c-foot{display:flex;align-items:center;gap:10px;margin-top:14px;flex-wrap:wrap}
+.c-hint{flex:1 1 200px;color:var(--soft);font-weight:700;font-size:15px}
+.c-x{background:none;border:0;color:var(--red);font:800 15px "Nunito Sans",sans-serif;cursor:pointer;min-height:44px;padding:0 10px;text-decoration:underline}
+.c-res{width:100%;border-radius:14px;padding:12px 14px;font-weight:700;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between}
+.c-res.ok{background:color-mix(in srgb,#1f9d55 14%,var(--card));color:light-dark(#11633a,#9fe0b9)}
+.c-res.no{background:color-mix(in srgb,var(--red) 12%,var(--card));color:var(--red)}
+.c-res.wait{background:var(--sun);color:var(--soft)}
+.c-res .tot{font-family:Anton,sans-serif;font-weight:400;font-size:28px;color:var(--ink);line-height:1.1;display:block}
+.c-res .det{font-size:14px;color:var(--soft);font-weight:700}
+.stp{display:inline-flex;align-items:center;gap:8px;color:var(--ink)}
+.stp button{width:44px;height:44px;border-radius:50%;border:0;background:var(--card);font:800 20px "Nunito Sans",sans-serif;cursor:pointer;color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.stp button:disabled{opacity:.35;cursor:default}
+.stp b{min-width:1.5em;text-align:center;font-size:18px}
+.c-upd{font-size:13px;color:var(--soft);width:100%}
+.qres{grid-column:1/-1;margin:0;font-weight:800;font-size:15px;text-align:center}
+.qres:empty{display:none}
+.qres.ok{color:light-dark(#11633a,#9fe0b9)}.qres.no{color:var(--red)}
+@media(max-width:520px){.c-sum{gap:6px}.c-chip{padding:8px 10px}.c-chip b{font-size:15px}.c-n{padding:6px 10px;font-size:16px}.d{min-height:38px;margin:1px 0;font-size:15px}.c-head h4{font-size:22px}}
+input,select,textarea{width:100%;font:inherit;font-size:16px;min-height:48px;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
+textarea{min-height:96px;resize:vertical}
+
+/* habitaciones */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:22px;margin-top:32px}
+.room{background:var(--card);border-radius:18px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.room img{aspect-ratio:16/10;object-fit:cover;width:100%;background:var(--sun)}
+.room .in{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.room ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:6px}
+.room li{background:var(--sun);border-radius:999px;padding:4px 12px;font-size:14px;font-weight:700}
+.room .btn{margin-top:auto;align-self:flex-start}
+.rp{font-family:Anton,sans-serif;font-size:38px;color:var(--red);line-height:1}.rp small{font-family:"Nunito Sans",sans-serif;font-size:16px;font-weight:700;color:var(--soft)}
+.rc{font-weight:800;color:var(--lake)}
+.price{color:var(--soft);font-size:15px}
+
+/* comodidades */
+.amen{background:var(--mango);color:#2a1512}
+.amen .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.am{background:rgba(255,255,255,.55);border-radius:16px;padding:18px}
+.am svg{width:34px;height:34px;color:var(--red2)}
+.am h3{margin-top:10px;font-size:18px}.am p{font-size:15px;margin-top:4px}
+
+/* galería */
+.gal-head{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.arrows{display:flex;gap:8px}
+.arrows button{width:48px;height:48px;border-radius:50%;border:2px solid var(--red);background:transparent;color:var(--red);font-size:22px;cursor:pointer}
+.arrows button:hover{background:var(--red);color:#fff}
+.gal{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:26px;padding-bottom:12px}
+.gal figure{flex:0 0 min(78vw,420px);margin:0;scroll-snap-align:start}
+.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;background:var(--sun)}
+.gal figcaption{font-size:14px;color:var(--soft);margin-top:6px}
+
+/* la zona */
+.zona{background:var(--lake);color:#fff}
+.zona .lead{color:#dff6f6}
+.places{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px;margin-top:28px}
+.pl{border-top:3px solid rgba(255,255,255,.6);padding-top:14px}
+.pl p{font-size:15.5px;color:#e6f7f7;margin-top:6px}
+
+/* reservar */
+.book{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(24px,4vw,56px)}
+@media(max-width:860px){.book{grid-template-columns:1fr}}
+.book>div:first-child{position:sticky;top:88px;align-self:start}
+.steps{margin:24px 0 0;padding:0;list-style:none;display:grid;gap:12px;position:relative}
+.steps::before,.steps::after{content:"";position:absolute;left:31px;top:34px;width:4px;border-radius:4px;background:var(--line);height:calc(100% - 68px)}
+.steps::after{background:linear-gradient(var(--red),#1f9d55);height:calc((100% - 68px)*var(--prog));transition:height .6s cubic-bezier(.3,1.4,.5,1)}
+.stb{display:flex;gap:14px;align-items:flex-start;width:100%;text-align:left;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:14px 16px;font:inherit;color:inherit;cursor:pointer;position:relative;z-index:1;transition:transform .35s cubic-bezier(.3,1.4,.5,1),border-color .3s,box-shadow .3s,opacity .3s}
+.stb:hover{transform:translateX(4px)}
+.sn{width:34px;height:34px;flex:none;border-radius:50%;display:grid;place-items:center;background:var(--sun);color:var(--soft);font-weight:800;position:relative;transition:background .3s,color .3s}
+.sn i{font-style:normal}.sn .ck{display:none;width:20px;height:20px}
+.stx{display:flex;flex-direction:column;gap:2px}.stx b{font-size:17px}
+.sd{color:var(--soft);font-size:15px}
+.steps li.todo .stb{opacity:.62}
+.steps li.active .stb{border-color:var(--red);box-shadow:0 14px 30px color-mix(in srgb,var(--red) 18%,transparent);transform:translateX(8px)}
+.steps li.active .sn{background:var(--red);color:#fff}
+.steps li.done .sn{background:#1f9d55;color:#fff}
+.steps li.done .sn i{display:none}.steps li.done .sn .ck{display:block}
+.steps li.done .sd{color:light-dark(#11633a,#9fe0b9);font-weight:700}
+.steps li.bad .sd{color:var(--red);font-weight:700}
+.sp-txt{margin:14px 0 0;font-weight:800;color:var(--soft)}
+.sp-txt b{color:var(--red)}
+.mprog{display:none}
+@media(prefers-reduced-motion:no-preference){
+ .steps li.active .sn::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--red);animation:ring 1.6s ease-out infinite}
+ @keyframes ring{from{transform:scale(.8);opacity:.9}to{transform:scale(1.35);opacity:0}}
+ .steps li.done .sn .ck path{stroke-dasharray:24;stroke-dashoffset:24;animation:draw .5s .1s ease-out forwards}
+ @keyframes draw{to{stroke-dashoffset:0}}
+ .steps li.done .sn{animation:pop .45s cubic-bezier(.3,1.6,.5,1)}
+ @keyframes pop{40%{transform:scale(1.25)}}
+ .flash{animation:flash .6s ease-out}
+ @keyframes flash{from{background:color-mix(in srgb,var(--mango) 55%,transparent)}}
+}
+@media(max-width:860px){.book>div:first-child{position:static}}
+.callbox{margin-top:24px;background:var(--sun);border-radius:16px;padding:18px 20px}
+.callbox a{font-family:Anton,sans-serif;font-size:32px;text-decoration:none;color:var(--red)}
+.fbox{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:clamp(18px,3vw,30px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.fbox .full{grid-column:1/-1}
+@media(max-width:520px){.fbox{grid-template-columns:1fr}}
+.err{color:var(--red);font-weight:700;font-size:14px;min-height:1.2em}
+.out{display:none;background:var(--sun);border-radius:14px;padding:16px;white-space:pre-wrap;font-size:15px}
+.out.on{display:block}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+
+/* panel del hotel */
+.admin{background:light-dark(#fff3dc,#1d1512);border-top:4px dashed var(--red)}
+.adm{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:24px;margin-top:24px;align-items:start}
+@media(max-width:860px){.adm{grid-template-columns:1fr}}
+.adm .d{aspect-ratio:auto;min-height:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.adm .d small{font-size:13px;font-weight:800;color:var(--soft)}
+.adm .d.o1{background:light-dark(#fde9ad,#4a3a16)}.adm .d.o2{background:light-dark(#f7b98d,#5a2c16)}.adm .d.o3{background:light-dark(#f19aa2,#5c1a22)}
+.adm .d.sel{outline:3px solid var(--red);outline-offset:-3px}
+.adm-side{display:flex;flex-direction:column;gap:14px}
+.adm-box{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px}
+.adm-box h3{margin-bottom:8px}
+.adm-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid var(--line);flex-wrap:wrap}
+.adm-row .stp button{background:var(--sun)}
+.mini{min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--red);background:transparent;color:var(--red);font:800 14px "Nunito Sans",sans-serif;cursor:pointer}
+.ok-msg{color:light-dark(#11633a,#9fe0b9);font-weight:800;font-size:14px;min-height:1.2em;margin-top:8px}
+#adm-json{min-height:110px;font:13px/1.4 ui-monospace,monospace}
+
+footer{background:#2a1512;color:#f8ece4}
+footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:24px}
+footer .logo{font-size:30px}
+footer p{opacity:.85;font-size:15px;margin-top:6px}
+.copy{max-width:1240px;margin:28px auto 0;font-size:13px;opacity:.6}
+@media(max-width:860px){.amen .grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:480px){.amen .grid{grid-template-columns:1fr}}
+.fab{position:fixed;right:16px;bottom:16px;z-index:30;width:58px;height:58px;border-radius:50%;background:#1f9d55;color:#fff;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.fab svg{width:30px;height:30px}
+@media(prefers-reduced-motion:no-preference){.postal{animation:sway 6s ease-in-out infinite alternate}@keyframes sway{to{transform:rotate(-1deg) translateY(-6px)}}}
+@media(max-width:780px){
+ nav .wrap{flex-wrap:nowrap;gap:10px}
+ .menu{display:grid;flex:none}
+ .navcall{margin-left:auto;padding:8px 12px;font-size:15px}
+ .links{display:none;position:absolute;left:0;right:0;top:100%;background:var(--red2);flex-direction:column;padding:8px max(5vw,16px) 16px;gap:2px;box-shadow:0 12px 24px rgba(0,0,0,.25)}
+ .links.open{display:flex}
+ .links a{padding:14px 12px;font-size:18px;border-bottom:1px solid rgba(255,255,255,.15)}
+ .fab{display:none!important}
+ .quick{z-index:auto}
+ body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+ .mbar{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--card);border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(40,5,0,.12)}
+ .mbar a{min-height:50px;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-decoration:none;font-weight:800;font-size:13px}
+ .mbar svg{width:20px;height:20px}
+ .mbar .m1{background:var(--sun);color:var(--red2)}.mbar .m2{background:#1f9d55;color:#fff}.mbar .m3{background:var(--red);color:#fff;font-size:15px}
+}
+@media(max-width:600px){
+ .quick form{padding:14px}
+ .quick form>div:has(#q-type){grid-column:1/-1}
+ .hero{padding-top:22px}
+ .msg{font-size:18px}
+ .phone{margin-top:14px}
+ .scene{height:110px}
+ .band{padding-top:44px;padding-bottom:44px}
+ .lead{font-size:16px}
+ .grid2{gap:16px;margin-top:22px}
+ .rp{font-size:32px}
+ .amen .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px}
+ .am{padding:14px}.am svg{width:28px;height:28px}.am h3{font-size:16px}.am p{font-size:14px}
+ .arrows{display:none}
+ .gal figure{flex-basis:82vw}
+ .fbox{padding:16px 12px;gap:14px}
+ .fbox .cal{padding:12px 6px;border-radius:16px}
+ .fbox .row .btn{flex:1 1 100%;justify-content:center;white-space:normal;text-align:center}
+ .callbox a{font-size:28px}
+ footer a{display:inline-block;padding:10px 0}
+ .pop{position:fixed;inset:auto 0 0 0;top:auto;z-index:50}
+ .pop .cal{width:100%;border-radius:24px 24px 0 0;max-height:90vh;overflow:auto;padding:16px 12px calc(16px + env(safe-area-inset-bottom));box-shadow:0 0 0 100vmax rgba(20,4,0,.55);animation:up .25s ease-out}
+ .pop .c-foot .btn{flex:1 1 100%;justify-content:center}
+ .c-res .stp{width:100%;justify-content:space-between}
+}
+@keyframes up{from{transform:translateY(40px);opacity:.4}}
+.c-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.c-top b{font-family:Anton,sans-serif;font-weight:400;font-size:22px}
+.c-close{width:44px;height:44px;border-radius:50%;border:0;background:var(--sun);color:var(--ink);font-size:22px;cursor:pointer}
+@media(min-width:601px){.c-top{display:none}}
+@media(max-width:860px){
+ .mprog{display:block;position:sticky;top:64px;z-index:5;background:var(--card);margin:-6px -4px 0;padding:10px 6px 8px;border-bottom:1px solid var(--line)}
+ .mp-dots{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+ .mp-dots span{display:flex;align-items:center;justify-content:center;gap:6px;font-weight:800;font-size:14px;color:var(--soft);min-height:36px;border-radius:999px;cursor:pointer;transition:background .3s,color .3s}
+ .mp-dots i{font-style:normal;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--sun);font-size:13px}
+ .mp-dots .active{background:color-mix(in srgb,var(--red) 12%,transparent);color:var(--red)}.mp-dots .active i{background:var(--red);color:#fff}
+ .mp-dots .done{color:light-dark(#11633a,#9fe0b9)}.mp-dots .done i{background:#1f9d55;color:#fff}
+ .mp-bar{height:5px;border-radius:5px;background:var(--line);margin:8px 4px 6px;overflow:hidden}
+ .mp-bar i{display:block;height:100%;width:calc(var(--prog,0)*100%);background:linear-gradient(90deg,var(--red),#1f9d55);transition:width .6s cubic-bezier(.3,1.4,.5,1)}
+ #mp-txt{margin:0;text-align:center;font-weight:800;font-size:14px;min-height:1.3em}
+ .steps li.active .stb{transform:none}
+}
+/* confirmación del hotel */
+.sync{display:inline-block;margin:12px 0 0;padding:10px 16px;border-radius:14px;font-weight:800;background:var(--sun);color:var(--soft)}
+.sync.on{background:color-mix(in srgb,#1f9d55 15%,var(--card));color:light-dark(#11633a,#9fe0b9)}
+.conf{position:fixed;inset:0;z-index:60;background:rgba(20,4,0,.62);display:grid;place-items:center;padding:16px}
+.conf[hidden]{display:none}
+.conf-card{background:var(--card);color:var(--ink);border-radius:24px;width:min(540px,100%);max-height:92vh;overflow:auto;padding:22px;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:up .3s ease-out}
+.cf-h{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.cf-h h3{font-family:Anton,sans-serif;font-weight:400;font-size:26px}
+.cf-code{font:800 14px ui-monospace,monospace;color:var(--soft);margin-top:4px}
+.cf-det{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;margin:14px 0 4px;background:var(--sun);border-radius:16px;padding:14px 16px}
+.cf-det dt{color:var(--soft);font-weight:700}.cf-det dd{margin:0;font-weight:800}
+.cf-det .big{font-family:Anton,sans-serif;font-weight:400;font-size:24px;color:var(--red)}
+.cfs{margin-top:16px}.cfs .stb{cursor:default}.cfs .stb:hover{transform:none}
+.cfs .stx .btn{margin-top:10px;align-self:flex-start;white-space:normal}
+.cf-foot{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;margin-top:16px}
+@media(max-width:600px){.conf{place-items:end stretch;padding:0}.conf-card{border-radius:24px 24px 0 0;max-height:94vh;padding:18px 16px calc(18px + env(safe-area-inset-bottom))}}
+.phones{display:flex;flex-wrap:wrap;gap:4px 22px;margin:18px 0 0}.phones .phone{margin:0}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
+ <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></symbol>
+ <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></symbol>
+</svg>
+
+<nav aria-label="Principal"><div class="wrap">
+ <a class="logo" href="#inicio">Las Cañitas<small>HOTEL · LOS RÍOS</small></a>
+ <div class="links" id="links"><a href="#habitaciones">Habitaciones</a><a href="#comodidades">Comodidades</a><a href="#galeria">Fotos</a><a href="#zona">La zona</a><a href="#reservar">Reservar</a></div>
+ <a class="navcall" href="tel:+18098170798">809-817-0798</a>
+ <button class="menu" id="menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></nav>
+
+<header class="hero" id="inicio">
+ <div class="sign">
+  <div class="hotel" aria-hidden="true"><span>H</span><span>O</span><span>T</span><span>E</span><span>L</span></div>
+  <div>
+   <h1 class="name">Las Cañitas</h1>
+   <p class="msg">Tu habitación fresca y tranquila a orillas del Lago Enriquillo.</p>
+   <p class="where"><svg width="18" height="18"><use href="#i-pin"/></svg>Los Ríos, Neyba · Bahoruco, República Dominicana</p>
+   <div class="ctas">
+    <a class="btn b-wa" href="#reservar"><svg><use href="#i-wa"/></svg>Ver disponibilidad y reservar</a>
+    <a class="btn b-call" href="tel:+18098170798"><svg><use href="#i-tel"/></svg>Llamar ahora</a>
+   </div>
+   <p class="phones"><a class="phone" href="tel:+18098170798">809-817-0798</a><a class="phone" href="tel:+18298144348">829-814-4348</a></p>
+  </div>
+  <figure class="postal" style="margin:0"><img src="f06.jpg" alt="Entrada del Hotel Las Cañitas con pared de piedra y palmas" width="900" height="675" fetchpriority="high"><span>¡Bienvenidos!</span></figure>
+ </div>
+ <svg class="scene" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
+  <defs>
+   <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d0182b"/><stop offset=".55" stop-color="#ef6b3a"/><stop offset="1" stop-color="#f5c84b"/></linearGradient>
+   <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#29b3b3"/><stop offset="1" stop-color="#0b6f78"/></linearGradient>
+   <g id="cane"><path d="M0 0v-150" stroke="#2f7a2a" stroke-width="7"/><path d="M-4-40h8M-4-85h8M-4-125h8" stroke="#1c5419" stroke-width="3"/><path d="M0-150c20-10 40-6 56 6M0-150c-18-14-42-12-58 2M0-120c22-4 36 4 48 18" stroke="#3f9c36" stroke-width="5" fill="none" stroke-linecap="round"/></g>
+  </defs>
+  <rect width="1200" height="220" fill="url(#sky)"/>
+  <circle cx="860" cy="92" r="40" fill="#ffe28a"/>
+  <path d="M0 130 120 78 210 110 330 60 470 104 590 70 720 112 860 66 990 108 1110 74 1200 96V150H0Z" fill="#8a2a1e" opacity=".75"/>
+  <path d="M0 142 160 108 300 132 460 98 640 136 800 104 980 134 1200 112V156H0Z" fill="#5d1c16" opacity=".85"/>
+  <rect y="150" width="1200" height="70" fill="url(#water)"/>
+  <path d="M800 162h120M780 176h170M820 192h90" stroke="#ffe28a" stroke-width="3" opacity=".7" stroke-linecap="round"/>
+  <path d="M60 170h80M300 186h60M520 168h90M1040 182h70" stroke="#bdf0ee" stroke-width="2" opacity=".55" stroke-linecap="round"/>
+  <use href="#cane" x="40" y="225"/><use href="#cane" x="80" y="232" transform="scale(1 .85)"/><use href="#cane" x="1120" y="226"/><use href="#cane" x="1160" y="236" transform="scale(1 .8)"/>
+ </svg>
+</header>
+
+<div class="quick">
+ <form id="qf" aria-label="Consulta de disponibilidad">
+  <button type="button" class="dbtn" id="q-inb" aria-haspopup="dialog" aria-controls="pop"><span class="dl">Llegada</span><b id="q-in-t">Elegir fecha</b></button>
+  <button type="button" class="dbtn" id="q-outb" aria-haspopup="dialog" aria-controls="pop"><span class="dl">Salida</span><b id="q-out-t">Elegir fecha</b></button>
+  <div><label for="q-type">Habitación</label><select id="q-type"><option value="una">Una cama · RD$1,500</option><option value="dos">Dos camas · RD$2,000</option></select></div>
+  <button class="btn b-red" type="submit">Ver disponibilidad</button>
+  <p class="qres" id="q-res" aria-live="polite"></p>
+ </form>
+ <div class="pop" id="pop" role="dialog" aria-label="Elige tus fechas" hidden><div class="cal" id="cal-q"></div></div>
+</div>
+
+<section class="band" id="habitaciones"><div class="wrap">
+ <h2>Habitaciones y precios</h2>
+ <p class="lead">9 habitaciones limpias y frescas para descansar después de un día de lago, balneario o carretera. Precio por habitación y por noche, en pesos dominicanos.</p>
+ <div class="grid2" id="rooms"></div>
+</div></section>
+
+<section class="band amen" id="comodidades"><div class="wrap">
+ <h2>Todo lo que necesitas, sin complicaciones</h2>
+ <div class="grid" id="amen"></div>
+</div></section>
+
+<section class="band" id="galeria"><div class="wrap">
+ <div class="gal-head"><div><h2>Así es Las Cañitas</h2><p class="lead">Fotos reales del hotel.</p></div>
+  <div class="arrows"><button type="button" id="prev" aria-label="Foto anterior">‹</button><button type="button" id="next" aria-label="Foto siguiente">›</button></div></div>
+ <div class="gal" id="gal" tabindex="0" aria-label="Galería de fotos"></div>
+</div></section>
+
+<section class="band zona" id="zona"><div class="wrap">
+ <h2>Los Ríos: el corazón del Lago Enriquillo</h2>
+ <p class="lead">Hospédate en el pueblo y recorre la Hoya de Enriquillo: el lago más grande del Caribe, balnearios de agua fresca y huellas taínas.</p>
+ <div class="places" id="places"></div>
+</div></section>
+
+<section class="band" id="reservar"><div class="wrap book">
+ <div>
+  <h2>Mira la disponibilidad y reserva</h2>
+  <p class="lead">Antes de escribirnos ya sabes si hay habitación libre y cuánto vas a pagar. Sin pagos en línea ni registros.</p>
+  <ol class="steps" id="steps" style="--prog:0">
+   <li id="st1"><button type="button" class="stb" data-go="1"><span class="sn"><i>1</i><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="stx"><b>Elige el tipo de habitación</b><span class="sd" id="sd1">Una cama (RD$1,500) o dos camas (RD$2,000) por noche.</span></span></button></li>
+   <li id="st2"><button type="button" class="stb" data-go="2"><span class="sn"><i>2</i><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="stx"><b>Marca tus fechas</b><span class="sd" id="sd2">Los días llenos salen rayados. Verás el total al momento.</span></span></button></li>
+   <li id="st3"><button type="button" class="stb" data-go="3"><span class="sn"><i>3</i><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="stx"><b>Envía tu reserva por WhatsApp</b><span class="sd" id="sd3">El mensaje se escribe solo y el hotel te la confirma.</span></span></button></li>
+  </ol>
+  <p class="sp-txt" id="sp-txt" aria-live="polite"></p>
+  <div class="callbox"><p>¿Prefieres llamar?</p><a href="tel:+18098170798">809-817-0798</a><br><a href="tel:+18298144348">829-814-4348</a></div>
+ </div>
+ <form class="fbox" id="bf" novalidate>
+  <div class="mprog full" id="mprog" aria-hidden="true"><div class="mp-dots"><span data-go="1"><i>1</i>Tipo</span><span data-go="2"><i>2</i>Fechas</span><span data-go="3"><i>3</i>Enviar</span></div><div class="mp-bar"><i></i></div><p id="mp-txt"></p></div>
+  <div><label for="b-name">Nombre</label><input id="b-name" autocomplete="name" required></div>
+  <div><label for="b-tel">Tu WhatsApp</label><input id="b-tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="809 000 0000" required></div>
+  <div class="full"><span class="lbl">Habitación y fechas</span><div class="cal" id="cal-b"></div></div>
+  <div class="full"><label for="b-p">Personas</label><select id="b-p"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5 o más</option></select></div>
+  <div class="full"><label for="b-note">Comentarios (opcional)</label><textarea id="b-note" placeholder="Hora aproximada de llegada, cama extra…"></textarea></div>
+  <p class="err full" id="err" role="alert"></p>
+  <div class="full row"><button class="btn b-wa" type="submit"><svg><use href="#i-wa"/></svg>Enviar reserva por WhatsApp</button><button class="btn b-red" type="button" id="copy">Copiar solicitud</button></div>
+  <div class="out full" id="out" aria-live="polite"></div>
+ </form>
+</div></section>
+
+<section class="band admin" id="panel" hidden><div class="wrap">
+ <h2>Panel del hotel</h2>
+ <p class="sync" id="adm-sync">Comprobando acceso…</p>
+ <p class="lead" id="adm-lead">Lo normal es confirmar desde el enlace que trae cada WhatsApp. Aquí también puedes pegar un código de reserva, anular reservas o marcar a mano las habitaciones ocupadas de cualquier día (por ejemplo, clientes que llegan sin reservar).</p>
+ <div class="adm">
+  <div class="adm-side">
+   <div class="adm-box">
+    <h3>Reserva confirmada</h3>
+    <label for="adm-code">Código de la reserva (viene en el WhatsApp del cliente)</label>
+    <div class="row"><input id="adm-code" placeholder="LC-D1-20261220-20261223" autocomplete="off" style="flex:1 1 220px"><button class="btn b-red" type="button" id="adm-add">Quitar del calendario</button></div>
+    <p class="err" id="adm-err" role="alert"></p><p class="ok-msg" id="adm-ok" aria-live="polite"></p>
+    <div id="adm-list"></div>
+   </div>
+   <div class="cal" id="adm-cal"></div>
+  </div>
+  <div class="adm-side">
+   <div class="adm-box" id="adm-ed"></div>
+   <div id="adm-manual"><div class="row"><button class="btn b-red" type="button" id="adm-copy">Copiar datos</button><button class="btn b-call" type="button" id="adm-reset">Descartar cambios</button></div>
+   <textarea id="adm-json" readonly aria-label="Datos de disponibilidad"></textarea></div>
+  </div>
+ </div>
+</div></section>
+
+<div class="conf" id="conf" hidden><div class="conf-card" role="dialog" aria-modal="true" aria-labelledby="cf-title" id="conf-card"></div></div>
+
+<footer class="band"><div class="wrap">
+ <div><span class="logo">Las Cañitas</span><p>Hotel en Los Ríos, Neyba. Descanso sencillo y cuidado junto al Lago Enriquillo.</p></div>
+ <div><h3>Contacto</h3><p>Teléfono y WhatsApp: <a href="tel:+18098170798">809-817-0798</a></p><p>Teléfono: <a href="tel:+18298144348">829-814-4348</a></p><p><a href="https://wa.me/18098170798">Escríbenos por WhatsApp</a></p></div>
+ <div><h3>Ubicación</h3><p>Los Ríos, provincia Bahoruco (Neyba), República Dominicana</p><p><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Las+Ca%C3%B1itas+Los+R%C3%ADos+Bahoruco">Ver en Google Maps</a></p></div>
+</div><p class="copy">© <span id="yr"></span> Hotel Las Cañitas · Los Ríos, República Dominicana · <a href="#panel-hotel">Acceso hotel</a></p></footer>
+
+<div class="mbar" aria-label="Acciones rápidas"><a class="m1" href="tel:+18098170798"><svg><use href="#i-tel"/></svg>Llamar</a><a class="m2" href="https://wa.me/18098170798"><svg><use href="#i-wa"/></svg>WhatsApp</a><a class="m3" href="#reservar">Reservar</a></div>
+<a class="fab" href="https://wa.me/18098170798" aria-label="Escribir por WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<script>
+{
+const PHONE='18098170798';
+/* === HABITACIONES Y FOTOS: cambia aquí las imágenes que quieras usar === */
+const TYPES={
+ una:{name:'Habitación de una cama',short:'Una cama',code:'U',total:4,price:1500,img:'f03.jpg',alt:'Habitación con cama, abanico de techo y cortinas azules',text:'Ideal para una persona o una pareja. Cama cómoda con cabecero acolchado.',tags:['Aire acondicionado','Abanico de techo','TV','1 cama']},
+ dos:{name:'Habitación de dos camas',short:'Dos camas',code:'D',total:5,price:2000,img:'f15.jpg',alt:'Habitación con dos camas y aire acondicionado',text:'Para familias, amigos o compañeros de trabajo. Espacio para todos.',tags:['Aire acondicionado','Abanico de techo','TV','2 camas']}
+};
+const GALLERY=[
+ ['f02.jpg','El letrero en la entrada'],['f06.jpg','Fachada y jardín'],['f01.jpg','Recepción “Bienvenidos”'],
+ ['f08.jpg','Habitación con aire acondicionado'],['f05.jpg','Habitación con TV'],['f10.jpg','Sala de espera'],
+ ['f13.jpg','Pasillo de habitaciones'],['f12.jpg','Habitación de dos camas con mesa']
+];
+const AMEN=[
+ ['M4 6h16v8H4zM7 18l2-4M17 18l-2-4M12 18v-4','Aire acondicionado','En las habitaciones, para el calor del sur.'],
+ ['M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0M12 10V3M14 12h7M11 14l-5 5','Abanico de techo','Ventilación extra en cada cuarto.'],
+ ['M3 5h18v11H3zM8 20h8','Televisión','Para relajarte al final del día.'],
+ ['M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z','Seguridad','Acceso con reja, cámaras y extintores.'],
+ ['M7 3h10v18H7zM7 9h10M10 6h1M10 12v3','Bebidas frías','Nevera con bebidas en la recepción.'],
+ ['M4 14h16v4H4zM6 14V9h12v5M8 18v2M16 18v2','Recepción y sala','Área de espera cómoda y atención cercana.']
+];
+const PLACES=[
+ ['Lago Enriquillo','El lago más grande del Caribe, por debajo del nivel del mar y más salado que el océano. Atardeceres inolvidables.'],
+ ['Las Caritas','Petroglifos taínos tallados en la roca frente al lago: una ventana a los primeros pobladores de la isla.'],
+ ['Balnearios de la zona','Las Barías, Las Marías y Boca de Cachón: aguas frescas y naturales para el chapuzón del día.'],
+ ['Iguanas y naturaleza','Iguanas, flamencos y la Sierra de Neyba, Parque Nacional, a la vista desde la carretera del lago.']
+];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ic=d=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="${d}"/></svg>`;
+const $=id=>document.getElementById(id);
+const money=n=>'RD$'+n.toLocaleString('en-US');
+const drawRooms=()=>{$('rooms').innerHTML=Object.entries(TYPES).map(([k,r])=>`<article class="room"><img src="${r.img}" alt="${esc(r.alt)}" loading="lazy" width="900" height="675"><div class="in"><h3>${esc(r.name)}</h3><p class="rp">${money(r.price)} <small>por noche</small></p><p>${esc(r.text)}</p><ul>${r.tags.map(t=>`<li>${esc(t)}</li>`).join('')}</ul><p class="rc">${r.total} habitaciones de este tipo</p><a class="btn b-red" href="#reservar" data-room="${k}">Ver disponibilidad</a></div></article>`).join('')};
+drawRooms();
+$('amen').innerHTML=AMEN.map(a=>`<div class="am">${ic(a[0])}<h3>${a[1]}</h3><p>${a[2]}</p></div>`).join('');
+$('gal').innerHTML=GALLERY.map(g=>`<figure><img src="${g[0]}" alt="${esc(g[1])}" loading="lazy" width="900" height="675"><figcaption>${esc(g[1])}</figcaption></figure>`).join('');
+$('places').innerHTML=PLACES.map(p=>`<div class="pl"><h3>${p[0]}</h3><p>${p[1]}</p></div>`).join('');
+$('yr').textContent=new Date().getFullYear();
+
+/* galería */
+const gal=$('gal');
+const step=d=>{const f=gal.querySelector('figure');gal.scrollBy({left:d*((f?f.offsetWidth:300)+14),behavior:'smooth'})};
+$('prev').addEventListener('click',()=>step(-1));$('next').addEventListener('click',()=>step(1));
+gal.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();step(1)}if(e.key==='ArrowLeft'){e.preventDefault();step(-1)}});
+
+/* disponibilidad: disponibilidad.json */
+let AV={ocupadas:{},reservas:[]},AVfile=null,avState='loading';
+const S={type:'una',rooms:1,in:null,out:null,off:0};
+const pad=n=>String(n).padStart(2,'0');
+const key=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const t0=new Date();t0.setHours(12,0,0,0);const TODAY=key(t0);
+const parse=k=>new Date(k+'T12:00');
+const addDays=(k,n)=>{const d=parse(k);d.setDate(d.getDate()+n);return key(d)};
+const fmt=k=>k?parse(k).toLocaleDateString('es-DO',{weekday:'short',day:'numeric',month:'short'}):'';
+const fmtL=k=>k?parse(k).toLocaleDateString('es-DO',{weekday:'long',day:'numeric',month:'long',year:'numeric'}):'';
+const nights=(a,b)=>Math.round((parse(b)-parse(a))/864e5);
+const cap=x=>x.charAt(0).toUpperCase()+x.slice(1);
+const manOcc=(t,k)=>{const o=AV.ocupadas[k];return o&&+o[t]>0?+o[t]:0};
+const resOcc=(t,k)=>(AV.reservas||[]).reduce((a,r)=>a+(r.t===t&&k>=r.in&&k<r.out?r.n:0),0);
+const occ=(t,k)=>Math.min(TYPES[t].total,manOcc(t,k)+resOcc(t,k));
+const compact=k=>k.replace(/-/g,'');
+const mkCode=()=>`LC-${TYPES[S.type].code}${S.rooms}-${compact(S.in)}-${compact(S.out)}`;
+const free=(t,k)=>avState==='ok'?TYPES[t].total-occ(t,k):TYPES[t].total;
+const minFree=(t,a,b)=>{let m=99;for(let k=a;k<b;k=addDays(k,1))m=Math.min(m,free(t,k));return m};
+const limitFrom=a=>{let k=a;for(let i=0;i<550;i++){if(free(S.type,k)<S.rooms)return k;k=addDays(k,1)}return k};
+function status(){
+ if(!S.in||!S.out)return null;
+ const n=nights(S.in,S.out),mf=minFree(S.type,S.in,S.out);
+ return {n,mf,ok:avState==='ok'?mf>=S.rooms:null,total:n*S.rooms*TYPES[S.type].price};
+}
+const cals=[];
+function drawCal(el,popup){
+ const mc=el.clientWidth>=600?2:1,picking=S.in&&!S.out,lim=picking?limitFrom(S.in):null;
+ let months='';
+ for(let m=0;m<mc;m++){
+  const first=new Date(t0.getFullYear(),t0.getMonth()+S.off+m,1,12);
+  const lead=(first.getDay()+6)%7,days=new Date(first.getFullYear(),first.getMonth()+1,0).getDate();
+  let cells='<span></span>'.repeat(lead);
+  for(let d=1;d<=days;d++){
+   const k=key(new Date(first.getFullYear(),first.getMonth(),d,12));
+   const fr=free(S.type,k),isFull=fr<S.rooms;
+   let on=k>=TODAY&&!isFull,c='d',lab=fmtL(k);
+   if(picking&&k>S.in){on=k<=lim;if(k===lim&&isFull)c+=' llenook'}
+   if(k===TODAY)c+=' today';
+   if(isFull&&k>=TODAY){if(!c.includes('llenook'))c+=' lleno';lab+=', lleno'}
+   else if(k>=TODAY&&fr<=1&&avState==='ok'){c+=' few';lab+=', última habitación'}
+   if(k===S.in)c+=' s-in'+(S.out?'':' solo');
+   else if(k===S.out)c+=' s-out';
+   else if(S.in&&S.out&&k>S.in&&k<S.out)c+=' inr';
+   cells+=`<button type="button" class="${c}" data-k="${k}" ${on||k===S.in||k===S.out?'':'disabled'} aria-label="${lab}" aria-pressed="${k===S.in||k===S.out}">${d}</button>`;
+  }
+  const mn=cap(first.toLocaleDateString('es',{month:'long'}));
+  const prev=m===0?`<button type="button" class="c-nav" data-nav="-1" aria-label="Mes anterior" ${S.off<=0?'disabled':''}>‹</button>`:'<span class="c-nav ghost"></span>';
+  const next=m===mc-1?`<button type="button" class="c-nav" data-nav="1" aria-label="Mes siguiente" ${S.off>=17?'disabled':''}>›</button>`:'<span class="c-nav ghost"></span>';
+  months+=`<div><div class="c-head">${prev}<h4>${mn}<span>${first.getFullYear()}</span></h4>${next}</div><div class="c-wd"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div><div class="c-grid">${cells}</div></div>`;
+ }
+ const st=status(),n=st?st.n:0;
+ const hint=!S.in?'Toca el día de llegada':!S.out?'Ahora toca el día de salida':'';
+ let res='';
+ if(avState==='loading')res='<div class="c-res wait">Cargando disponibilidad…</div>';
+ else if(st&&st.ok){
+  const mx=Math.min(st.mf,TYPES[S.type].total);
+  res=`<div class="c-res ok"><div>✓ Disponible · ${st.mf===1?'queda 1 habitación':`quedan ${st.mf} habitaciones`}<span class="tot">${money(st.total)}</span><span class="det">${money(TYPES[S.type].price)} × ${n} noche${n>1?'s':''}${S.rooms>1?` × ${S.rooms} habitaciones`:''}</span></div><div class="stp" aria-label="Número de habitaciones"><span>Habitaciones</span><button type="button" data-rm="-1" aria-label="Una habitación menos" ${S.rooms<=1?'disabled':''}>−</button><b>${S.rooms}</b><button type="button" data-rm="1" aria-label="Una habitación más" ${S.rooms>=mx?'disabled':''}>+</button></div></div>`;
+ }else if(st&&st.ok===false)res=`<div class="c-res no">✕ No hay ${S.rooms>1?S.rooms+' habitaciones':'habitación'} de ${TYPES[S.type].short.toLowerCase()} libre${S.rooms>1?'s':''} en esas fechas. Prueba otras fechas u otro tipo.</div>`;
+ else if(st)res=`<div class="c-res wait"><div>No pudimos cargar la disponibilidad; el hotel te la confirmará.<span class="tot">${money(st.total)}</span><span class="det">${money(TYPES[S.type].price)} × ${n} noche${n>1?'s':''}</span></div></div>`;
+ const tbtn=Object.entries(TYPES).map(([k,t])=>`<button type="button" data-type="${k}" aria-pressed="${S.type===k}">${t.short}<small>${money(t.price)} / noche</small></button>`).join('');
+ el.innerHTML=`${popup?'<div class="c-top"><b>Elige tus fechas</b><button type="button" class="c-close" data-done aria-label="Cerrar">✕</button></div>':''}<div class="c-type" role="group" aria-label="Tipo de habitación">${tbtn}</div><div class="c-sum"><div class="c-chip ${!S.in||S.out?'act':''}"><span>Llegada</span><b>${S.in?fmt(S.in):'—'}</b></div><div class="c-n">${n||'–'}<small>${n===1?'noche':'noches'}</small></div><div class="c-chip ${picking?'act':''}"><span>Salida</span><b>${S.out?fmt(S.out):'—'}</b></div></div><div class="c-months" style="--mc:${mc}">${months}</div><div class="c-leg"><span><i class="lg-few"></i>Última habitación</span><span><i class="lg-full"></i>Lleno</span><span><i class="lg-today"></i>Hoy</span></div><div class="c-foot">${res}${hint?`<span class="c-hint">${hint}</span>`:''}${S.in?'<button type="button" class="c-x" data-clear>Borrar fechas</button>':''}${popup&&S.out?'<button type="button" class="btn b-red" data-done>Confirmar fechas</button>':''}${avState==='ok'&&AV.actualizado?`<span class="c-upd">Disponibilidad actualizada por el hotel el ${esc(fmtL(String(AV.actualizado)))}.</span>`:''}</div>`;
+}
+const qIn=$('q-in-t'),qOut=$('q-out-t'),pop=$('pop'),qType=$('q-type'),qRes=$('q-res');
+function render(){
+ cals.forEach(([el,p])=>{if(!p||!pop.hidden)drawCal(el,p)});
+ qIn.textContent=S.in?fmt(S.in):'Elegir fecha';qOut.textContent=S.out?fmt(S.out):'Elegir fecha';
+ $('q-inb').classList.toggle('on',!pop.hidden&&(!S.in||!!S.out));$('q-outb').classList.toggle('on',!pop.hidden&&!!S.in&&!S.out);
+ qType.value=S.type;
+ const st=status();
+ qRes.className='qres'+(st&&st.ok?' ok':st&&st.ok===false?' no':'');
+ qRes.textContent=!st?'':st.ok?`✓ Disponible · ${st.n} noche${st.n>1?'s':''} · ${money(st.total)}`:st.ok===false?'✕ Sin disponibilidad en esas fechas para este tipo':`${st.n} noche${st.n>1?'s':''} · ${money(st.total)}`;
+ if(!$('panel').hidden)drawAdmin();
+ updSteps();
+}
+function bindCal(el,popup){
+ cals.push([el,popup]);
+ el.addEventListener('click',e=>{
+  const t=e.target.closest('button');if(!t)return;
+  if(t.dataset.nav){S.off=Math.max(0,Math.min(17,S.off+ +t.dataset.nav));render();return}
+  if(t.dataset.type){S.type=t.dataset.type;S.rooms=1;S.typeChosen=true;render();return}
+  if(t.dataset.rm){S.rooms=Math.max(1,S.rooms+ +t.dataset.rm);render();return}
+  if('clear' in t.dataset){S.in=S.out=null;S.rooms=1;render();return}
+  if('done' in t.dataset){closePop();return}
+  const k=t.dataset.k;if(!k)return;
+  if(!S.in||S.out||k<=S.in){S.in=k;S.out=null}else{S.out=k;$('err').textContent='';if(popup)setTimeout(closePop,600)}
+  render();
+  const again=el.querySelector(`[data-k="${k}"]`);if(again)again.focus({preventScroll:true});
+ });
+ const preview=h=>{
+  const ok=h&&S.in&&!S.out&&h>S.in&&h<=limitFrom(S.in);
+  el.querySelectorAll('.d').forEach(b=>b.classList.toggle('prv',!!ok&&b.dataset.k>S.in&&b.dataset.k<=h));
+  const si=el.querySelector('.s-in');if(si)si.classList.toggle('solo',!ok);
+  const n=ok?nights(S.in,h):0,c=el.querySelector('.c-n'),hi=el.querySelector('.c-hint');
+  if(c)c.innerHTML=`${n||'–'}<small>${n===1?'noche':'noches'}</small>`;
+  if(hi)hi.textContent=n?`${n} noche${n>1?'s':''} · ${money(n*TYPES[S.type].price)}: toca para confirmar`:'Ahora toca el día de salida';
+ };
+ el.addEventListener('mouseover',e=>{const t=e.target.closest('.d');if(t&&!t.disabled&&S.in&&!S.out)preview(t.dataset.k)});
+ el.addEventListener('mouseleave',()=>{if(S.in&&!S.out)preview(null)});
+}
+bindCal($('cal-b'),false);bindCal($('cal-q'),true);
+const mq=matchMedia('(max-width:600px)');
+const openPop=()=>{pop.hidden=false;if(mq.matches)document.body.style.overflow='hidden';render()};
+const closePop=()=>{pop.hidden=true;document.body.style.overflow='';render()};
+const menu=$('menu'),links=$('links');
+menu.addEventListener('click',()=>{const o=links.classList.toggle('open');menu.setAttribute('aria-expanded',o)});
+links.addEventListener('click',e=>{if(e.target.closest('a')){links.classList.remove('open');menu.setAttribute('aria-expanded','false')}});
+$('q-inb').addEventListener('click',()=>pop.hidden?openPop():closePop());
+$('q-outb').addEventListener('click',openPop);
+qType.addEventListener('change',()=>{S.type=qType.value;S.rooms=1;S.typeChosen=true;render()});
+document.addEventListener('click',e=>{if(!pop.hidden&&e.target.isConnected&&!e.target.closest('#pop,#q-inb,#q-outb'))closePop()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!pop.hidden){closePop();$('q-inb').focus()}});
+const calRO=new ResizeObserver(()=>render());calRO.observe($('cal-b'));
+
+/* pasos dinámicos */
+let sentSig=null;
+const sig=()=>[S.type,S.rooms,S.in,S.out,$('b-name').value.trim(),$('b-tel').value.trim()].join('|');
+const setTxt=(el,t)=>{if(el.textContent!==t){el.textContent=t;el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash')}};
+function updSteps(){
+ const st=status(),T=TYPES[S.type],name=$('b-name').value.trim();
+ const d1=!!(S.typeChosen||(S.in&&S.out)),d2=!!(st&&st.ok!==false),d3=sentSig!==null&&sentSig===sig();
+ const done=[d1,d2,d3],act=done.indexOf(false);
+ const txt=[
+  d1?`${T.name} · ${money(T.price)} por noche${S.rooms>1?` · ${S.rooms} habitaciones`:''}`:'Una cama (RD$1,500) o dos camas (RD$2,000) por noche.',
+  !S.in?'Toca tu llegada y tu salida en el calendario.':!S.out?`Llegada el ${fmt(S.in)}: ahora toca la salida.`:st.ok===false?'Sin disponibilidad en esas fechas: prueba otras u otro tipo.':`${fmt(S.in)} → ${fmt(S.out)} · ${st.n} noche${st.n>1?'s':''} · ${money(st.total)}`,
+  d3?'¡Enviada! El hotel te confirmará por WhatsApp.':!d2?'El mensaje se escribe solo y el hotel te la confirma.':!name||telDigits($('b-tel').value).length<10?'Escribe tu nombre y tu WhatsApp, y envía.':'Todo listo: pulsa «Enviar reserva por WhatsApp».'
+ ];
+ [1,2,3].forEach(i=>{const li=$('st'+i);li.className=done[i-1]?'done':act===i-1?'active':'todo';if(i===2&&st&&st.ok===false)li.classList.add('bad');setTxt($('sd'+i),txt[i-1]);
+  $('mprog').querySelector(`[data-go="${i}"]`).className=done[i-1]?'done':act===i-1?'active':''});
+ const prog=done.filter(Boolean).length/3;
+ $('steps').style.setProperty('--prog',d3?1:d2?1:d1?.5:0);$('mprog').style.setProperty('--prog',prog);
+ const summary=d3?'¡Reserva enviada! 🎉':act===0?'Paso 1 de 3: elige tu habitación':act===1?(st&&st.ok===false?'Esas fechas están llenas':'Paso 2 de 3: marca tus fechas'):`Paso 3 de 3${st&&st.ok?` · Total ${money(st.total)}`:''}`;
+ setTxt($('mp-txt'),summary);$('sp-txt').textContent=d3?'':act>=0?`Te falta${act===2?' 1 paso':`n ${3-act} pasos`}.`:'';
+}
+const goStep=i=>{
+ const cb=$('cal-b');
+ if(i==1){cb.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(()=>{const b=cb.querySelector('.c-type [aria-pressed=true]');if(b)b.focus({preventScroll:true})},450)}
+ else if(i==2){(cb.querySelector('.c-months')||cb).scrollIntoView({behavior:'smooth',block:'center'})}
+ else{const f=$('b-name').value.trim()?$('bf').querySelector('button[type=submit]'):$('b-name');f.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(()=>f.focus({preventScroll:true}),450)}
+};
+$('steps').addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b)goStep(+b.dataset.go)});
+$('mprog').addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b)goStep(+b.dataset.go)});
+$('b-name').addEventListener('input',updSteps);$('b-tel').addEventListener('input',updSteps);
+
+/* reserva rápida → formulario completo */
+$('qf').addEventListener('submit',e=>{e.preventDefault();if(!S.in||!S.out){openPop();return}closePop();$('reservar').scrollIntoView({behavior:'smooth'});setTimeout(()=>$('b-name').focus({preventScroll:true}),500)});
+$('rooms').addEventListener('click',e=>{const a=e.target.closest('[data-room]');if(a){S.type=a.dataset.room;S.rooms=1;S.typeChosen=true;render()}});
+
+/* mensaje */
+const SITE_URL=(window.claude&&window.claude.use)?'https://claude.ai/artifact/UpTYjf8upUfLoEm41sEvxP':(location.origin+location.pathname).replace(/index\.html$/,'');
+const telDigits=v=>{let d=String(v||'').replace(/\D/g,'');if(d.length===10&&/^(809|829|849)/.test(d))d='1'+d;return d};
+const buildMsg=()=>{
+ const n=$('b-name').value.trim(),st=status(),tel=telDigits($('b-tel').value);
+ if(!S.in||!S.out)return [null,'Elige en el calendario tu llegada y tu salida.'];
+ if(st.ok===false)return [null,'Esas fechas no tienen habitaciones libres de este tipo. Elige otras fechas u otro tipo.'];
+ if(!n)return [null,'Escribe tu nombre.'];
+ if(tel.length<10)return [null,'Escribe tu número de WhatsApp para que el hotel te confirme la reserva.'];
+ const T=TYPES[S.type];
+ let m=`Hola, Hotel Las Cañitas. Quiero reservar:\n\n• Nombre: ${n}\n`;
+ m+=`• WhatsApp: +${tel}\n`;
+ m+=`• Habitación: ${S.rooms} × ${T.name}\n• Llegada: ${fmtL(S.in)}\n• Salida: ${fmtL(S.out)} (${st.n} noche${st.n>1?'s':''})\n• Personas: ${$('b-p').value}\n• Total: ${money(st.total)} (${money(T.price)} × ${st.n} noche${st.n>1?'s':''}${S.rooms>1?` × ${S.rooms} hab.`:''})\n• Código de reserva: ${mkCode()}\n`;
+ if($('b-note').value.trim())m+=`• Comentarios: ${$('b-note').value.trim()}\n`;
+ m+=st.ok?`\nEn la web aparece disponible. ¿Me confirman la reserva? Gracias.`:'\n¿Me confirman si hay disponibilidad? Gracias.';
+ m+=`\n\n(Para el hotel, confirmar con un toque: ${SITE_URL}#${mkCode()}-${tel})`;
+ return [m,''];
+};
+$('bf').addEventListener('submit',e=>{
+ e.preventDefault();const [m,er]=buildMsg();$('err').textContent=er;if(!m)return;
+ const url=`https://wa.me/${PHONE}?text=${encodeURIComponent(m)}`;sentSig=sig();updSteps();
+ $('out').className='out full on';$('out').textContent='Tu solicitud:\n\n'+m+'\n\nSe está abriendo WhatsApp. Si no se abre, cópiala y envíala al 809-817-0798, o llama al 829-814-4348.';
+ const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();
+});
+$('copy').addEventListener('click',async()=>{const [m,er]=buildMsg();$('err').textContent=er;if(!m)return;
+ $('out').className='out full on';$('out').textContent=m;
+ try{await navigator.clipboard.writeText(m);$('copy').textContent='¡Copiada!';setTimeout(()=>$('copy').textContent='Copiar solicitud',2000)}catch(x){$('err').textContent='No se pudo copiar automáticamente; selecciona el texto de abajo.'}});
+
+/* panel del hotel (#panel-hotel) */
+const A={off:0,sel:TODAY},DRAFT='lc-disponibilidad-borrador';
+const clone=o=>JSON.parse(JSON.stringify(o));
+const saveDraft=()=>{try{localStorage.setItem(DRAFT,JSON.stringify(AV))}catch(x){}};
+const setOcc=(k,t,v)=>{
+ const r=resOcc(t,k);v=Math.max(r,Math.min(TYPES[t].total,v))-r;
+ const o=Object.assign({},AV.ocupadas[k]||{});
+ if(v)o[t]=v;else delete o[t];
+ if(Object.keys(o).length)AV.ocupadas[k]=o;else delete AV.ocupadas[k];
+ AV.actualizado=TODAY;persist();render();
+};
+function drawAdmin(){
+ const el=$('adm-cal'),mc=el.clientWidth>=640?2:1,tot=TYPES.una.total+TYPES.dos.total;
+ let months='';
+ for(let m=0;m<mc;m++){
+  const first=new Date(t0.getFullYear(),t0.getMonth()+A.off+m,1,12);
+  const lead=(first.getDay()+6)%7,days=new Date(first.getFullYear(),first.getMonth()+1,0).getDate();
+  let cells='<span></span>'.repeat(lead);
+  for(let d=1;d<=days;d++){
+   const k=key(new Date(first.getFullYear(),first.getMonth(),d,12)),u=occ('una',k)+occ('dos',k),lv=u===0?'':u>=tot?' o3':u>=tot/2?' o2':' o1';
+   cells+=`<button type="button" class="d${lv}${k===A.sel?' sel':''}${k===TODAY?' today':''}" data-k="${k}" ${k<TODAY?'disabled':''} aria-label="${fmtL(k)}: ${u} ocupadas">${d}<small>${u}/${tot}</small></button>`;
+  }
+  const prev=m===0?`<button type="button" class="c-nav" data-nav="-1" aria-label="Mes anterior" ${A.off<=0?'disabled':''}>‹</button>`:'<span class="c-nav ghost"></span>';
+  const next=m===mc-1?`<button type="button" class="c-nav" data-nav="1" aria-label="Mes siguiente" ${A.off>=17?'disabled':''}>›</button>`:'<span class="c-nav ghost"></span>';
+  months+=`<div><div class="c-head">${prev}<h4>${cap(first.toLocaleDateString('es',{month:'long'}))}<span>${first.getFullYear()}</span></h4>${next}</div><div class="c-wd"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div><div class="c-grid">${cells}</div></div>`;
+ }
+ el.innerHTML=`<div class="c-months" style="--mc:${mc}">${months}</div><p class="c-leg">Cada día muestra las habitaciones ocupadas esa noche, de ${tot} en total.</p>`;
+ $('adm-ed').innerHTML=`<h3>Ocupación del ${esc(fmtL(A.sel))}</h3>${Object.entries(TYPES).map(([t,T])=>`<div class="adm-row"><div><b>${T.short}</b><br><span class="price">${T.total-occ(t,A.sel)} libres de ${T.total}${resOcc(t,A.sel)?` · ${resOcc(t,A.sel)} por reservas`:''}</span></div><div class="stp"><button type="button" data-t="${t}" data-v="${occ(t,A.sel)-1}" aria-label="Una ocupada menos">−</button><b>${occ(t,A.sel)}</b><button type="button" data-t="${t}" data-v="${occ(t,A.sel)+1}" aria-label="Una ocupada más">+</button></div><div class="row"><button type="button" class="mini" data-t="${t}" data-v="${T.total}">Lleno</button><button type="button" class="mini" data-t="${t}" data-v="0">Libre</button></div></div>`).join('')}<div class="adm-row"><button type="button" class="mini" id="adm-next">Copiar al día siguiente →</button></div>`;
+ $('adm-json').value=JSON.stringify(AV,null,1);
+ const up=(AV.reservas||[]).filter(r=>r.out>=TODAY).sort((a,b)=>a.in<b.in?-1:1);
+ $('adm-list').innerHTML=up.length?`<h3 style="margin-top:14px">Reservas confirmadas (${up.length})</h3>`+up.map(r=>`<div class="adm-row"><div><b>${esc(r.c)}</b><br><span class="price">${r.n} × ${TYPES[r.t].short} · ${esc(fmt(r.in))} → ${esc(fmt(r.out))}</span></div><button type="button" class="mini" data-del="${esc(r.c)}">Anular</button></div>`).join(''):'<p class="price" style="margin-top:10px">Aún no hay reservas confirmadas registradas.</p>';
+}
+$('adm-add').addEventListener('click',()=>{
+ $('adm-err').textContent='';$('adm-ok').textContent='';
+ const r=parseCode($('adm-code').value);
+ if(!r){$('adm-err').textContent='Código no válido. Debe verse así: LC-D1-20261220-20261223';return}
+ const [ok,msg]=confirmRes(r);
+ if(!ok){$('adm-err').textContent=msg;return}
+ $('adm-code').value='';A.sel=r.in;A.off=Math.max(0,(parse(r.in).getFullYear()-t0.getFullYear())*12+parse(r.in).getMonth()-t0.getMonth());
+ $('adm-ok').textContent='✓ '+msg;render();
+});
+$('adm-list').addEventListener('click',e=>{const b=e.target.closest('[data-del]');if(!b)return;AV.reservas=(AV.reservas||[]).filter(r=>r.c!==b.dataset.del);AV.actualizado=TODAY;persist();$('adm-ok').textContent='Reserva anulada: las noches vuelven a estar disponibles.';render()});
+$('adm-cal').addEventListener('click',e=>{const t=e.target.closest('button');if(!t)return;if(t.dataset.nav){A.off=Math.max(0,Math.min(17,A.off+ +t.dataset.nav));drawAdmin();return}if(t.dataset.k){A.sel=t.dataset.k;drawAdmin()}});
+$('adm-ed').addEventListener('click',e=>{const t=e.target.closest('button');if(!t)return;
+ if(t.id==='adm-next'){const nk=addDays(A.sel,1);for(const ty in TYPES)setOcc(nk,ty,occ(ty,A.sel));A.sel=nk;render();return}
+ if(t.dataset.t)setOcc(A.sel,t.dataset.t,+t.dataset.v)});
+$('adm-copy').addEventListener('click',async()=>{const v=$('adm-json').value;try{await navigator.clipboard.writeText(v);$('adm-copy').textContent='¡Copiado!';setTimeout(()=>$('adm-copy').textContent='Copiar datos',2000)}catch(x){$('adm-json').select()}});
+$('adm-reset').addEventListener('click',()=>{try{localStorage.removeItem(DRAFT)}catch(x){}mergeAV();render()});
+
+/* base de datos privada del hotel + confirmación con un toque */
+const LOCAL=!(window.claude&&window.claude.use);
+let DB=null,PDB=null,pubData=null,dbAdmin=LOCAL?true:null,dbData=null,pub=null,wBusy=false,wAgain=false,CF=null,cfMsg='';
+function mergeAV(){
+ AV=clone(AVfile||{ocupadas:{},reservas:[]});
+ const src=dbData||pubData;
+ if(src){AV.ocupadas=clone(src.ocupadas&&typeof src.ocupadas==='object'?src.ocupadas:{});AV.reservas=clone(Array.isArray(src.reservas)?src.reservas.filter(r=>r&&TYPES[r.t]&&typeof r.in==='string'&&typeof r.out==='string'&&+r.n>0):[]);if(src.actualizado)AV.actualizado=String(src.actualizado)}
+ if(!AV.ocupadas)AV.ocupadas={};if(!Array.isArray(AV.reservas))AV.reservas=[];
+}
+async function persist(){
+ if(!DB){saveDraft();refreshAdmin();return}
+ if(wBusy){wAgain=true;return}
+ wBusy=true;
+ try{
+  await DB.doc('hotel/estado').set(clone({ocupadas:AV.ocupadas,reservas:AV.reservas,actualizado:AV.actualizado||TODAY}));
+  await DB.doc('pub/disponibilidad').set(clone({ocupadas:AV.ocupadas,reservas:(AV.reservas||[]).map(r=>({c:r.c,t:r.t,in:r.in,out:r.out,n:r.n})),actualizado:AV.actualizado||TODAY}));
+ }
+ catch(e){$('adm-err').textContent='No se pudo guardar en la base de datos ('+((e&&e.code)||'error')+'). Inténtalo de nuevo.'}
+ wBusy=false;if(wAgain){wAgain=false;persist()}
+}
+function refreshAdmin(){
+ const sy=$('adm-sync'),on=!!DB;
+ sy.className='sync'+(on?' on':'');
+ sy.textContent=on?'● Conectado. Cada reserva que confirmes aparece como ocupada en la web al instante.'
+  :dbAdmin===null?'Comprobando acceso…':LOCAL?'Web en tu propio servidor: lo que confirmes queda en este navegador. Para publicarlo, pulsa «Copiar datos», abre disponibilidad.json en GitHub, pega el contenido y guarda (Commit). Vercel actualiza la web sola en menos de un minuto.':dbAdmin?'Publicación automática aún no activada: tras confirmar, pulsa «Copiar datos» y envíaselos a Claude.':'Sin conexión con la cuenta del hotel: abre esta página en claude.ai con la cuenta del hotel para que todo se publique solo. Mientras tanto, usa «Copiar datos».';
+ $('adm-manual').hidden=on;
+}
+const parseCode=v=>{
+ const m=/(LC-([UD])(\d{1,2})-(\d{8})-(\d{8}))(?:-(\d{7,15}))?/i.exec(String(v||''));if(!m)return null;
+ const dk=x=>`${x.slice(0,4)}-${x.slice(4,6)}-${x.slice(6)}`;
+ const r={c:`LC-${m[2].toUpperCase()}${m[3]}-${m[4]}-${m[5]}`,t:m[2].toUpperCase()==='U'?'una':'dos',n:+m[3],in:dk(m[4]),out:dk(m[5]),tel:m[6]||''};
+ if(isNaN(parse(r.in))||isNaN(parse(r.out))||r.out<=r.in||r.n<1)return null;return r;
+};
+const findRes=c=>(AV.reservas||[]).find(r=>r.c===c);
+function confirmRes(r){
+ if(findRes(r.c))return [false,'Esta reserva ya estaba confirmada.'];
+ const mf=minFree(r.t,r.in,r.out);
+ if(mf<r.n)return [false,`No quedan ${r.n} habitación(es) de ${TYPES[r.t].short.toLowerCase()} libres en esas fechas (mínimo libre: ${mf}).`];
+ const nn=nights(r.in,r.out);
+ AV.reservas=(AV.reservas||[]).concat({c:r.c,t:r.t,in:r.in,out:r.out,n:r.n,tel:r.tel||'',total:nn*r.n*TYPES[r.t].price,conf:new Date().toISOString()});
+ AV.actualizado=TODAY;persist();
+ return [true,`${r.c}: ${nn} noche(s) de ${TYPES[r.t].short.toLowerCase()} quitadas del calendario.`];
+}
+const clientMsg=(r,ok)=>{const T=TYPES[r.t],nn=nights(r.in,r.out);return ok
+ ?`Hola, le escribe el Hotel Las Cañitas. ✅ Su reserva está confirmada:\n\n• ${r.n} × ${T.name}\n• Llegada: ${fmtL(r.in)}\n• Salida: ${fmtL(r.out)} (${nn} noche${nn>1?'s':''})\n• Total: ${money(nn*r.n*T.price)}\n• Código: ${r.c}\n\n¡Le esperamos en Los Ríos! Cualquier cosa: 809-817-0798 / 829-814-4348.`
+ :`Hola, le escribe el Hotel Las Cañitas. Lo sentimos mucho: ya no nos quedan habitaciones de ${T.short.toLowerCase()} libres del ${fmtL(r.in)} al ${fmtL(r.out)}. Puede ver otras fechas disponibles en nuestra web: ${SITE_URL}`};
+function refreshConf(){
+ const box=$('conf');if(!CF){box.hidden=true;return}
+ box.hidden=false;
+ const r=CF,T=TYPES[r.t],nn=nights(r.in,r.out),reg=findRes(r.c),tel=(reg&&reg.tel)||r.tel;
+ const loading=avState==='loading'||dbAdmin===null;
+ const free=loading?0:minFree(r.t,r.in,r.out)+(reg?reg.n:0),fits=free>=r.n;
+ const d1=!loading,d2=!!reg,d3=!!(reg&&reg.av),bad=!loading&&!reg&&!fits;
+ const cls=(d,i)=>d?'done':([d1,d2,d3].indexOf(false)===i?'active':'todo');
+ const waBtn=(ok,label)=>tel?`<a class="btn ${ok?'b-wa':'b-red'}" href="https://wa.me/${esc(tel)}?text=${encodeURIComponent(clientMsg(r,ok))}" target="_blank" rel="noopener" data-av="${ok?1:0}"><svg><use href="#i-wa"/></svg>${label}</a>`:`<button type="button" class="btn ${ok?'b-wa':'b-red'}" data-cp="${ok?1:0}">Copiar mensaje para el cliente</button>`;
+ let s2,s3;
+ if(!dbAdmin)s2=`<span class="sd">Este enlace es para el hotel. Ábrelo con la cuenta del hotel en claude.ai para confirmar con un toque.</span>`;
+ else if(reg)s2=`<span class="sd">${DB?'Confirmada. Ya aparece como ocupada en la web.':'Confirmada en este navegador. Para que la vean los clientes, abre el panel, pulsa «Copiar datos» y pégalos en disponibilidad.json en GitHub.'}</span>`;
+ else if(bad)s2=`<span class="sd">No se puede confirmar: no hay sitio suficiente.</span>`;
+ else s2=`<span class="sd">Un toque y esas noches dejan de estar disponibles.</span><button type="button" class="btn b-red" id="cf-ok" ${loading?'disabled':''}>✓ Confirmar reserva</button>`;
+ if(!dbAdmin)s3=`<span class="sd">El hotel te avisará por WhatsApp.</span>`;
+ else if(bad)s3=`<span class="sd">Avísale con un mensaje ya escrito.</span>${waBtn(false,'Avisar que no hay sitio')}`;
+ else if(reg)s3=`<span class="sd">${d3?'Aviso enviado. ':''}${tel?`WhatsApp del cliente: +${esc(tel)}`:'El cliente no dejó WhatsApp: copia el mensaje y respóndele en su chat.'}</span>${waBtn(true,d3?'Volver a avisar':'Avisar al cliente por WhatsApp')}`;
+ else s3=`<span class="sd">Después de confirmar, envíale la confirmación con un toque.</span>`;
+ const done=[d1,d2,d3].filter(Boolean).length;
+ $('conf-card').innerHTML=`<div class="cf-h"><div><h3 id="cf-title">${reg?'Reserva confirmada':'Nueva reserva'}</h3><p class="cf-code">${esc(r.c)}</p></div><button type="button" class="c-close" id="cf-x" aria-label="Cerrar">✕</button></div>
+ <dl class="cf-det"><dt>Habitación</dt><dd>${r.n} × ${T.name}</dd><dt>Llegada</dt><dd>${esc(fmtL(r.in))}</dd><dt>Salida</dt><dd>${esc(fmtL(r.out))} · ${nn} noche${nn>1?'s':''}</dd>${tel?`<dt>Cliente</dt><dd>+${esc(tel)}</dd>`:''}<dt>Total</dt><dd class="big">${money(nn*r.n*T.price)}</dd></dl>
+ <ol class="steps cfs" style="--prog:${done>=3?1:done>=2?1:done>=1?.5:0}">
+  <li class="${cls(d1,0)}${bad?' bad':''}"><div class="stb"><span class="sn"><i>1</i><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="stx"><b>Revisar disponibilidad</b><span class="sd">${loading?'Comprobando…':reg?'Reserva ya registrada.':fits?`Hay sitio: quedan ${free} ${free>1?'habitaciones':'habitación'} de ${T.short.toLowerCase()}.`:`Ya no hay sitio: quedan ${free} de ${T.short.toLowerCase()} para esas fechas.`}</span></span></div></li>
+  <li class="${cls(d2,1)}"><div class="stb"><span class="sn"><i>2</i><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="stx"><b>Confirmar</b>${s2}</span></div></li>
+  <li class="${cls(d3,2)}"><div class="stb"><span class="sn"><i>3</i><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="stx"><b>Avisar al cliente</b>${s3}</span></div></li>
+ </ol>
+ <p class="err" role="alert">${esc(cfMsg)}</p>
+ <div class="cf-foot"><button type="button" class="btn b-call" id="cf-close" style="border-color:var(--line)">Cerrar</button>${reg&&dbAdmin?'<button type="button" class="c-x" id="cf-undo">Anular confirmación</button>':''}${dbAdmin?'<a class="c-x" href="#panel-hotel" id="cf-panel">Abrir panel</a>':''}</div>`;
+}
+const closeConf=()=>{CF=null;cfMsg='';refreshConf();if(/^#LC-/i.test(location.hash)){try{history.replaceState(null,'',location.pathname+location.search)}catch(x){location.hash=''}}};
+$('conf').addEventListener('click',async e=>{
+ if(e.target===$('conf')||e.target.closest('#cf-x,#cf-close')){closeConf();return}
+ if(e.target.closest('#cf-panel')){CF=null;refreshConf();return}
+ if(e.target.closest('#cf-ok')){const [ok,msg]=confirmRes(CF);cfMsg=ok?'':msg;render();refreshConf();return}
+ if(e.target.closest('#cf-undo')){AV.reservas=(AV.reservas||[]).filter(x=>x.c!==CF.c);AV.actualizado=TODAY;persist();render();refreshConf();return}
+ const w=e.target.closest('[data-av],[data-cp]');
+ if(w){const ok=(w.dataset.av||w.dataset.cp)==='1';
+  if(w.dataset.cp!==undefined){try{await navigator.clipboard.writeText(clientMsg(CF,ok));w.textContent='¡Copiado!'}catch(x){cfMsg='No se pudo copiar.'}}
+  const reg=findRes(CF.c);if(ok&&reg&&!reg.av){AV.reservas=AV.reservas.map(x=>x.c===CF.c?Object.assign({},x,{av:true}):x);persist();render();setTimeout(refreshConf,50)}}
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&CF)closeConf()});
+async function initDb(){
+ if(LOCAL){refreshAdmin();return}
+ let u=null,db=null;
+ try{[u,db]=await Promise.all([window.claude.use('user'),window.claude.use('db')])}catch(x){}
+ if(db){PDB=db;let first=true;const pt=setTimeout(()=>{first=false},10000);
+  db.doc('pub/disponibilidad').onSnapshot(sn=>{clearTimeout(pt);pubData=sn.exists?sn.data():null;if(pubData){avState='ok';if(!dbData){mergeAV();render();refreshConf()}}},()=>{clearTimeout(pt)});}
+ let ce=false;try{ce=u?!!(await u.canEdit()):false}catch(x){}
+ if(!ce){dbAdmin=false;refreshAdmin();refreshConf();return}
+ if(!db){dbAdmin=true;refreshAdmin();refreshConf();return}
+ DB=db;dbAdmin=true;refreshAdmin();
+ DB.doc('hotel/estado').onSnapshot(sn=>{dbData=sn.exists?sn.data():null;if(avState!=='ok')avState='ok';mergeAV();render();refreshConf()},()=>{DB=null;dbAdmin=false;refreshAdmin();refreshConf()});
+ DB.doc('hotel/publicado').onSnapshot(sn=>{pub=sn.exists?sn.data():null;refreshAdmin()},()=>{});
+}
+const route=()=>{
+ const h=decodeURIComponent(location.hash||''),on=h==='#panel-hotel'||/^#LC-/i.test(h);
+ $('panel').hidden=!on;
+ if(on&&!DB){let d=null;try{d=JSON.parse(localStorage.getItem(DRAFT)||'null')}catch(x){}if(d&&d.ocupadas){if(!Array.isArray(d.reservas))d.reservas=[];AV=d}}
+ CF=/^#LC-/i.test(h)?parseCode(h):null;
+ render();refreshConf();refreshAdmin();
+ if(h==='#panel-hotel')$('panel').scrollIntoView();
+};
+addEventListener('hashchange',route);
+
+/* cargar disponibilidad */
+render();
+const avTimer=setTimeout(()=>{if(avState==='loading'){avState='error';render()}},10000);
+fetch('disponibilidad.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(j=>{
+ clearTimeout(avTimer);
+ if(!j||typeof j!=='object')throw 0;
+ const h=j.habitaciones||{};
+ for(const t in TYPES){if(h[t]){if(+h[t].total>0)TYPES[t].total=+h[t].total;if(+h[t].precio>0)TYPES[t].price=+h[t].precio}}
+ AVfile={actualizado:String(j.actualizado||''),habitaciones:{una:{total:TYPES.una.total,precio:TYPES.una.price},dos:{total:TYPES.dos.total,precio:TYPES.dos.price}},ocupadas:(j.ocupadas&&typeof j.ocupadas==='object')?j.ocupadas:{},reservas:Array.isArray(j.reservas)?j.reservas.filter(r=>r&&TYPES[r.t]&&/^\d{4}-\d\d-\d\d$/.test(r.in)&&/^\d{4}-\d\d-\d\d$/.test(r.out)&&+r.n>0).map(r=>({c:String(r.c||''),t:r.t,in:r.in,out:r.out,n:+r.n})):[]};
+ avState='ok';mergeAV();
+ drawRooms();qType.innerHTML=Object.entries(TYPES).map(([k,t])=>`<option value="${k}">${t.short} · ${money(t.price)}</option>`).join('');
+ route();render();
+}).catch(()=>{clearTimeout(avTimer);if(!dbData)avState='error';route();render()});
+initDb();
+}
+</script>
+</body>
+</html>
