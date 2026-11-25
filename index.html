@@ -2,77 +2,113 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hotel Las Cañitas</title>
-<meta name="description" content="Hotel Las Cañitas en Los Ríos, Neyba (Bahoruco), República Dominicana. Habitaciones con aire acondicionado junto al Lago Enriquillo. Reservas: 809-817-0798 y 829-814-4348.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hotel Las Cañitas · Los Ríos, Neyba</title>
+<meta name="description" content="Hotel Las Cañitas en Los Ríos, Neyba (Bahoruco), República Dominicana. 9 habitaciones con aire acondicionado junto al Lago Enriquillo, desde RD$1,500 por noche. Mira la disponibilidad y reserva por WhatsApp: 809-817-0798.">
+<meta name="theme-color" content="#0a3a40">
+<meta property="og:title" content="Hotel Las Cañitas · Los Ríos, Neyba">
+<meta property="og:description" content="Habitaciones frescas y tranquilas a orillas del Lago Enriquillo. Desde RD$1,500 por noche.">
+<meta property="og:image" content="hero-s.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%230a3a40'/%3E%3Ccircle cx='32' cy='32' r='27' fill='none' stroke='%23f4b63f' stroke-width='2'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-style='italic' font-size='26' fill='%23f4b63f' text-anchor='middle'%3ELC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Pacifico&family=Nunito+Sans:opsz,wght@6..12,400;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="hero-s.jpg" media="(max-width:820px)">
+<link rel="preload" as="image" href="hero-l.jpg" media="(min-width:821px)">
+<script>(function(){var d=document.documentElement;d.classList.add('js');var skip=false;try{skip=sessionStorage.getItem('lc-intro')==='1'||matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}if(skip){d.classList.add('nointro','ready')}setTimeout(function(){d.classList.add('ready')},4200)})()</script>
 <style>
-/* VOICE: cálido, directo, hospitalario; un hotel de pueblo orgulloso y cuidado.
-   IDEA: la página se comporta como el letrero rojo pintado a mano del hotel, junto a una postal del Lago Enriquillo.
-   PICTURE: escena SVG del lago al atardecer con la Sierra de Neyba y cañitas en primer plano, bajo el letrero.
-   COLOUR and TYPE: rojo letrero dominante, amarillo mango de las habitaciones, turquesa del lago; Anton + Pacifico (como el letrero) + Nunito Sans.
-   LAYOUT: letrero a ancho completo, barra de reserva, habitaciones, galería deslizable, la zona, formulario, pie. */
+/* VOICE: hospitalidad cálida y profesional; un hotel pequeño que se presenta con orgullo y claridad.
+   IDEA: una revista de viajes del suroeste dominicano: gran foto de portada, titulares serif, fichas limpias.
+   PICTURE: la fachada real del hotel a pantalla completa, más el lago ilustrado en la sección de la zona.
+   COLOUR and TYPE: blanco, tinta cálida, rojo del letrero como acento y turquesa del lago; Instrument Serif + Manrope.
+   LAYOUT: portada → buscador flotante → hotel → habitaciones → comodidades → fotos → zona → reserva → preguntas → contacto. */
 :root{color-scheme:light dark;
---red:#d0182b;--red2:#a40f1f;--mango:#f5c84b;--lake:#0e8f97;
---bg:light-dark(#fffaf0,#16100e);--card:light-dark(#ffffff,#241a17);--ink:light-dark(#2a1512,#f8ece4);
---soft:light-dark(#6b4a42,#cdb5ab);--line:light-dark(#efdccb,#3b2b26);--sun:light-dark(#fdf0c6,#2a2114)}
+ --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+ --sans:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+ --red:#c8102e;--red2:#9a0b22;--lake:#0b7a82;--lakeD:#0a3a40;--mango:#f4b63f;
+ --bg:light-dark(#ffffff,#0f0b0a);--card:light-dark(#ffffff,#19130f);--alt:light-dark(#f8f4ef,#151010);
+ --ink:light-dark(#1b1311,#f5ede8);--soft:light-dark(#6a5a54,#b8a69e);--line:light-dark(#ece3da,#2f241e);
+ --sun:light-dark(#fbf2e4,#271e16);--ok:light-dark(#137a3a,#7fd6a1);
+ --sh:0 1px 2px rgba(40,15,5,.05),0 14px 36px rgba(40,15,5,.08);--shL:0 30px 70px rgba(30,8,0,.18)}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 "Nunito Sans",system-ui,sans-serif;overflow-x:clip}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16.5px/1.65 var(--sans);overflow-x:clip;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-feature-settings:"kern","liga","tnum" 0}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
-.band{padding:clamp(40px,6vw,88px) max(5vw,16px)}
-.wrap{max-width:1240px;margin:0 auto}
-h1,h2,h3{margin:0;line-height:1.05;text-wrap:balance}
-h2{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(32px,4.4vw,50px);letter-spacing:.01em}
-h3{font-size:20px;font-weight:800}
+h1,h2,h3,h4{margin:0;text-wrap:balance}
 p{margin:0}
-.lead{color:var(--soft);max-width:62ch;margin-top:12px;font-size:17px}
-.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;font-weight:800;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:16px;font-family:inherit;white-space:nowrap}
-.btn svg{width:20px;height:20px;flex:none}
-.b-wa{background:#1f9d55;color:#fff}.b-wa:hover{background:#178246}
-.b-call{background:#fff;color:var(--red2)}.b-call:hover{background:var(--mango);color:#2a1512}
-.b-red{background:var(--red);color:#fff}.b-red:hover{background:var(--red2)}
-.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid var(--mango);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto}
+.sec{padding:clamp(72px,9vw,128px) max(4vw,16px)}
+.alt{background:var(--alt)}
+.kicker{display:inline-flex;align-items:center;gap:10px;color:var(--red);font-weight:700;font-size:14px}
+.kicker::before{content:"";width:22px;height:1.5px;background:currentColor}
+h2{font:400 clamp(38px,4.8vw,62px)/1.03 var(--serif);letter-spacing:-.01em;margin-top:12px;max-width:17ch}
+h2 em,h1 em{font-style:italic}
+h3{font-weight:700;font-size:19px;line-height:1.3}
+.lead{font-size:clamp(16.5px,1.3vw,18.5px);color:var(--soft);max-width:60ch;margin-top:16px}
+.head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:20px 40px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;border-radius:999px;font:700 15.5px/1 var(--sans);text-decoration:none;border:1.5px solid transparent;cursor:pointer;white-space:nowrap;transition:transform .2s,background .2s,box-shadow .2s,color .2s,border-color .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn svg{width:19px;height:19px;flex:none}
+.b-red{background:var(--red);color:#fff;box-shadow:0 8px 20px color-mix(in srgb,var(--red) 30%,transparent)}.b-red:hover{background:var(--red2)}
+.b-wa{background:#18914b;color:#fff;box-shadow:0 8px 20px rgba(24,145,75,.28)}.b-wa:hover{background:#137a3e}
+.b-call{background:transparent;color:var(--ink);border-color:var(--line)}.b-call:hover{border-color:var(--ink)}
+.b-glass{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.4);backdrop-filter:blur(10px)}.b-glass:hover{background:rgba(255,255,255,.24)}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+:focus-visible{outline:3px solid color-mix(in srgb,var(--red) 55%,transparent);outline-offset:3px}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-weight:700}
+.skip:focus{top:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
-/* nav */
-nav{position:sticky;top:0;z-index:20;background:var(--red);color:#fff;box-shadow:0 2px 0 var(--red2)}
-nav .wrap{display:flex;align-items:center;gap:18px;padding:10px max(5vw,16px);flex-wrap:wrap}
-.logo{font-family:Pacifico,cursive;font-size:24px;text-decoration:none;line-height:1}
-.logo small{font-family:Anton,sans-serif;font-size:13px;letter-spacing:.2em;display:block;opacity:.85}
-.links{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
-.links a{text-decoration:none;font-weight:700;padding:10px 12px;border-radius:8px}
-.links a:hover{background:var(--red2)}
-.navcall{background:#fff;color:var(--red2);padding:8px 16px;border-radius:999px;font-weight:800;text-decoration:none;white-space:nowrap}
-.menu{display:none;width:44px;height:44px;border-radius:10px;border:2px solid rgba(255,255,255,.5);background:transparent;color:#fff;cursor:pointer;place-items:center}
+/* cabecera */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:40;color:#fff;transition:background .35s,color .35s,box-shadow .35s;padding-top:env(safe-area-inset-top)}
+.hdr.mo{background:var(--bg)!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;color:var(--ink)}
+.hdr.solid{background:color-mix(in srgb,var(--bg) 90%,transparent);-webkit-backdrop-filter:saturate(1.6) blur(16px);backdrop-filter:saturate(1.6) blur(16px);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.hdr .wrap{display:flex;align-items:center;gap:18px;height:74px;padding:0 max(4vw,16px);max-width:1320px}
+.logo{text-decoration:none;display:flex;flex-direction:column;line-height:1;min-height:44px;justify-content:center}
+.logo b{font:400 italic 29px/1 var(--serif)}
+.logo small{font:700 11.5px/1 var(--sans);letter-spacing:.06em;opacity:.75;margin-top:4px}
+.links{display:flex;gap:2px;margin-left:auto}
+.links a{position:relative;padding:10px 12px;font-weight:600;font-size:15px;text-decoration:none;border-radius:10px}
+.links a::after{content:"";position:absolute;left:12px;right:12px;bottom:5px;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.links a:hover::after,.links a.on::after{transform:scaleX(1)}
+.hcall{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;text-decoration:none;white-space:nowrap;padding:8px 4px}
+.hcall svg{width:17px;height:17px}
+.hdr .btn{min-height:44px;padding:0 20px}
+.menu{display:none;width:46px;height:46px;border-radius:12px;border:1.5px solid currentColor;background:transparent;color:inherit;cursor:pointer;place-items:center;opacity:.9}
 .menu svg{width:22px;height:22px}
-.logo{min-height:44px;display:flex;flex-direction:column;justify-content:center}
-.mbar{display:none}
 
+/* portada */
+.hero{position:relative;min-height:min(100svh,920px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;isolation:isolate;background:#2a1a14}
+.hero .bg{position:absolute;inset:0;z-index:-2}
+.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(14,5,3,.78) 0%,rgba(14,5,3,.5) 38%,rgba(14,5,3,.08) 70%),linear-gradient(180deg,rgba(12,4,2,.55) 0%,rgba(12,4,2,0) 26%,rgba(12,4,2,.1) 60%,rgba(12,4,2,.82) 100%)}
+@media(max-width:860px){.hero::after{background:linear-gradient(180deg,rgba(12,4,2,.6) 0%,rgba(12,4,2,.42) 35%,rgba(12,4,2,.55) 65%,rgba(12,4,2,.9) 100%)}}
+.hero-in{max-width:1320px;margin:0 auto;width:100%;padding:150px max(4vw,16px) 140px}
+.chip{display:inline-flex;gap:8px;align-items:center;padding:8px 15px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-weight:600;font-size:14px}
+.chip svg{width:16px;height:16px}
+h1{font:400 clamp(48px,7.6vw,108px)/.96 var(--serif);letter-spacing:-.015em;margin-top:20px;max-width:12.5ch;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.sub{font-size:clamp(17px,1.5vw,20px);max-width:44ch;margin-top:20px;color:rgba(255,255,255,.9)}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:24px;font-weight:600;font-size:15px;color:rgba(255,255,255,.92)}
+.facts span{display:flex;align-items:center;gap:8px}
+.facts svg{width:18px;height:18px;color:var(--mango)}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.scrollcue{position:absolute;right:max(4vw,16px);bottom:150px;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:13px;font-weight:600;color:rgba(255,255,255,.8);text-decoration:none;writing-mode:vertical-rl}
+.scrollcue i{width:1.5px;height:56px;background:linear-gradient(rgba(255,255,255,.8),transparent)}
 
-/* hero = el letrero */
-.hero{background:var(--red);color:#fff;position:relative;padding:clamp(28px,5vw,64px) max(5vw,16px) 0}
-.sign{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:auto minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(18px,3vw,44px);align-items:center}
-.hotel{font-family:Anton,sans-serif;font-size:clamp(40px,6vw,78px);line-height:.92;display:flex;flex-direction:column;align-items:center;padding-right:clamp(14px,2vw,28px);border-right:3px solid rgba(255,255,255,.35)}
-.name{font-family:Pacifico,cursive;font-weight:400;font-size:clamp(46px,7.4vw,96px);line-height:1.15;text-shadow:3px 4px 0 var(--red2)}
-.msg{font-size:clamp(19px,2vw,23px);font-weight:700;margin-top:10px;max-width:30ch}
-.where{margin-top:8px;opacity:.9;display:flex;gap:8px;align-items:center}
-.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-.phone{font-family:Anton,sans-serif;font-size:clamp(28px,3.4vw,40px);letter-spacing:.03em;margin-top:18px;display:block;text-decoration:none}
-.postal{background:#fff;padding:10px 10px 40px;border-radius:4px;transform:rotate(2.5deg);box-shadow:0 18px 40px rgba(60,0,8,.45);position:relative}
-.postal img{aspect-ratio:4/3;object-fit:cover;width:100%}
-.postal span{position:absolute;bottom:8px;left:14px;color:var(--red2);font-family:Pacifico,cursive;font-size:18px}
-.scene{display:block;width:calc(100% + 2*max(5vw,16px));margin:clamp(20px,3vw,40px) calc(-1*max(5vw,16px)) 0;height:clamp(130px,16vw,220px)}
-@media(max-width:900px){.sign{grid-template-columns:auto minmax(0,1fr)}.postal{grid-column:1/-1;max-width:460px;justify-self:center;transform:rotate(1.5deg)}}
-@media(max-width:600px){.postal{max-width:300px}.sign{grid-template-columns:1fr}.hotel{flex-direction:row;gap:.12em;border:0;padding:0;justify-content:flex-start;font-size:34px}.ctas .btn{flex:1 1 100%;justify-content:center}}
-
-/* barra de reserva rápida */
-.quick{max-width:1240px;margin:-34px auto 0;position:relative;z-index:12;padding:0 max(5vw,16px)}
-.quick form{background:var(--card);border-radius:18px;box-shadow:0 14px 40px rgba(60,10,0,.18);padding:16px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:12px;align-items:end;border:1px solid var(--line)}
-@media(max-width:780px){.quick form{grid-template-columns:repeat(2,minmax(0,1fr))}.quick .btn{grid-column:1/-1;justify-content:center}}
-label,.lbl{display:block;font-weight:800;font-size:14px;margin-bottom:6px}
+/* buscador flotante */
+.quick{position:relative;z-index:12;max-width:1180px;margin:-82px auto 0;padding:0 max(4vw,16px)}
+.quick form{background:var(--card);border-radius:24px;box-shadow:var(--shL);padding:10px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.15fr) auto;gap:6px;border:1px solid var(--line);align-items:stretch}
+.fld{position:relative;border-radius:16px;padding:10px 16px;min-height:64px;display:flex;flex-direction:column;justify-content:center;transition:background .2s}
+.fld:hover,.fld:focus-within{background:var(--alt)}
+.fld label{font-size:12.5px;font-weight:700;color:var(--soft);margin:0}
+.fld select{border:0;background:transparent;padding:0;min-height:0;font:700 16px var(--sans);color:var(--ink);appearance:none;-webkit-appearance:none;cursor:pointer;width:100%}
+.fld .chev{position:absolute;right:16px;top:50%;width:16px;height:16px;margin-top:-8px;pointer-events:none;color:var(--soft)}
+.quick .btn{min-height:64px;border-radius:16px;padding:0 28px;font-size:16px}
+.quick .btn svg{width:20px;height:20px}
+</style>
+<style>
 /* calendario */
 .dbtn{width:100%;min-height:56px;text-align:left;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:12px;padding:8px 14px;font:inherit;cursor:pointer;display:flex;flex-direction:column;justify-content:center}
 .dbtn .dl{font-size:13px;font-weight:800;color:var(--soft)}.dbtn b{font-size:16px}
@@ -85,19 +121,19 @@ label,.lbl{display:block;font-weight:800;font-size:14px;margin-bottom:6px}
 .c-chip{background:var(--sun);border-radius:14px;padding:8px 14px;border:2px solid transparent}
 .c-chip.act{border-color:var(--red)}
 .c-chip span{display:block;font-size:13px;font-weight:800;color:var(--soft)}.c-chip b{font-size:16px;white-space:nowrap}
-.c-n{font-family:Anton,sans-serif;background:var(--red);color:#fff;border-radius:999px;padding:6px 14px;font-size:17px;white-space:nowrap;text-align:center;line-height:1.2}
-.c-n small{display:block;font-family:"Nunito Sans",sans-serif;font-size:13px;font-weight:700;opacity:.9}
+.c-n{font-family:var(--serif);background:var(--red);color:#fff;border-radius:999px;padding:6px 14px;font-size:17px;white-space:nowrap;text-align:center;line-height:1.2}
+.c-n small{display:block;font-family:var(--sans);font-size:13px;font-weight:700;opacity:.9}
 .c-months{display:grid;grid-template-columns:repeat(var(--mc,1),minmax(0,1fr));gap:clamp(18px,3vw,34px);position:relative}
 .c-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px}
-.c-head h4{margin:0;font-family:Anton,sans-serif;font-weight:400;font-size:24px;letter-spacing:.02em}
-.c-head h4 span{color:var(--soft);font-family:"Nunito Sans",sans-serif;font-size:15px;font-weight:700;margin-left:6px}
+.c-head h4{margin:0;font-family:var(--serif);font-weight:400;font-size:24px;letter-spacing:.02em}
+.c-head h4 span{color:var(--soft);font-family:var(--sans);font-size:15px;font-weight:700;margin-left:6px}
 .c-nav{width:44px;height:44px;border-radius:50%;border:0;background:var(--sun);color:var(--ink);font-size:20px;cursor:pointer;flex:none}
 .c-nav:hover{background:var(--red);color:#fff}.c-nav:disabled{opacity:.3;cursor:default;background:var(--sun);color:var(--ink)}
 .c-nav.ghost{visibility:hidden}
 .c-wd,.c-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
 .c-wd span{text-align:center;font-size:13px;font-weight:800;color:var(--soft);padding:4px 0}
 .c-wd span:nth-child(n+6){color:var(--red)}
-.d{aspect-ratio:1;min-height:40px;border:0;background:transparent;color:var(--ink);font:700 15px/1 "Nunito Sans",sans-serif;cursor:pointer;border-radius:12px;position:relative;margin:2px 0;transition:background .15s,transform .15s}
+.d{aspect-ratio:1;min-height:40px;border:0;background:transparent;color:var(--ink);font:700 15px/1 var(--sans);cursor:pointer;border-radius:12px;position:relative;margin:2px 0;transition:background .15s,transform .15s}
 .d:hover:not(:disabled){background:var(--sun);transform:translateY(-2px)}
 .d:disabled{opacity:.28;cursor:default;text-decoration:line-through}
 .d.today{box-shadow:inset 0 0 0 2px var(--lake)}
@@ -109,7 +145,7 @@ label,.lbl{display:block;font-weight:800;font-size:14px;margin-bottom:6px}
 .d.s-in,.d.s-out{background:var(--red)!important;color:#fff;transform:none!important;box-shadow:0 6px 14px color-mix(in srgb,var(--red) 35%,transparent)}
 .d.s-in{border-radius:14px 4px 4px 14px}.d.s-out{border-radius:4px 14px 14px 4px}.d.s-in.solo{border-radius:14px}
 .c-type{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--sun);padding:4px;border-radius:14px;margin-bottom:14px}
-.c-type button{min-height:50px;border:0;border-radius:11px;background:transparent;font:800 15px/1.2 "Nunito Sans",sans-serif;color:var(--ink);cursor:pointer}
+.c-type button{min-height:50px;border:0;border-radius:11px;background:transparent;font:800 15px/1.2 var(--sans);color:var(--ink);cursor:pointer}
 .c-type button small{display:block;font-weight:700;font-size:13px;color:var(--soft);margin-top:2px}
 .c-type button[aria-pressed=true]{background:var(--card);color:var(--red2);box-shadow:0 2px 10px rgba(60,10,0,.14)}
 .c-leg{display:flex;gap:6px 16px;flex-wrap:wrap;font-size:13px;color:var(--soft);margin:10px 0 0}
@@ -119,15 +155,15 @@ label,.lbl{display:block;font-weight:800;font-size:14px;margin-bottom:6px}
 .lg-today{box-shadow:inset 0 0 0 2px var(--lake)}
 .c-foot{display:flex;align-items:center;gap:10px;margin-top:14px;flex-wrap:wrap}
 .c-hint{flex:1 1 200px;color:var(--soft);font-weight:700;font-size:15px}
-.c-x{background:none;border:0;color:var(--red);font:800 15px "Nunito Sans",sans-serif;cursor:pointer;min-height:44px;padding:0 10px;text-decoration:underline}
+.c-x{background:none;border:0;color:var(--red);font:800 15px var(--sans);cursor:pointer;min-height:44px;padding:0 10px;text-decoration:underline}
 .c-res{width:100%;border-radius:14px;padding:12px 14px;font-weight:700;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between}
 .c-res.ok{background:color-mix(in srgb,#1f9d55 14%,var(--card));color:light-dark(#11633a,#9fe0b9)}
 .c-res.no{background:color-mix(in srgb,var(--red) 12%,var(--card));color:var(--red)}
 .c-res.wait{background:var(--sun);color:var(--soft)}
-.c-res .tot{font-family:Anton,sans-serif;font-weight:400;font-size:28px;color:var(--ink);line-height:1.1;display:block}
+.c-res .tot{font-family:var(--serif);font-weight:400;font-size:28px;color:var(--ink);line-height:1.1;display:block}
 .c-res .det{font-size:14px;color:var(--soft);font-weight:700}
 .stp{display:inline-flex;align-items:center;gap:8px;color:var(--ink)}
-.stp button{width:44px;height:44px;border-radius:50%;border:0;background:var(--card);font:800 20px "Nunito Sans",sans-serif;cursor:pointer;color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.stp button{width:44px;height:44px;border-radius:50%;border:0;background:var(--card);font:800 20px var(--sans);cursor:pointer;color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.12)}
 .stp button:disabled{opacity:.35;cursor:default}
 .stp b{min-width:1.5em;text-align:center;font-size:18px}
 .c-upd{font-size:13px;color:var(--soft);width:100%}
@@ -137,42 +173,6 @@ label,.lbl{display:block;font-weight:800;font-size:14px;margin-bottom:6px}
 @media(max-width:520px){.c-sum{gap:6px}.c-chip{padding:8px 10px}.c-chip b{font-size:15px}.c-n{padding:6px 10px;font-size:16px}.d{min-height:38px;margin:1px 0;font-size:15px}.c-head h4{font-size:22px}}
 input,select,textarea{width:100%;font:inherit;font-size:16px;min-height:48px;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
 textarea{min-height:96px;resize:vertical}
-
-/* habitaciones */
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:22px;margin-top:32px}
-.room{background:var(--card);border-radius:18px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
-.room img{aspect-ratio:16/10;object-fit:cover;width:100%;background:var(--sun)}
-.room .in{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
-.room ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:6px}
-.room li{background:var(--sun);border-radius:999px;padding:4px 12px;font-size:14px;font-weight:700}
-.room .btn{margin-top:auto;align-self:flex-start}
-.rp{font-family:Anton,sans-serif;font-size:38px;color:var(--red);line-height:1}.rp small{font-family:"Nunito Sans",sans-serif;font-size:16px;font-weight:700;color:var(--soft)}
-.rc{font-weight:800;color:var(--lake)}
-.price{color:var(--soft);font-size:15px}
-
-/* comodidades */
-.amen{background:var(--mango);color:#2a1512}
-.amen .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
-.am{background:rgba(255,255,255,.55);border-radius:16px;padding:18px}
-.am svg{width:34px;height:34px;color:var(--red2)}
-.am h3{margin-top:10px;font-size:18px}.am p{font-size:15px;margin-top:4px}
-
-/* galería */
-.gal-head{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.arrows{display:flex;gap:8px}
-.arrows button{width:48px;height:48px;border-radius:50%;border:2px solid var(--red);background:transparent;color:var(--red);font-size:22px;cursor:pointer}
-.arrows button:hover{background:var(--red);color:#fff}
-.gal{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:26px;padding-bottom:12px}
-.gal figure{flex:0 0 min(78vw,420px);margin:0;scroll-snap-align:start}
-.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;background:var(--sun)}
-.gal figcaption{font-size:14px;color:var(--soft);margin-top:6px}
-
-/* la zona */
-.zona{background:var(--lake);color:#fff}
-.zona .lead{color:#dff6f6}
-.places{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px;margin-top:28px}
-.pl{border-top:3px solid rgba(255,255,255,.6);padding-top:14px}
-.pl p{font-size:15.5px;color:#e6f7f7;margin-top:6px}
 
 /* reservar */
 .book{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(24px,4vw,56px)}
@@ -209,7 +209,7 @@ textarea{min-height:96px;resize:vertical}
 }
 @media(max-width:860px){.book>div:first-child{position:static}}
 .callbox{margin-top:24px;background:var(--sun);border-radius:16px;padding:18px 20px}
-.callbox a{font-family:Anton,sans-serif;font-size:32px;text-decoration:none;color:var(--red)}
+.callbox a{font-family:var(--serif);font-size:32px;text-decoration:none;color:var(--red)}
 .fbox{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:clamp(18px,3vw,30px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .fbox .full{grid-column:1/-1}
 @media(max-width:520px){.fbox{grid-template-columns:1fr}}
@@ -231,64 +231,10 @@ textarea{min-height:96px;resize:vertical}
 .adm-box h3{margin-bottom:8px}
 .adm-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid var(--line);flex-wrap:wrap}
 .adm-row .stp button{background:var(--sun)}
-.mini{min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--red);background:transparent;color:var(--red);font:800 14px "Nunito Sans",sans-serif;cursor:pointer}
+.mini{min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--red);background:transparent;color:var(--red);font:800 14px var(--sans);cursor:pointer}
 .ok-msg{color:light-dark(#11633a,#9fe0b9);font-weight:800;font-size:14px;min-height:1.2em;margin-top:8px}
 #adm-json{min-height:110px;font:13px/1.4 ui-monospace,monospace}
 
-footer{background:#2a1512;color:#f8ece4}
-footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:24px}
-footer .logo{font-size:30px}
-footer p{opacity:.85;font-size:15px;margin-top:6px}
-.copy{max-width:1240px;margin:28px auto 0;font-size:13px;opacity:.6}
-@media(max-width:860px){.amen .grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:480px){.amen .grid{grid-template-columns:1fr}}
-.fab{position:fixed;right:16px;bottom:16px;z-index:30;width:58px;height:58px;border-radius:50%;background:#1f9d55;color:#fff;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3)}
-.fab svg{width:30px;height:30px}
-@media(prefers-reduced-motion:no-preference){.postal{animation:sway 6s ease-in-out infinite alternate}@keyframes sway{to{transform:rotate(-1deg) translateY(-6px)}}}
-@media(max-width:780px){
- nav .wrap{flex-wrap:nowrap;gap:10px}
- .menu{display:grid;flex:none}
- .navcall{margin-left:auto;padding:8px 12px;font-size:15px}
- .links{display:none;position:absolute;left:0;right:0;top:100%;background:var(--red2);flex-direction:column;padding:8px max(5vw,16px) 16px;gap:2px;box-shadow:0 12px 24px rgba(0,0,0,.25)}
- .links.open{display:flex}
- .links a{padding:14px 12px;font-size:18px;border-bottom:1px solid rgba(255,255,255,.15)}
- .fab{display:none!important}
- .quick{z-index:auto}
- body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
- .mbar{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--card);border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(40,5,0,.12)}
- .mbar a{min-height:50px;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-decoration:none;font-weight:800;font-size:13px}
- .mbar svg{width:20px;height:20px}
- .mbar .m1{background:var(--sun);color:var(--red2)}.mbar .m2{background:#1f9d55;color:#fff}.mbar .m3{background:var(--red);color:#fff;font-size:15px}
-}
-@media(max-width:600px){
- .quick form{padding:14px}
- .quick form>div:has(#q-type){grid-column:1/-1}
- .hero{padding-top:22px}
- .msg{font-size:18px}
- .phone{margin-top:14px}
- .scene{height:110px}
- .band{padding-top:44px;padding-bottom:44px}
- .lead{font-size:16px}
- .grid2{gap:16px;margin-top:22px}
- .rp{font-size:32px}
- .amen .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px}
- .am{padding:14px}.am svg{width:28px;height:28px}.am h3{font-size:16px}.am p{font-size:14px}
- .arrows{display:none}
- .gal figure{flex-basis:82vw}
- .fbox{padding:16px 12px;gap:14px}
- .fbox .cal{padding:12px 6px;border-radius:16px}
- .fbox .row .btn{flex:1 1 100%;justify-content:center;white-space:normal;text-align:center}
- .callbox a{font-size:28px}
- footer a{display:inline-block;padding:10px 0}
- .pop{position:fixed;inset:auto 0 0 0;top:auto;z-index:50}
- .pop .cal{width:100%;border-radius:24px 24px 0 0;max-height:90vh;overflow:auto;padding:16px 12px calc(16px + env(safe-area-inset-bottom));box-shadow:0 0 0 100vmax rgba(20,4,0,.55);animation:up .25s ease-out}
- .pop .c-foot .btn{flex:1 1 100%;justify-content:center}
- .c-res .stp{width:100%;justify-content:space-between}
-}
-@keyframes up{from{transform:translateY(40px);opacity:.4}}
-.c-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-.c-top b{font-family:Anton,sans-serif;font-weight:400;font-size:22px}
-.c-close{width:44px;height:44px;border-radius:50%;border:0;background:var(--sun);color:var(--ink);font-size:22px;cursor:pointer}
-@media(min-width:601px){.c-top{display:none}}
 @media(max-width:860px){
  .mprog{display:block;position:sticky;top:64px;z-index:5;background:var(--card);margin:-6px -4px 0;padding:10px 6px 8px;border-bottom:1px solid var(--line)}
  .mp-dots{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
@@ -308,106 +254,595 @@ footer p{opacity:.85;font-size:15px;margin-top:6px}
 .conf[hidden]{display:none}
 .conf-card{background:var(--card);color:var(--ink);border-radius:24px;width:min(540px,100%);max-height:92vh;overflow:auto;padding:22px;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:up .3s ease-out}
 .cf-h{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.cf-h h3{font-family:Anton,sans-serif;font-weight:400;font-size:26px}
+.cf-h h3{font-family:var(--serif);font-weight:400;font-size:26px}
 .cf-code{font:800 14px ui-monospace,monospace;color:var(--soft);margin-top:4px}
 .cf-det{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;margin:14px 0 4px;background:var(--sun);border-radius:16px;padding:14px 16px}
 .cf-det dt{color:var(--soft);font-weight:700}.cf-det dd{margin:0;font-weight:800}
-.cf-det .big{font-family:Anton,sans-serif;font-weight:400;font-size:24px;color:var(--red)}
+.cf-det .big{font-family:var(--serif);font-weight:400;font-size:24px;color:var(--red)}
 .cfs{margin-top:16px}.cfs .stb{cursor:default}.cfs .stb:hover{transform:none}
 .cfs .stx .btn{margin-top:10px;align-self:flex-start;white-space:normal}
 .cf-foot{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;margin-top:16px}
 @media(max-width:600px){.conf{place-items:end stretch;padding:0}.conf-card{border-radius:24px 24px 0 0;max-height:94vh;padding:18px 16px calc(18px + env(safe-area-inset-bottom))}}
 .phones{display:flex;flex-wrap:wrap;gap:4px 22px;margin:18px 0 0}.phones .phone{margin:0}
+/* ===== ajustes de componentes al nuevo diseño ===== */
+.quick .dbtn{border:0;background:transparent;border-radius:16px;min-height:64px;padding:10px 16px;transition:background .2s}
+.quick .dbtn:hover{background:var(--alt)}
+.quick .dbtn .dl{font-size:12.5px;font-weight:700;color:var(--soft)}
+.quick .dbtn b{font-size:16px;font-weight:700}
+.dbtn.on{box-shadow:inset 0 0 0 2px var(--red);border-color:transparent}
+.qres{padding:4px 0 6px}
+.cal{border-radius:24px}
+.c-head h4{font-size:26px}
+.c-n{font-size:20px}
+.price{color:var(--soft);font-size:15px}
+#reservar h2{font-size:clamp(36px,4vw,52px)}
+.fbox{border-radius:26px;box-shadow:var(--sh)}
+.stb{border-width:1.5px}
+.callbox{border-radius:20px;background:var(--alt);border:1px solid var(--line)}
+.callbox a{font-size:30px;display:inline-block;padding:2px 0}
+label,.lbl{font-size:13.5px}
+input,select,textarea{border-radius:12px;font-family:var(--sans)}
+input:focus,select:focus,textarea:focus{border-color:var(--red);outline:none;box-shadow:0 0 0 4px color-mix(in srgb,var(--red) 12%,transparent)}
+
+/* ===== el hotel ===== */
+.about{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(36px,6vw,96px);align-items:center}
+.collage{position:relative;aspect-ratio:1/1.02}
+.collage img{position:absolute;object-fit:cover;border-radius:24px;box-shadow:var(--sh);background:var(--sun)}
+.collage .c1{left:0;top:0;width:80%;height:80%}
+.collage .c2{right:0;bottom:0;width:52%;height:52%;border:8px solid var(--bg);border-radius:28px}
+.collage .tag{position:absolute;left:5%;bottom:7%;background:var(--card);border-radius:18px;padding:14px 18px;box-shadow:var(--shL);display:flex;flex-direction:column;line-height:1.2}
+.collage .tag b{font:400 italic 26px/1 var(--serif);color:var(--red)}
+.collage .tag span{font-size:13.5px;color:var(--soft);font-weight:600;margin-top:4px}
+.stats{display:flex;flex-wrap:wrap;gap:20px clamp(28px,4vw,56px);margin-top:40px;border-top:1px solid var(--line);padding-top:30px}
+.stat b{display:block;font:400 clamp(34px,3.6vw,50px)/1 var(--serif);white-space:nowrap}
+.stat span{display:block;color:var(--soft);font-size:14.5px;font-weight:600;margin-top:8px}
+
+/* ===== habitaciones ===== */
+.rooms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:48px}
+.room{background:var(--card);border:1px solid var(--line);border-radius:28px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--sh);transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s}
+.room:hover{transform:translateY(-4px);box-shadow:var(--shL)}
+.car{position:relative;background:var(--sun)}
+.car-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.car-track::-webkit-scrollbar{display:none}
+.car-track img{flex:0 0 100%;width:100%;aspect-ratio:4/3;object-fit:cover;scroll-snap-align:start;cursor:zoom-in}
+.car-btn{position:absolute;top:50%;margin-top:-22px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.94);color:#1b1311;cursor:pointer;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.18);opacity:0;transition:opacity .25s,transform .2s}
+.car-btn svg{width:18px;height:18px}
+.car:hover .car-btn,.car-btn:focus-visible{opacity:1}
+.car-btn:hover{transform:scale(1.06)}
+.car-prev{left:14px}.car-next{right:14px}
+.car-dots{position:absolute;left:0;right:0;bottom:14px;display:flex;justify-content:center;gap:6px;pointer-events:none}
+.car-dots i{width:7px;height:7px;border-radius:4px;background:rgba(255,255,255,.6);transition:width .3s,background .3s}
+.car-dots i.on{width:22px;background:#fff}
+.avail{position:absolute;left:14px;top:14px;display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.95);color:#1b1311;font-weight:700;font-size:13px;box-shadow:0 6px 18px rgba(0,0,0,.14)}
+.avail:empty{display:none}
+.avail i{width:8px;height:8px;border-radius:50%;background:#18914b;box-shadow:0 0 0 4px rgba(24,145,75,.2)}
+.avail.low i{background:#e8890c;box-shadow:0 0 0 4px rgba(232,137,12,.22)}
+.avail.full i{background:var(--red);box-shadow:0 0 0 4px rgba(200,16,46,.2)}
+.room .in{padding:26px 28px 28px;display:flex;flex-direction:column;gap:16px;flex:1}
+.room-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.room h3{font:400 clamp(28px,2.6vw,34px)/1.05 var(--serif)}
+.room .count{font-size:14px;color:var(--soft);font-weight:600;margin-top:6px}
+.rprice{text-align:right;white-space:nowrap;flex:none}
+.rprice b{display:block;font:400 36px/1 var(--serif);color:var(--red)}
+.rprice span{font-size:13.5px;color:var(--soft);font-weight:600}
+.room p.txt{color:var(--soft)}
+.feats{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.feats li{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:999px;background:var(--alt);font-size:14px;font-weight:600}
+.feats svg{width:16px;height:16px;color:var(--lake)}
+.room-acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+
+/* ===== comodidades ===== */
+.amen-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:26px;overflow:hidden;margin-top:48px}
+.am{background:var(--card);padding:30px 28px;display:flex;gap:18px;align-items:flex-start;transition:background .3s}
+.am:hover{background:var(--sun)}
+.am .ico{width:50px;height:50px;border-radius:15px;display:grid;place-items:center;background:color-mix(in srgb,var(--red) 9%,transparent);color:var(--red);flex:none;transition:transform .3s}
+.am:hover .ico{transform:rotate(-6deg) scale(1.06)}
+.am svg{width:24px;height:24px}
+.am h3{font-size:17px}
+.am p{color:var(--soft);font-size:15px;margin-top:4px}
+
+/* ===== galería ===== */
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(150px,17vw,236px);grid-auto-flow:dense;gap:12px;margin-top:48px}
+.bento button{position:relative;border:0;padding:0;border-radius:20px;overflow:hidden;cursor:zoom-in;background:var(--sun);color:#fff}
+.bento img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.bento button:hover img{transform:scale(1.06)}
+.bento .cap{position:absolute;left:0;right:0;bottom:0;padding:36px 16px 14px;background:linear-gradient(transparent,rgba(10,4,2,.68));font-size:14px;font-weight:600;text-align:left;opacity:0;transform:translateY(8px);transition:opacity .35s,transform .35s}
+.bento button:hover .cap,.bento button:focus-visible .cap{opacity:1;transform:none}
+.bento .more{position:absolute;inset:0;background:rgba(12,4,2,.55);display:grid;place-items:center;font:400 italic 30px var(--serif)}
+.g-big{grid-column:span 2;grid-row:span 2}.g-tall{grid-row:span 2}.g-wide{grid-column:span 2}
+
+/* visor de fotos */
+.lb{position:fixed;inset:0;z-index:85;background:rgba(10,6,5,.96);display:grid;grid-template-rows:auto minmax(0,1fr) auto;color:#fff}
+.lb[hidden]{display:none}
+.lb-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px max(3vw,14px);padding-top:calc(14px + env(safe-area-inset-top));font-weight:700}
+.lb-stage{position:relative;display:grid;place-items:center;padding:0 max(3vw,14px);touch-action:pan-y;overflow:hidden}
+.lb-stage img{max-width:100%;max-height:100%;border-radius:14px;object-fit:contain;transition:opacity .25s,transform .25s}
+.lb-stage img.fade{opacity:0;transform:scale(.98)}
+.lb-btn{width:52px;height:52px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;cursor:pointer;display:grid;place-items:center;transition:background .2s}
+.lb-btn:hover{background:rgba(255,255,255,.26)}
+.lb-btn svg{width:22px;height:22px}
+.lb-prev,.lb-next{position:absolute;top:50%;margin-top:-26px}
+.lb-prev{left:max(2vw,10px)}.lb-next{right:max(2vw,10px)}
+.lb-cap{text-align:center;padding:14px 16px calc(18px + env(safe-area-inset-bottom));font-weight:600;color:rgba(255,255,255,.85)}
+
+/* ===== la zona ===== */
+.zona{background:var(--lakeD);color:#fff;padding-top:0;overflow:hidden}
+.zona .scene{display:block;width:calc(100% + 2*max(4vw,16px));margin:0 calc(-1*max(4vw,16px)) clamp(52px,7vw,88px);height:clamp(170px,22vw,300px)}
+.zona .kicker{color:var(--mango)}
+.zona .lead{color:rgba(255,255,255,.78)}
+.places{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:44px}
+.pl{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:22px;padding:26px 24px;transition:background .3s,transform .3s}
+.pl:hover{background:rgba(255,255,255,.1);transform:translateY(-4px)}
+.pl .n{font:400 italic 42px/1 var(--serif);color:var(--mango)}
+.pl h3{margin-top:16px;font-size:18px}
+.pl p{color:rgba(255,255,255,.74);font-size:15px;margin-top:6px}
+.pl{display:flex;flex-direction:column}
+.mlinks{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:16px}
+.mlink{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;font-weight:700;font-size:13.5px;transition:background .2s,border-color .2s}
+.mlink:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.45)}
+.mlink svg{width:14px;height:14px;color:var(--mango)}
+.pl.feat{display:grid}
+.pl-ph{display:block;position:relative;margin:-26px -24px 18px;width:calc(100% + 48px);border:0;padding:0;background:#0c444b;border-radius:22px 22px 0 0;overflow:hidden;cursor:zoom-in}
+.pl-ph img{width:100%;aspect-ratio:16/11;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.pl-ph:hover img{transform:scale(1.05)}
+.pl.feat.has-img{grid-template-columns:minmax(0,.95fr) auto minmax(0,1.3fr) auto;padding:0 32px 0 0;overflow:hidden;min-height:320px}
+.feat-ph{margin:0;width:100%;height:100%;border-radius:0;align-self:stretch}
+.feat-ph img{height:100%;aspect-ratio:auto;min-height:320px}
+.pl.feat.has-img .n{padding-left:8px}
+@media(max-width:1080px){.pl.feat.has-img{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);padding:0;gap:0}.pl.feat.has-img>.n,.pl.feat.has-img>div,.pl.feat.has-img>.btn{grid-column:2;padding:0 26px;margin:0}.feat-ph{grid-row:1/span 3}.pl.feat.has-img>.n{padding-top:26px}.pl.feat.has-img>.btn{justify-self:start;margin:14px 26px 26px}}
+@media(max-width:700px){.pl.feat.has-img{grid-template-columns:1fr}.feat-ph{grid-row:auto;grid-column:1}.feat-ph img{min-height:0;aspect-ratio:4/3}.pl.feat.has-img>.n,.pl.feat.has-img>div,.pl.feat.has-img>.btn{grid-column:1;padding-left:22px;padding-right:22px}.pl.feat.has-img>.btn{margin:14px 22px 24px}}
+.pl-ph span{position:absolute;left:10px;bottom:10px;padding:5px 10px;border-radius:999px;background:rgba(6,38,43,.75);color:#fff;font-size:12.5px;font-weight:700;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.pl.feat{grid-column:1/-1;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px 32px;align-items:center;padding:30px 32px;background:linear-gradient(120deg,rgba(244,182,63,.16),rgba(255,255,255,.05));border-color:rgba(244,182,63,.45)}
+.pl.feat .n{font-size:64px}
+.pl.feat h3{margin-top:10px;font:400 clamp(30px,3vw,40px)/1.05 var(--serif)}
+.pl.feat p{font-size:16px;max-width:60ch;color:rgba(255,255,255,.82)}
+.near{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;background:var(--mango);color:#2a1a08;font-weight:800;font-size:13px}
+.near svg{width:14px;height:14px}
+@media(max-width:700px){.pl.feat{grid-template-columns:1fr;padding:26px 22px}.pl.feat .n{font-size:44px}.pl.feat .btn{justify-self:start}}
+
+/* ===== preguntas ===== */
+.faq{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,96px);align-items:start}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:22px 2px;font-weight:700;font-size:18px;line-height:1.35}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{flex:none;width:32px;height:32px;border-radius:50%;border:1.5px solid var(--line);position:relative;transition:transform .3s,background .3s,border-color .3s}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;margin:-.75px 0 0 -6px;background:currentColor}
+.faq summary i::after{transform:rotate(90deg);transition:transform .3s}
+.faq details[open] summary i{background:var(--red);border-color:var(--red);color:#fff}
+.faq details[open] summary i::after{transform:rotate(0)}
+.faq .ans{padding:0 2px 24px;color:var(--soft);max-width:62ch}
+.inlink{color:var(--red);font-weight:700;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
+.inlink:hover{text-decoration-thickness:2.5px}
+
+/* ===== contacto ===== */
+.cta{background:var(--red);color:#fff;border-radius:34px;padding:clamp(36px,6vw,76px);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:36px;align-items:center;position:relative;overflow:hidden;isolation:isolate}
+.cta::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.16),transparent 65%);z-index:-1}
+.cta h2{color:#fff;margin-top:12px}
+.cta .kicker{color:#ffd7a0}
+.cta p{color:rgba(255,255,255,.85);margin-top:14px;max-width:44ch}
+.cta-box{display:flex;flex-direction:column;gap:6px}
+.cta-box .tel{font:400 clamp(32px,3.6vw,46px)/1.1 var(--serif);text-decoration:none}
+.cta-box .tel:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.cta-box .btn{margin-top:14px;align-self:flex-start}
+.cta .b-wa{background:#fff;color:#137a3e;box-shadow:none}
+
+/* ===== pie ===== */
+footer{background:#140e0c;color:#efe5df;padding:72px max(4vw,16px) 36px}
+.ft{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px}
+.ft .logo b{font-size:34px}
+.ft p,.ft li{color:rgba(239,229,223,.72);font-size:15px}
+.ft h3{font-size:15px;margin-bottom:14px;color:#fff}
+.ft ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.ft a{text-decoration:none}.ft a:hover{text-decoration:underline}
+.ft-bot{max-width:1240px;margin:48px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13.5px;color:rgba(239,229,223,.55)}
+
+/* ===== anticipo ===== */
+.dep{display:block;font-size:14px;font-weight:700;color:var(--acc,#f4b63f);margin-top:2px}
+.dep b{font-weight:800}
+.last{margin:16px 0 4px;padding:20px;border-radius:20px;background:linear-gradient(135deg,rgba(244,182,63,.2),rgba(244,182,63,.06));border:1px solid rgba(244,182,63,.5);text-align:center}
+.last-k{display:inline-block;padding:6px 12px;border-radius:999px;background:var(--acc,#f4b63f);color:#0a3a40;font-weight:800;font-size:13px}
+.last p{margin-top:12px}
+.last-amt{display:block;font:400 clamp(44px,9vw,60px)/1 var(--serif);color:var(--acc,#f4b63f);margin-top:6px}
+.last-of{display:block;color:var(--soft);font-size:14px;font-weight:600;margin-top:6px}
+.last-why{font-size:14.5px;color:var(--soft);max-width:44ch;margin:12px auto 0}
+#sent .cf-foot .btn{flex:1 1 auto}
+/* ===== confianza, emblema y móvil ===== */
+.logo{flex-direction:row;align-items:center;gap:11px}
+.lw{display:flex;flex-direction:column;line-height:1}
+.emb{width:42px;height:42px;flex:none;border-radius:50%;display:grid;place-items:center;font:400 italic 19px/1 var(--serif);color:var(--acc,#f4b63f);border:1.5px solid currentColor;box-shadow:inset 0 0 0 3px rgba(10,58,64,.0),inset 0 0 0 4px rgba(244,182,63,.35);letter-spacing:-.02em;padding-top:2px}
+.trust{background:var(--bg);padding:40px max(4vw,16px) 0}
+.trust-in{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:18px 22px;background:rgba(255,255,255,.03)}
+.tr{display:flex;align-items:center;gap:12px}
+.tr-i{width:42px;height:42px;flex:none;border-radius:12px;display:grid;place-items:center;background:rgba(244,182,63,.13);color:var(--acc,#f4b63f)}
+.tr-i svg{width:21px;height:21px}
+.tr b{display:block;font-size:14.5px;line-height:1.25}.tr span{display:block;font-size:13px;color:var(--soft);line-height:1.3}
+.zona{padding-top:0}
+#place-feat{margin-top:44px}
+#place-feat .pl.feat{margin:0}
+.places{margin-top:16px}
+.swipe-hint{display:none}
+.secure{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:16px;background:rgba(63,191,122,.1);border:1px solid rgba(63,191,122,.35);font-size:14px;color:var(--soft);line-height:1.5}
+.secure svg{width:22px;height:22px;flex:none;color:#8fe0ae;margin-top:1px}
+.secure b{color:var(--ink)}
+@media(max-width:1080px){.trust-in{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 18px}}
+@media(max-width:700px){
+ .places{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:12px -18px 0;padding:0 18px 8px;scrollbar-width:none;scroll-padding:0 18px}
+ .places::-webkit-scrollbar{display:none}
+ .places .pl{flex:0 0 78%;scroll-snap-align:start}
+ .swipe-hint{display:flex;align-items:center;gap:6px;justify-content:flex-end;margin:22px 0 0;font-size:13px;font-weight:700;color:var(--acc,#f4b63f)}
+ .swipe-hint svg{width:16px;height:16px}
+ #place-feat{margin-top:30px}
+}
+@media(max-width:600px){
+ .emb{width:36px;height:36px;font-size:16px}
+ .logo{gap:9px}
+ .trust{padding:28px 14px 0}
+ .trust-in{padding:14px;gap:14px 12px;border-radius:18px}
+ .tr{gap:10px;align-items:flex-start}
+ .tr-i{width:36px;height:36px;border-radius:10px}.tr-i svg{width:18px;height:18px}
+ .tr b{font-size:13.5px}.tr span{font-size:12.5px}
+ .zona .scene{height:120px;margin-bottom:40px}
+ .zona h2{font-size:38px}
+ .ft-bot{flex-direction:column}
+}
+/* ===== modo edición ===== */
+.faq summary>span{flex:1}
+html.editing [data-t]{outline:1.5px dashed color-mix(in srgb,var(--red) 60%,transparent);outline-offset:5px;border-radius:4px;cursor:text;transition:outline-color .2s,background .2s}
+html.editing .hero [data-t],html.editing .zona [data-t],html.editing .cta [data-t],html.editing footer [data-t],html.editing .bento [data-t]{outline-color:rgba(255,216,138,.8)}
+html.editing [data-t]:hover,html.editing [data-t]:focus{outline-style:solid;background:color-mix(in srgb,var(--mango) 14%,transparent)}
+html.editing [data-t].chg{outline:2px solid #18914b}
+html.editing .bento .cap{opacity:1;transform:none}
+html.editing .mbar,html.editing .fab,html.editing .totop{display:none!important}
+html.editing body{padding-bottom:110px}
+.ebar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:90;width:min(860px,calc(100% - 24px));background:#1b1311;color:#fff;border-radius:22px;padding:12px 12px 12px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px 18px;flex-wrap:wrap;box-shadow:0 24px 60px rgba(0,0,0,.35);margin-bottom:env(safe-area-inset-bottom)}
+.ebar[hidden]{display:none}
+.e-info{display:flex;flex-direction:column;line-height:1.3}.e-info b{font-size:15px}.e-info span{font-size:13.5px;color:rgba(255,255,255,.72)}
+.e-acts{display:flex;gap:8px;flex-wrap:wrap}
+.ebar .btn{min-height:44px;padding:0 18px;font-size:14.5px}
+.ebar .b-call{color:#fff;border-color:rgba(255,255,255,.28)}.ebar .b-call:hover{border-color:#fff}
+#e-json{width:100%;min-height:90px;font:13px ui-monospace,monospace}
+@media(max-width:600px){.ebar{padding:12px;border-radius:18px}.e-acts{width:100%}.e-acts .btn{flex:1 1 auto;padding:0 12px}}
+.ebtn{position:fixed;left:22px;bottom:22px;z-index:35;display:inline-flex;align-items:center;gap:9px;min-height:50px;padding:0 20px 0 16px;border-radius:999px;border:0;background:#1b1311;color:#fff;font:700 15px var(--sans);cursor:pointer;box-shadow:0 14px 34px rgba(0,0,0,.3);transition:transform .2s}
+.ebtn:hover{transform:translateY(-2px)}
+.ebtn svg{width:19px;height:19px;color:var(--mango)}
+.ebtn[hidden],html.editing .ebtn{display:none}
+@media(max-width:780px){.ebtn{left:12px;bottom:calc(86px + env(safe-area-inset-bottom));min-height:46px;font-size:14px}}
+/* ===== flotantes ===== */
+.fab{position:fixed;right:22px;bottom:22px;z-index:30;width:60px;height:60px;border-radius:50%;background:#18914b;color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px rgba(24,145,75,.4);transition:transform .25s}
+.fab:hover{transform:scale(1.07)}
+.fab svg{width:30px;height:30px}
+.totop{position:fixed;right:30px;bottom:96px;z-index:30;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);display:grid;place-items:center;cursor:pointer;box-shadow:var(--sh);opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .3s,transform .3s}
+.totop.on{opacity:1;transform:none;pointer-events:auto}
+.totop svg{width:18px;height:18px}
+.toast{position:fixed;left:50%;bottom:30px;z-index:95;transform:translate(-50%,16px);opacity:0;pointer-events:none;background:var(--ink);color:var(--bg);padding:13px 20px;border-radius:16px;font-weight:700;font-size:15px;box-shadow:var(--shL);transition:opacity .3s,transform .3s;max-width:min(92vw,440px);text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.mbar{display:none}
+@keyframes up{from{transform:translateY(40px);opacity:.4}}
+.c-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.c-top b{font:400 26px var(--serif)}
+.c-close{width:44px;height:44px;border-radius:50%;border:0;background:var(--sun);color:var(--ink);font-size:20px;cursor:pointer}
+@media(min-width:601px){.c-top{display:none}}
+
+/* ===== apertura y movimiento ===== */
+.intro{position:fixed;inset:0;z-index:200;background:var(--red);color:#fff;display:grid;place-items:center;clip-path:inset(0 0 0 0);transition:clip-path 1.05s cubic-bezier(.77,0,.18,1);animation:introSafe 0s 4.5s forwards;cursor:pointer}
+html:not(.js) .intro,html.nointro .intro{display:none}
+.intro.out{clip-path:inset(0 0 100% 0)}
+.intro-in{text-align:center;padding:24px}
+.intro-sm{display:block;font-weight:600;font-size:14px;color:rgba(255,255,255,.8);opacity:0;animation:ifade .8s .25s forwards}
+.intro-sm.b{animation-delay:.9s}
+.intro-name{display:flex;justify-content:center;gap:.22em;font:400 italic clamp(58px,12vw,150px)/1.05 var(--serif);margin-top:10px}
+.intro-name span{display:block;overflow:hidden;padding:0 .04em .08em}
+.intro-name span i{display:block;font-style:inherit;transform:translateY(110%);animation:iup 1s cubic-bezier(.2,.8,.2,1) forwards}
+.intro-name span:nth-child(2) i{animation-delay:.12s}
+.intro-line{display:block;width:min(260px,52vw);height:1.5px;background:rgba(255,255,255,.28);margin:20px auto}
+.intro-line i{display:block;height:100%;background:#fff;transform:scaleX(0);transform-origin:left;animation:iline 1.2s .3s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes iup{to{transform:none}}@keyframes ifade{to{opacity:1}}@keyframes iline{to{transform:scaleX(1)}}
+@keyframes introSafe{to{visibility:hidden;pointer-events:none}}
+html.js:not(.ready) .hero-in>*,html.js:not(.ready) .quick{opacity:0}
+.hero .bg{will-change:transform}
+@media(prefers-reduced-motion:no-preference){
+ html.ready .hero .bg img{animation:kb 2.6s cubic-bezier(.16,.8,.2,1) both}
+ @keyframes kb{from{transform:scale(1.18)}}
+ html.ready .hero-in>*{animation:rise 1s cubic-bezier(.2,.7,.2,1) backwards}
+ html.ready .hero-in>*:nth-child(1){animation-delay:.15s}html.ready .hero-in>*:nth-child(2){animation-delay:.25s}html.ready .hero-in>*:nth-child(3){animation-delay:.4s}html.ready .hero-in>*:nth-child(4){animation-delay:.5s}html.ready .hero-in>*:nth-child(5){animation-delay:.6s}
+ html.ready .quick{animation:rise 1s .75s cubic-bezier(.2,.7,.2,1) backwards}
+ h1 em{background:linear-gradient(100deg,#fff 0%,#fff 40%,#ffd88a 50%,#fff 60%,#fff 100%);background-size:300% 100%;background-position:0 0;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+ html.ready h1 em{animation:shine 2.4s 1s ease-in-out both}
+ @keyframes shine{from{background-position:100% 0}to{background-position:0 0}}
+ @keyframes rise{from{opacity:0;transform:translateY(28px)}}
+ .scrollcue i{animation:cue 2.2s ease-in-out infinite}
+ @keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+ html.js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+ html.js .rv.in{opacity:1;transform:none}
+}
+
+/* ===== tamaños de pantalla ===== */
+@media(max-width:1080px){
+ .links,.hcall span{display:none}
+ .menu{display:grid}
+ .hdr .wrap{gap:10px}
+ .hcall{margin-left:auto}
+ .links.open{display:flex;position:fixed;left:0;right:0;top:calc(74px + env(safe-area-inset-top));bottom:0;background:var(--bg);color:var(--ink);flex-direction:column;padding:12px max(4vw,16px) 24px;margin:0;overflow:auto}
+ .links.open a{font:400 34px/1.2 var(--serif);padding:16px 4px;border-bottom:1px solid var(--line);border-radius:0}
+ .links.open a::after{display:none}
+ .places{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .ft{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){
+ .about,.faq,.cta{grid-template-columns:1fr}
+ .collage{max-width:560px;width:100%;margin:0 auto}
+ .rooms{grid-template-columns:1fr;max-width:640px;margin-left:auto;margin-right:auto}
+ .amen-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:clamp(130px,30vw,220px)}
+ .quick form{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .quick .fld,.quick .btn,.qres{grid-column:1/-1}
+ .scrollcue{display:none}
+ .hero-in{padding-bottom:120px}
+}
+@media(max-width:780px){
+ .fab{display:none!important}
+ .totop{bottom:calc(92px + env(safe-area-inset-bottom));right:16px}
+ .toast{bottom:calc(96px + env(safe-area-inset-bottom))}
+ .quick{z-index:auto}
+ body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+ .mbar{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--card) 94%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+ .mbar a{min-height:52px;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-decoration:none;font-weight:700;font-size:12.5px}
+ .mbar svg{width:20px;height:20px}
+ .mbar .m1{background:var(--alt);color:var(--ink)}.mbar .m2{background:#18914b;color:#fff}.mbar .m3{background:var(--red);color:#fff;font-size:15px}
+}
+@media(max-width:600px){
+ body{font-size:16px}
+ .hdr .wrap{height:64px}
+ .links.open{top:calc(64px + env(safe-area-inset-top))}
+ html{scroll-padding-top:72px}
+ .logo b{font-size:25px}
+ .hdr .btn{display:none}
+ .hero{min-height:min(92svh,760px)}
+ .hero-in{padding:110px 18px 104px}
+ h1{font-size:clamp(44px,12.4vw,58px)}
+ .sub{font-size:16.5px;margin-top:16px}
+ .facts{gap:8px 18px;font-size:14px;margin-top:18px}
+ .ctas{margin-top:24px}
+ .ctas .btn{flex:1 1 100%}
+ .quick{margin-top:-64px;padding:0 12px}
+ .quick form{padding:8px;border-radius:22px}
+ .quick .btn{min-height:56px}
+ .fld,.quick .dbtn{min-height:58px;padding:8px 14px}
+ .sec{padding:64px 18px}
+ .stats{gap:16px 26px;margin-top:30px;padding-top:24px}
+ .stat b{font-size:30px}
+ .stat span{font-size:13px}
+ .collage{aspect-ratio:1/1.08}
+ .rooms{margin-top:32px}
+ .room .in{padding:20px 20px 22px}
+ .room-top{flex-direction:column;gap:10px}
+ .rprice{text-align:left}
+ .rprice b{display:inline;font-size:32px}
+ .room-acts .btn{flex:1 1 100%}
+ .car-btn{display:none}
+ .amen-grid{grid-template-columns:1fr;margin-top:32px}
+ .am{padding:22px 20px}
+ .bento{gap:8px;margin-top:32px}
+ .bento button{border-radius:14px}
+ .bento .cap{opacity:1;transform:none;font-size:13px;padding:28px 10px 8px}
+ .places{grid-template-columns:1fr;margin-top:32px}
+ .zona .scene{height:150px}
+ .faq summary{font-size:16.5px;padding:18px 2px}
+ .cta{border-radius:26px;padding:32px 22px}
+ .cta-box .btn{align-self:stretch}
+ .ft{grid-template-columns:1fr;gap:28px}
+ footer{padding-top:56px}
+ .lb-prev,.lb-next{display:none}
+ .pop{position:fixed;inset:auto 0 0 0;top:auto;z-index:50}
+ .pop .cal{width:100%;border-radius:26px 26px 0 0;max-height:90vh;overflow:auto;padding:16px 12px calc(16px + env(safe-area-inset-bottom));box-shadow:0 0 0 100vmax rgba(20,4,0,.55);animation:up .25s ease-out}
+ .pop .c-foot .btn{flex:1 1 100%;justify-content:center}
+ .c-res .stp{width:100%;justify-content:space-between}
+ .fbox{padding:16px 12px;gap:14px}
+ .fbox .cal{padding:12px 6px;border-radius:18px}
+ .fbox .row .btn{flex:1 1 100%;white-space:normal;text-align:center}
+ .callbox a{font-size:28px}
+}
+/* ===== tema "Lago": la estética de la sección La zona en toda la web ===== */
+:root,:root[data-theme=light],:root[data-theme=dark]{color-scheme:dark;
+ --bg:#0a3a40;--alt:#0c434a;--card:#0f4a52;--ink:#f3f8f7;--soft:#b5cfcd;--line:#245b62;
+ --sun:#14555d;--band:#5e5426;--ok:#8fe0ae;--acc:#f4b63f;--lakeL:#6fd6d2;
+ --sh:0 1px 2px rgba(0,0,0,.18),0 18px 40px rgba(0,10,12,.35);--shL:0 30px 80px rgba(0,8,10,.5)}
+body{background:var(--bg)}
+.sec{background:var(--bg)}.alt,.sec.alt{background:var(--alt)}
+.zona{background:#08323a}
+.kicker,.zona .kicker,.cta .kicker{color:var(--acc)}
+h2 em{color:inherit}
+.lead{color:var(--soft)}
+.hero::after{background:linear-gradient(90deg,rgba(6,38,43,.8) 0%,rgba(6,38,43,.5) 38%,rgba(6,38,43,.06) 70%),linear-gradient(180deg,rgba(6,38,43,.55) 0%,rgba(6,38,43,0) 26%,rgba(6,38,43,.15) 62%,#0a3a40 100%)}
+@media(max-width:860px){.hero::after{background:linear-gradient(180deg,rgba(6,38,43,.62) 0%,rgba(6,38,43,.42) 35%,rgba(6,38,43,.6) 68%,#0a3a40 100%)}}
+.facts svg{color:var(--acc)}
+.quick form{background:rgba(15,74,82,.92);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-color:rgba(255,255,255,.14)}
+.fld:hover,.fld:focus-within,.quick .dbtn:hover{background:rgba(255,255,255,.07)}
+.fld select option{background:#0f4a52;color:#f3f8f7}
+.room,.amen-grid,.fbox,.cal,.adm-box{border-color:rgba(255,255,255,.13)}
+.room{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.rprice b{color:var(--acc)}
+.feats li{background:rgba(255,255,255,.07)}.feats svg{color:var(--lakeL)}
+.amen-grid{background:rgba(255,255,255,.12)}
+.am{background:var(--alt)}.am:hover{background:#105058}
+.am .ico{background:rgba(244,182,63,.14);color:var(--acc)}
+.bento button{background:var(--sun)}
+.b-call{color:var(--ink);border-color:rgba(255,255,255,.28)}.b-call:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.inlink{color:var(--acc)}
+.faq summary i{border-color:rgba(255,255,255,.3)}
+.faq details[open] summary i{background:var(--acc);border-color:var(--acc);color:#0a3a40}
+.cta{background:linear-gradient(135deg,#c8102e,#9a0b22)}
+.cta .kicker{color:#ffd88a}
+footer{background:#072a2f}
+.ft-bot{border-top-color:rgba(255,255,255,.1)}
+.callbox{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.13)}
+.callbox a{color:var(--acc)}
+.c-wd span:nth-child(n+6){color:var(--acc)}
+.c-chip{background:rgba(255,255,255,.06)}
+.c-chip.act{border-color:var(--acc)}
+.c-nav{background:rgba(255,255,255,.08);color:var(--ink)}.c-nav:hover{background:var(--acc);color:#0a3a40}
+.c-type{background:rgba(255,255,255,.06)}
+.c-type button[aria-pressed=true]{background:var(--acc);color:#0a3a40;box-shadow:none}
+.c-type button[aria-pressed=true] small{color:#3d3313}
+.d:hover:not(:disabled){background:rgba(255,255,255,.1)}
+.d.today{box-shadow:inset 0 0 0 2px var(--lakeL)}.lg-today{box-shadow:inset 0 0 0 2px var(--lakeL)}
+.d.lleno,.d.llenook{color:#ff9d9d;background:repeating-linear-gradient(135deg,transparent 0 5px,rgba(255,120,120,.2) 5px 7px)}
+.c-x{color:var(--acc)}
+.c-res.no{color:#ffb0b0;background:rgba(255,90,90,.12)}
+.err{color:#ffb0b0}
+.qres.no{color:#ffb0b0}
+.stp button{background:rgba(255,255,255,.1);color:var(--ink)}
+.steps::before{background:rgba(255,255,255,.14)}
+.steps::after{background:linear-gradient(var(--acc),#3fbf7a)}
+.stb{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.13)}
+.steps li.active .stb{border-color:var(--acc);box-shadow:0 14px 30px rgba(0,0,0,.25)}
+.steps li.active .sn{background:var(--acc);color:#0a3a40}
+.steps li.active .sn::after{border-color:var(--acc)}
+.sn{background:rgba(255,255,255,.1);color:var(--soft)}
+.sp-txt b{color:var(--acc)}
+.mp-dots .active{background:rgba(244,182,63,.15);color:var(--acc)}.mp-dots .active i{background:var(--acc);color:#0a3a40}
+.mp-bar{background:rgba(255,255,255,.12)}.mp-bar i{background:linear-gradient(90deg,var(--acc),#3fbf7a)}
+.mprog{background:var(--card)}
+input,select,textarea{background:rgba(0,0,0,.18);border-color:rgba(255,255,255,.18);color:var(--ink)}
+input::placeholder,textarea::placeholder{color:rgba(255,255,255,.45)}
+input:focus,select:focus,textarea:focus{border-color:var(--acc);box-shadow:0 0 0 4px rgba(244,182,63,.18)}
+.out{background:rgba(255,255,255,.06)}
+.admin{background:var(--alt);border-top-color:var(--acc)}
+.mini{border-color:var(--acc);color:var(--acc)}
+.sync{background:rgba(255,255,255,.07);color:var(--soft)}
+.c-close{background:rgba(255,255,255,.1)}
+.mbar{background:rgba(10,58,64,.94);border-top-color:rgba(255,255,255,.12)}
+.mbar .m1{background:rgba(255,255,255,.08);color:var(--ink)}
+.totop{background:var(--card);border-color:rgba(255,255,255,.18)}
+.links.open{background:var(--bg)}
+.hdr.mo{background:var(--bg)!important}
+.intro{background:#0a3a40}
+.intro-line i{background:var(--acc)}
+.intro-name{color:#fff}
+.dbtn.on{box-shadow:inset 0 0 0 2px var(--acc)}
+.c-n{background:var(--acc);color:#0a3a40}
+.cf-det{background:rgba(255,255,255,.06)}.cf-det .big{color:var(--acc)}
+html.editing [data-t]{outline-color:rgba(255,216,138,.75)}
+:focus-visible{outline-color:rgba(244,182,63,.75)}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="intro" id="intro" aria-hidden="true"><div class="intro-in"><span class="intro-sm">Hotel</span><b class="intro-name"><span><i>Las</i></span><span><i>Cañitas</i></span></b><span class="intro-line"><i></i></span><span class="intro-sm b">Los Ríos · Lago Enriquillo</span></div></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
  <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></symbol>
  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></symbol>
+ <symbol id="i-l" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7"/></symbol>
+ <symbol id="i-r" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></symbol>
+ <symbol id="i-up" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></symbol>
+ <symbol id="i-dn" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></symbol>
+ <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></g></symbol>
+ <symbol id="i-bed" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V7M3 13h18v5M21 18v-3a3 3 0 0 0-3-3h-7v1"/><circle cx="7" cy="10.5" r="1.8"/></g></symbol>
+ <symbol id="i-snow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9M9.5 4.5 12 7l2.5-2.5M9.5 19.5 12 17l2.5 2.5"/></g></symbol>
+ <symbol id="i-fan" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1.8"/><path d="M12 10.2C12 6 13 3.5 15.5 4s1.5 4.5-3.5 6.2M13.6 13c3.6 2.1 5.3 4.2 3.6 6s-4.6-1.2-5.2-5.3M10.4 12.9c-3.6 2.1-6.3 2.5-6.7 0s3.4-3.6 6.4-1.3"/></g></symbol>
+ <symbol id="i-tv" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8"/></g></symbol>
+ <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3.5V12c0 4.6-3.4 7.8-8 9-4.6-1.2-8-4.4-8-9V6.5z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></g></symbol>
+ <symbol id="i-cup" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10l-1.2 16.2a2 2 0 0 1-2 1.8h-3.6a2 2 0 0 1-2-1.8z"/><path d="M7.4 8h9.2"/></g></symbol>
+ <symbol id="i-sofa" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11V8a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v3"/><path d="M3 13a2 2 0 0 1 4 0v2h10v-2a2 2 0 0 1 4 0v5H3zM6 18v2M18 18v2"/></g></symbol>
+ <symbol id="i-chat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.8 7L4 20.5l1.5-4.6A8 8 0 1 1 21 12z"/></g></symbol>
+ <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></symbol>
+ <symbol id="i-lock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.3"/></g></symbol>
+ <symbol id="i-pen" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></g></symbol>
+ <symbol id="i-tag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.3"/></g></symbol>
 </svg>
 
-<nav aria-label="Principal"><div class="wrap">
- <a class="logo" href="#inicio">Las Cañitas<small>HOTEL · LOS RÍOS</small></a>
- <div class="links" id="links"><a href="#habitaciones">Habitaciones</a><a href="#comodidades">Comodidades</a><a href="#galeria">Fotos</a><a href="#zona">La zona</a><a href="#reservar">Reservar</a></div>
- <a class="navcall" href="tel:+18098170798">809-817-0798</a>
- <button class="menu" id="menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-</div></nav>
+<header class="hdr" id="hdr"><div class="wrap">
+ <a class="logo" href="#inicio" aria-label="Hotel Las Cañitas, ir al inicio"><span class="emb" aria-hidden="true">LC</span><span class="lw"><b>Las Cañitas</b><small>Hotel · Los Ríos, Neyba</small></span></a>
+ <nav class="links" id="links" aria-label="Principal"><a href="#zona">La zona</a><a href="#galeria">Fotos</a><a href="#habitaciones">Habitaciones</a><a href="#reservar">Reservar</a><a href="#preguntas">Preguntas</a></nav>
+ <a class="hcall" href="tel:+18098170798" aria-label="Llamar al 809-817-0798"><svg><use href="#i-tel"/></svg><span>809-817-0798</span></a>
+ <a class="btn b-red" href="#reservar">Reservar</a>
+ <button class="menu" id="menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg></button>
+</div></header>
 
-<header class="hero" id="inicio">
- <div class="sign">
-  <div class="hotel" aria-hidden="true"><span>H</span><span>O</span><span>T</span><span>E</span><span>L</span></div>
-  <div>
-   <h1 class="name">Las Cañitas</h1>
-   <p class="msg">Tu habitación fresca y tranquila a orillas del Lago Enriquillo.</p>
-   <p class="where"><svg width="18" height="18"><use href="#i-pin"/></svg>Los Ríos, Neyba · Bahoruco, República Dominicana</p>
-   <div class="ctas">
-    <a class="btn b-wa" href="#reservar"><svg><use href="#i-wa"/></svg>Ver disponibilidad y reservar</a>
-    <a class="btn b-call" href="tel:+18098170798"><svg><use href="#i-tel"/></svg>Llamar ahora</a>
-   </div>
-   <p class="phones"><a class="phone" href="tel:+18098170798">809-817-0798</a><a class="phone" href="tel:+18298144348">829-814-4348</a></p>
-  </div>
-  <figure class="postal" style="margin:0"><img src="f06.jpg" alt="Entrada del Hotel Las Cañitas con pared de piedra y palmas" width="900" height="675" fetchpriority="high"><span>¡Bienvenidos!</span></figure>
+<section class="hero" id="inicio">
+ <picture class="bg"><source media="(min-width:821px)" srcset="hero-l.jpg"><img src="hero-s.jpg" alt="Entrada del Hotel Las Cañitas, con pared de piedra y palmeras" width="820" height="615" fetchpriority="high"></picture>
+ <div class="hero-in">
+  <span class="chip"><svg><use href="#i-pin"/></svg>Los Ríos, Neyba · República Dominicana</span>
+  <h1>Descansa a orillas del <em>Lago Enriquillo</em></h1>
+  <p class="sub">Habitaciones limpias, frescas y seguras en el corazón de la Hoya de Enriquillo. Mira la disponibilidad al momento y reserva en un minuto.</p>
+  <div class="facts"><span><svg><use href="#i-bed"/></svg>9 habitaciones</span><span><svg><use href="#i-snow"/></svg>Aire acondicionado</span><span><svg><use href="#i-tag"/></svg>Desde RD$1,500 por noche</span></div>
+  <div class="ctas"><a class="btn b-red" href="#reservar">Ver disponibilidad</a><a class="btn b-glass" href="tel:+18098170798"><svg><use href="#i-tel"/></svg>809-817-0798</a></div>
  </div>
- <svg class="scene" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
-  <defs>
-   <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d0182b"/><stop offset=".55" stop-color="#ef6b3a"/><stop offset="1" stop-color="#f5c84b"/></linearGradient>
-   <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#29b3b3"/><stop offset="1" stop-color="#0b6f78"/></linearGradient>
-   <g id="cane"><path d="M0 0v-150" stroke="#2f7a2a" stroke-width="7"/><path d="M-4-40h8M-4-85h8M-4-125h8" stroke="#1c5419" stroke-width="3"/><path d="M0-150c20-10 40-6 56 6M0-150c-18-14-42-12-58 2M0-120c22-4 36 4 48 18" stroke="#3f9c36" stroke-width="5" fill="none" stroke-linecap="round"/></g>
-  </defs>
-  <rect width="1200" height="220" fill="url(#sky)"/>
-  <circle cx="860" cy="92" r="40" fill="#ffe28a"/>
-  <path d="M0 130 120 78 210 110 330 60 470 104 590 70 720 112 860 66 990 108 1110 74 1200 96V150H0Z" fill="#8a2a1e" opacity=".75"/>
-  <path d="M0 142 160 108 300 132 460 98 640 136 800 104 980 134 1200 112V156H0Z" fill="#5d1c16" opacity=".85"/>
-  <rect y="150" width="1200" height="70" fill="url(#water)"/>
-  <path d="M800 162h120M780 176h170M820 192h90" stroke="#ffe28a" stroke-width="3" opacity=".7" stroke-linecap="round"/>
-  <path d="M60 170h80M300 186h60M520 168h90M1040 182h70" stroke="#bdf0ee" stroke-width="2" opacity=".55" stroke-linecap="round"/>
-  <use href="#cane" x="40" y="225"/><use href="#cane" x="80" y="232" transform="scale(1 .85)"/><use href="#cane" x="1120" y="226"/><use href="#cane" x="1160" y="236" transform="scale(1 .8)"/>
- </svg>
-</header>
+ <a class="scrollcue" href="#zona" aria-label="Ir a la siguiente sección">Descubre<i></i></a>
+</section>
 
 <div class="quick">
- <form id="qf" aria-label="Consulta de disponibilidad">
+ <form id="qf" aria-label="Buscar disponibilidad">
   <button type="button" class="dbtn" id="q-inb" aria-haspopup="dialog" aria-controls="pop"><span class="dl">Llegada</span><b id="q-in-t">Elegir fecha</b></button>
   <button type="button" class="dbtn" id="q-outb" aria-haspopup="dialog" aria-controls="pop"><span class="dl">Salida</span><b id="q-out-t">Elegir fecha</b></button>
-  <div><label for="q-type">Habitación</label><select id="q-type"><option value="una">Una cama · RD$1,500</option><option value="dos">Dos camas · RD$2,000</option></select></div>
-  <button class="btn b-red" type="submit">Ver disponibilidad</button>
+  <div class="fld"><label for="q-type">Habitación</label><select id="q-type"><option value="una">Una cama · RD$1,500</option><option value="dos">Dos camas · RD$2,000</option></select><svg class="chev"><use href="#i-dn"/></svg></div>
+  <button class="btn b-red" type="submit"><svg><use href="#i-search"/></svg>Buscar</button>
   <p class="qres" id="q-res" aria-live="polite"></p>
  </form>
  <div class="pop" id="pop" role="dialog" aria-label="Elige tus fechas" hidden><div class="cal" id="cal-q"></div></div>
 </div>
 
-<section class="band" id="habitaciones"><div class="wrap">
- <h2>Habitaciones y precios</h2>
- <p class="lead">9 habitaciones limpias y frescas para descansar después de un día de lago, balneario o carretera. Precio por habitación y por noche, en pesos dominicanos.</p>
- <div class="grid2" id="rooms"></div>
+<main id="main">
+<section class="trust" aria-label="Por qué reservar con nosotros"><div class="wrap trust-in">
+ <div class="tr"><span class="tr-i"><svg><use href="#i-shield"/></svg></span><div><b>Web oficial del hotel</b><span>Hotel Las Cañitas, Los Ríos</span></div></div>
+ <div class="tr"><span class="tr-i"><svg><use href="#i-chat"/></svg></span><div><b>Trato directo</b><span>Sin intermediarios</span></div></div>
+ <div class="tr"><span class="tr-i"><svg><use href="#i-tag"/></svg></span><div><b>Precio del hotel</b><span>Sin comisiones de agencias</span></div></div>
+ <div class="tr"><span class="tr-i"><svg><use href="#i-lock"/></svg></span><div><b>Datos protegidos</b><span>Solo los recibe el hotel</span></div></div>
+</div></section>
+<section class="sec zona" id="zona">
+ <svg class="scene" viewBox="0 0 1200 260" preserveAspectRatio="none" aria-hidden="true">
+  <defs>
+   <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a3a40"/><stop offset=".45" stop-color="#c8102e"/><stop offset=".8" stop-color="#f08a3c"/><stop offset="1" stop-color="#f4b63f"/></linearGradient>
+   <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2aa9ad"/><stop offset="1" stop-color="#0a3a40"/></linearGradient>
+   <g id="cane"><path d="M0 0v-150" stroke="#1f5a22" stroke-width="7"/><path d="M-4-40h8M-4-85h8M-4-125h8" stroke="#123816" stroke-width="3"/><path d="M0-150c20-10 40-6 56 6M0-150c-18-14-42-12-58 2M0-120c22-4 36 4 48 18" stroke="#2c7a2a" stroke-width="5" fill="none" stroke-linecap="round"/></g>
+  </defs>
+  <rect width="1200" height="260" fill="url(#sky)"/>
+  <circle cx="830" cy="128" r="42" fill="#ffe08a"/>
+  <path d="M0 160 120 104 210 136 330 84 470 128 590 94 720 138 860 90 990 132 1110 98 1200 120V182H0Z" fill="#7d2318" opacity=".8"/>
+  <path d="M0 172 160 136 300 160 460 124 640 164 800 132 980 162 1200 140V190H0Z" fill="#4d1712" opacity=".92"/>
+  <rect y="182" width="1200" height="78" fill="url(#water)"/>
+  <path d="M770 196h120M750 212h170M790 230h90" stroke="#ffe08a" stroke-width="3" opacity=".65" stroke-linecap="round"/>
+  <path d="M60 204h80M300 222h60M520 202h90M1040 218h70" stroke="#bdf0ee" stroke-width="2" opacity=".5" stroke-linecap="round"/>
+  <use href="#cane" x="40" y="265"/><use href="#cane" x="80" y="272" transform="scale(1 .85)"/><use href="#cane" x="1120" y="266"/><use href="#cane" x="1160" y="276" transform="scale(1 .8)"/>
+ </svg>
+ <div class="wrap">
+  <div class="head-row rv"><div><span class="kicker">La zona</span><h2>Los Ríos, el corazón del <em>Lago Enriquillo</em></h2></div><p class="lead">Hospédate en el pueblo y recorre la Hoya de Enriquillo: lagunas de agua fresca a minutos del hotel, el lago más grande del Caribe y huellas taínas.</p></div>
+  <div id="place-feat"></div>
+  <p class="swipe-hint" aria-hidden="true">Desliza para ver más <svg><use href="#i-r"/></svg></p>
+  <div class="places" id="places"></div>
+ </div>
+</section>
+
+<section class="sec" id="galeria"><div class="wrap">
+ <div class="head-row rv"><div><span class="kicker">Fotos reales</span><h2>Así es <em>Las Cañitas</em></h2></div><button class="btn b-call" type="button" id="gal-all">Ver todas las fotos</button></div>
+ <div class="bento rv" id="gal"></div>
 </div></section>
 
-<section class="band amen" id="comodidades"><div class="wrap">
- <h2>Todo lo que necesitas, sin complicaciones</h2>
- <div class="grid" id="amen"></div>
+<section class="sec alt" id="habitaciones"><div class="wrap">
+ <div class="head-row rv"><div><span class="kicker">Habitaciones y precios</span><h2>Elige cómo quieres <em>descansar</em></h2></div><p class="lead">Precio por habitación y por noche, en pesos dominicanos. La disponibilidad de esta noche se muestra en cada foto.</p></div>
+ <div class="rooms" id="rooms"></div>
 </div></section>
 
-<section class="band" id="galeria"><div class="wrap">
- <div class="gal-head"><div><h2>Así es Las Cañitas</h2><p class="lead">Fotos reales del hotel.</p></div>
-  <div class="arrows"><button type="button" id="prev" aria-label="Foto anterior">‹</button><button type="button" id="next" aria-label="Foto siguiente">›</button></div></div>
- <div class="gal" id="gal" tabindex="0" aria-label="Galería de fotos"></div>
+<section class="sec" id="comodidades"><div class="wrap">
+ <div class="head-row rv"><div><span class="kicker">Comodidades</span><h2>Todo lo necesario, <em>sin complicaciones</em></h2></div></div>
+ <div class="amen-grid rv" id="amen"></div>
 </div></section>
 
-<section class="band zona" id="zona"><div class="wrap">
- <h2>Los Ríos: el corazón del Lago Enriquillo</h2>
- <p class="lead">Hospédate en el pueblo y recorre la Hoya de Enriquillo: el lago más grande del Caribe, balnearios de agua fresca y huellas taínas.</p>
- <div class="places" id="places"></div>
-</div></section>
 
-<section class="band" id="reservar"><div class="wrap book">
+
+
+
+<section class="sec" id="reservar"><div class="wrap book">
  <div>
-  <h2>Mira la disponibilidad y reserva</h2>
+  <span class="kicker">Reservar</span>
+  <h2>Mira la disponibilidad y <em>reserva</em></h2>
   <p class="lead">Antes de escribirnos ya sabes si hay habitación libre y cuánto vas a pagar. Sin pagos en línea ni registros.</p>
   <ol class="steps" id="steps" style="--prog:0">
    <li id="st1"><button type="button" class="stb" data-go="1"><span class="sn"><i>1</i><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="stx"><b>Elige el tipo de habitación</b><span class="sd" id="sd1">Una cama (RD$1,500) o dos camas (RD$2,000) por noche.</span></span></button></li>
    <li id="st2"><button type="button" class="stb" data-go="2"><span class="sn"><i>2</i><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="stx"><b>Marca tus fechas</b><span class="sd" id="sd2">Los días llenos salen rayados. Verás el total al momento.</span></span></button></li>
-   <li id="st3"><button type="button" class="stb" data-go="3"><span class="sn"><i>3</i><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="stx"><b>Envía tu reserva por WhatsApp</b><span class="sd" id="sd3">El mensaje se escribe solo y el hotel te la confirma.</span></span></button></li>
+   <li id="st3"><button type="button" class="stb" data-go="3"><span class="sn"><i>3</i><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="stx"><b>Envía tu reserva por WhatsApp</b><span class="sd" id="sd3">El mensaje se escribe solo. Para confirmar, transfieres el 30%.</span></span></button></li>
   </ol>
   <p class="sp-txt" id="sp-txt" aria-live="polite"></p>
   <div class="callbox"><p>¿Prefieres llamar?</p><a href="tel:+18098170798">809-817-0798</a><br><a href="tel:+18298144348">829-814-4348</a></div>
@@ -420,14 +855,36 @@ footer p{opacity:.85;font-size:15px;margin-top:6px}
   <div class="full"><label for="b-p">Personas</label><select id="b-p"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5 o más</option></select></div>
   <div class="full"><label for="b-note">Comentarios (opcional)</label><textarea id="b-note" placeholder="Hora aproximada de llegada, cama extra…"></textarea></div>
   <p class="err full" id="err" role="alert"></p>
-  <div class="full row"><button class="btn b-wa" type="submit"><svg><use href="#i-wa"/></svg>Enviar reserva por WhatsApp</button><button class="btn b-red" type="button" id="copy">Copiar solicitud</button></div>
+  <p class="secure full"><svg><use href="#i-lock"/></svg><span><b>Reserva segura.</b> Tu solicitud se envía directamente al WhatsApp oficial del hotel (809-817-0798). No pagas nada en esta web y tus datos solo los recibe el hotel.</span></p>
+  <div class="full row"><button class="btn b-wa" type="submit"><svg><use href="#i-wa"/></svg>Enviar reserva por WhatsApp</button><button class="btn b-call" type="button" id="copy">Copiar solicitud</button></div>
   <div class="out full" id="out" aria-live="polite"></div>
  </form>
 </div></section>
 
-<section class="band admin" id="panel" hidden><div class="wrap">
+<section class="sec alt" id="preguntas"><div class="wrap faq">
+ <div class="rv"><span class="kicker">Preguntas frecuentes</span><h2>Lo que suelen <em>preguntarnos</em></h2><p class="lead">¿No encuentras tu respuesta? Escríbenos por WhatsApp o llámanos.</p></div>
+ <div class="rv" id="faq-list">
+  <details><summary><span>¿Cómo reservo una habitación?</span><i aria-hidden="true"></i></summary><p class="ans">Elige el tipo de habitación y tus fechas en el calendario. Verás al momento si hay habitaciones libres y el precio total. Después pulsa «Enviar reserva por WhatsApp»: el mensaje se escribe solo y el hotel te responde para confirmarla.</p></details>
+  <details><summary><span>¿Cuánto cuesta una noche?</span><i aria-hidden="true"></i></summary><p class="ans">La habitación de una cama cuesta RD$1,500 por noche y la de dos camas, RD$2,000 por noche. El precio es por habitación.</p></details>
+  <details><summary><span>¿Tengo que pagar por adelantado en la web?</span><i aria-hidden="true"></i></summary><p class="ans">En la web no se paga ni hace falta registrarse. Pero, para confirmar tu visita, te pedimos una transferencia del 30% del precio total. Así guardamos tu habitación y evitamos cancelaciones de última hora. El hotel te envía los datos por WhatsApp.</p></details>
+  <details><summary><span>¿Cuándo queda confirmada mi reserva?</span><i aria-hidden="true"></i></summary><p class="ans">Cuando haces la transferencia del 30% y el hotel te responde por WhatsApp con el mensaje de confirmación, que incluye tu código de reserva. Desde ese momento esas noches dejan de ofrecerse a otros clientes.</p></details>
+  <details><summary><span>¿Puedo cambiar o cancelar mi reserva?</span><i aria-hidden="true"></i></summary><p class="ans">Sí, escríbenos por WhatsApp al 809-817-0798 o llama al 829-814-4348 con tu código de reserva y te ayudamos.</p></details>
+  <details><summary><span>¿Qué hay para hacer cerca?</span><i aria-hidden="true"></i></summary><p class="ans">A solo 5 minutos del hotel está el Hoyo de Felipe, una laguna natural de agua fresca. Un poco más lejos: el Lago Enriquillo, los petroglifos taínos de Las Caritas, balnearios como Las Barías, Las Marías y Boca de Cachón, y la Sierra de Neyba. <a class="inlink" href="#zona">Mirar las imágenes y ubicaciones</a>.</p></details>
+ </div>
+</div></section>
+
+<section class="sec" id="contacto"><div class="wrap">
+ <div class="cta rv">
+  <div><span class="kicker">Contacto</span><h2>¿Listo para descansar en <em>Los Ríos</em>?</h2><p>Llámanos o escríbenos por WhatsApp. Te atendemos directamente, sin intermediarios.</p></div>
+  <div class="cta-box"><a class="tel" href="tel:+18098170798">809-817-0798</a><a class="tel" href="tel:+18298144348">829-814-4348</a><a class="btn b-wa" href="https://wa.me/18098170798"><svg><use href="#i-wa"/></svg>Escribir por WhatsApp</a></div>
+ </div>
+</div></section>
+</main>
+
+<section class="sec admin" id="panel" hidden><div class="wrap">
  <h2>Panel del hotel</h2>
  <p class="sync" id="adm-sync">Comprobando acceso…</p>
+ <p style="margin-top:14px"><button class="btn b-red" type="button" id="adm-edit">Editar los textos de la web</button></p>
  <p class="lead" id="adm-lead">Lo normal es confirmar desde el enlace que trae cada WhatsApp. Aquí también puedes pegar un código de reserva, anular reservas o marcar a mano las habitaciones ocupadas de cualquier día (por ejemplo, clientes que llegan sin reservar).</p>
  <div class="adm">
   <div class="adm-side">
@@ -448,60 +905,109 @@ footer p{opacity:.85;font-size:15px;margin-top:6px}
  </div>
 </div></section>
 
+<div class="conf" id="sent" hidden><div class="conf-card" role="dialog" aria-modal="true" aria-labelledby="sent-t" id="sent-card"></div></div>
 <div class="conf" id="conf" hidden><div class="conf-card" role="dialog" aria-modal="true" aria-labelledby="cf-title" id="conf-card"></div></div>
 
-<footer class="band"><div class="wrap">
- <div><span class="logo">Las Cañitas</span><p>Hotel en Los Ríos, Neyba. Descanso sencillo y cuidado junto al Lago Enriquillo.</p></div>
- <div><h3>Contacto</h3><p>Teléfono y WhatsApp: <a href="tel:+18098170798">809-817-0798</a></p><p>Teléfono: <a href="tel:+18298144348">829-814-4348</a></p><p><a href="https://wa.me/18098170798">Escríbenos por WhatsApp</a></p></div>
- <div><h3>Ubicación</h3><p>Los Ríos, provincia Bahoruco (Neyba), República Dominicana</p><p><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Las+Ca%C3%B1itas+Los+R%C3%ADos+Bahoruco">Ver en Google Maps</a></p></div>
-</div><p class="copy">© <span id="yr"></span> Hotel Las Cañitas · Los Ríos, República Dominicana · <a href="#panel-hotel">Acceso hotel</a></p></footer>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Visor de fotos">
+ <div class="lb-top"><span id="lb-count"></span><button class="lb-btn" type="button" id="lb-x" aria-label="Cerrar">✕</button></div>
+ <div class="lb-stage" id="lb-stage"><img id="lb-img" alt=""><button class="lb-btn lb-prev" type="button" id="lb-prev" aria-label="Foto anterior"><svg><use href="#i-l"/></svg></button><button class="lb-btn lb-next" type="button" id="lb-next" aria-label="Foto siguiente"><svg><use href="#i-r"/></svg></button></div>
+ <p class="lb-cap" id="lb-cap"></p>
+</div>
 
+<footer><div class="wrap ft">
+ <div><a class="logo" href="#inicio"><span class="emb" aria-hidden="true">LC</span><span class="lw"><b>Las Cañitas</b><small>Hotel · Los Ríos, Neyba</small></span></a><p style="margin-top:16px;max-width:34ch">Habitaciones frescas y tranquilas en el corazón de la Hoya de Enriquillo, República Dominicana.</p></div>
+ <div><h3>El hotel</h3><ul><li><a href="#habitaciones">Habitaciones y precios</a></li><li><a href="#comodidades">Comodidades</a></li><li><a href="#galeria">Fotos</a></li><li><a href="#zona">La zona</a></li></ul></div>
+ <div><h3>Contacto</h3><ul><li><a href="tel:+18098170798">809-817-0798</a> (también WhatsApp)</li><li><a href="tel:+18298144348">829-814-4348</a></li><li><a href="https://wa.me/18098170798">Escribir por WhatsApp</a></li></ul></div>
+ <div><h3>Ubicación</h3><ul><li>Los Ríos, provincia Bahoruco (Neyba), República Dominicana</li><li><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Las+Ca%C3%B1itas+Los+R%C3%ADos+Bahoruco">Ver en Google Maps</a></li></ul></div>
+</div>
+<div class="ft-bot"><span>© <span id="yr"></span> Hotel Las Cañitas · Sitio web oficial · Reservas directas con el hotel · Los Ríos, Bahoruco, República Dominicana</span><a href="#panel-hotel">Acceso hotel</a></div></footer>
+
+<button class="totop" id="totop" type="button" aria-label="Volver arriba"><svg><use href="#i-up"/></svg></button>
+<button class="ebtn" id="e-btn" type="button" hidden><svg><use href="#i-pen"/></svg>Editar textos</button>
+<div class="ebar" id="ebar" hidden role="region" aria-label="Modo edición"><div class="e-info"><b>Modo edición</b><span id="e-count">Toca cualquier texto con borde para cambiarlo.</span></div><div class="e-acts"><button class="btn b-call" type="button" id="e-undo">Deshacer</button><button class="btn b-red" type="button" id="e-save">Publicar</button><button class="btn b-call" type="button" id="e-exit">Salir</button></div><textarea id="e-json" hidden readonly aria-label="Textos"></textarea></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div class="mbar" aria-label="Acciones rápidas"><a class="m1" href="tel:+18098170798"><svg><use href="#i-tel"/></svg>Llamar</a><a class="m2" href="https://wa.me/18098170798"><svg><use href="#i-wa"/></svg>WhatsApp</a><a class="m3" href="#reservar">Reservar</a></div>
 <a class="fab" href="https://wa.me/18098170798" aria-label="Escribir por WhatsApp"><svg><use href="#i-wa"/></svg></a>
-
 <script>
 {
 const PHONE='18098170798';
+const IMG='';
 /* === HABITACIONES Y FOTOS: cambia aquí las imágenes que quieras usar === */
 const TYPES={
- una:{name:'Habitación de una cama',short:'Una cama',code:'U',total:4,price:1500,img:'f03.jpg',alt:'Habitación con cama, abanico de techo y cortinas azules',text:'Ideal para una persona o una pareja. Cama cómoda con cabecero acolchado.',tags:['Aire acondicionado','Abanico de techo','TV','1 cama']},
- dos:{name:'Habitación de dos camas',short:'Dos camas',code:'D',total:5,price:2000,img:'f15.jpg',alt:'Habitación con dos camas y aire acondicionado',text:'Para familias, amigos o compañeros de trabajo. Espacio para todos.',tags:['Aire acondicionado','Abanico de techo','TV','2 camas']}
+ una:{name:'Habitación de una cama',short:'Una cama',code:'U',total:4,price:1500,
+  text:'Ideal para una persona o una pareja. Cama amplia con cabecero acolchado y ambiente tranquilo.',
+  feats:[['i-bed','1 cama'],['i-snow','Aire acondicionado'],['i-fan','Abanico de techo'],['i-tv','TV']],
+  imgs:[['f03','Habitación de una cama con abanico de techo'],['f11','Cama con sábanas blancas'],['f08','Habitación con aire acondicionado y TV']]},
+ dos:{name:'Habitación de dos camas',short:'Dos camas',code:'D',total:5,price:2000,
+  text:'Para familias, amigos o compañeros de trabajo. Dos camas y espacio para todos.',
+  feats:[['i-bed','2 camas'],['i-snow','Aire acondicionado'],['i-fan','Abanico de techo'],['i-tv','TV']],
+  imgs:[['f15','Habitación con dos camas'],['f04','Dos camas, TV y mesa'],['f12','Habitación amplia con mesa y sillas']]}
 };
 const GALLERY=[
- ['f02.jpg','El letrero en la entrada'],['f06.jpg','Fachada y jardín'],['f01.jpg','Recepción “Bienvenidos”'],
- ['f08.jpg','Habitación con aire acondicionado'],['f05.jpg','Habitación con TV'],['f10.jpg','Sala de espera'],
- ['f13.jpg','Pasillo de habitaciones'],['f12.jpg','Habitación de dos camas con mesa']
+ ['hero-l','Fachada y jardín de la entrada','g-big'],['f01','Recepción «Bienvenidos»','g-tall'],['f02','El letrero del hotel',''],['f07','Sala de espera',''],
+ ['f04','Habitación de dos camas','g-wide'],['f03','Habitación de una cama',''],['f13','Pasillo de las habitaciones',''],
+ ['f09','Escalera a las habitaciones',''],['f10','Escaleras y pasillo',''],['f05','Habitación con TV',''],['f15','Habitación con dos camas',''],['f12','Habitación con mesa y sillas',''],['f11','Cama con sábanas blancas',''],['f08','Habitación con aire acondicionado','']
 ];
 const AMEN=[
- ['M4 6h16v8H4zM7 18l2-4M17 18l-2-4M12 18v-4','Aire acondicionado','En las habitaciones, para el calor del sur.'],
- ['M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0M12 10V3M14 12h7M11 14l-5 5','Abanico de techo','Ventilación extra en cada cuarto.'],
- ['M3 5h18v11H3zM8 20h8','Televisión','Para relajarte al final del día.'],
- ['M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z','Seguridad','Acceso con reja, cámaras y extintores.'],
- ['M7 3h10v18H7zM7 9h10M10 6h1M10 12v3','Bebidas frías','Nevera con bebidas en la recepción.'],
- ['M4 14h16v4H4zM6 14V9h12v5M8 18v2M16 18v2','Recepción y sala','Área de espera cómoda y atención cercana.']
+ ['i-snow','Aire acondicionado','En las habitaciones, para el calor del sur.'],
+ ['i-fan','Abanico de techo','Ventilación extra en cada cuarto.'],
+ ['i-tv','Televisión','Para relajarte al final del día.'],
+ ['i-shield','Seguridad','Acceso con reja, cámaras y extintores.'],
+ ['i-cup','Bebidas frías','Nevera con bebidas en la recepción.'],
+ ['i-chat','Atención directa','Por teléfono y WhatsApp, sin intermediarios.']
 ];
+const MAPS=q=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);
 const PLACES=[
- ['Lago Enriquillo','El lago más grande del Caribe, por debajo del nivel del mar y más salado que el océano. Atardeceres inolvidables.'],
- ['Las Caritas','Petroglifos taínos tallados en la roca frente al lago: una ventana a los primeros pobladores de la isla.'],
- ['Balnearios de la zona','Las Barías, Las Marías y Boca de Cachón: aguas frescas y naturales para el chapuzón del día.'],
- ['Iguanas y naturaleza','Iguanas, flamencos y la Sierra de Neyba, Parque Nacional, a la vista desde la carretera del lago.']
+ {n:'Hoyo de Felipe',d:'Laguna natural de agua fresca y cristalina en Los Ríos, perfecta para refrescarse en el calor del sur. El plan más cercano: a solo 5 minutos del hotel.',near:'A 5 minutos del hotel',img:'hoyo-de-felipe',alt:'Hoyo de Felipe: laguna de agua turquesa y transparente rodeada de árboles',cap:'Hoyo de Felipe',maps:[['Cómo llegar','Hoyo de Felipe, Los Ríos, Bahoruco, República Dominicana']]},
+ {n:'Lago Enriquillo',d:'El lago más grande del Caribe, por debajo del nivel del mar y más salado que el océano.',img:'lago-enriquillo',alt:'Lago Enriquillo con cactus en primer plano y montañas al fondo',cap:'Lago Enriquillo',maps:[['Ver ubicación','Lago Enriquillo, República Dominicana']]},
+ {n:'Las Caritas',d:'Petroglifos taínos tallados en la roca frente al lago: una ventana a los primeros pobladores.',img:'las-caritas',alt:'Petroglifos taínos de caras talladas en la roca en Las Caritas',cap:'Petroglifos de Las Caritas',maps:[['Ver ubicación','Las Caritas de los Indios, Lago Enriquillo, República Dominicana']]},
+ {n:'Balnearios',d:'Aguas frescas y naturales para el chapuzón del día.',img:'las-marias',alt:'Balneario Las Marías: agua cristalina color turquesa rodeada de árboles',cap:'Balneario Las Marías',maps:[['Las Barías','Balneario Las Barías, La Descubierta, República Dominicana'],['Las Marías','Balneario Las Marías, Neyba, República Dominicana'],['Boca de Cachón','Boca de Cachón, Jimaní, República Dominicana']]},
+ {n:'Naturaleza',d:'Túneles de árboles como el de El Estero, iguanas, flamencos y la Sierra de Neyba, Parque Nacional, a la vista desde la carretera del lago.',img:'el-estero',alt:'Carretera bajo un túnel de árboles en El Estero, provincia Bahoruco',cap:'El Estero · foto @thegoodlifeneyba',maps:[['Ver ubicación','Parque Nacional Sierra de Neyba, República Dominicana']]}
 ];
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const ic=d=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="${d}"/></svg>`;
 const $=id=>document.getElementById(id);
 const money=n=>'RD$'+n.toLocaleString('en-US');
-const drawRooms=()=>{$('rooms').innerHTML=Object.entries(TYPES).map(([k,r])=>`<article class="room"><img src="${r.img}" alt="${esc(r.alt)}" loading="lazy" width="900" height="675"><div class="in"><h3>${esc(r.name)}</h3><p class="rp">${money(r.price)} <small>por noche</small></p><p>${esc(r.text)}</p><ul>${r.tags.map(t=>`<li>${esc(t)}</li>`).join('')}</ul><p class="rc">${r.total} habitaciones de este tipo</p><a class="btn b-red" href="#reservar" data-room="${k}">Ver disponibilidad</a></div></article>`).join('')};
+const icon=id=>`<svg aria-hidden="true"><use href="#${id}"/></svg>`;
+const drawRooms=()=>{$('rooms').innerHTML=Object.entries(TYPES).map(([k,r])=>`<article class="room rv in" id="room-${k}">
+ <div class="car" data-car="${k}"><div class="car-track" tabindex="0" aria-label="Fotos de ${esc(r.name)}">${r.imgs.map((im,i)=>`<img src="${IMG}${im[0]}.jpg" alt="${esc(im[1])}" width="900" height="675" loading="lazy" data-lb="${k}" data-i="${i}">`).join('')}</div>
+ <button class="car-btn car-prev" type="button" aria-label="Foto anterior">${icon('i-l')}</button><button class="car-btn car-next" type="button" aria-label="Foto siguiente">${icon('i-r')}</button>
+ <div class="car-dots">${r.imgs.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join('')}</div><span class="avail" id="av-${k}"></span></div>
+ <div class="in"><div class="room-top"><div><h3>${esc(r.name)}</h3><p class="count">${r.total} habitaciones de este tipo</p></div><div class="rprice"><b>${money(r.price)}</b><span> / noche</span></div></div>
+ <p class="txt">${esc(r.text)}</p><ul class="feats">${r.feats.map(f=>`<li>${icon(f[0])}${esc(f[1])}</li>`).join('')}</ul>
+ <div class="room-acts"><a class="btn b-red" href="#reservar" data-room="${k}">Ver disponibilidad</a><button class="btn b-call" type="button" data-photos="${k}">Ver fotos</button></div></div></article>`).join('');bindCars()};
+function bindCars(){document.querySelectorAll('.car').forEach(c=>{
+ const tr=c.querySelector('.car-track'),dots=[...c.querySelectorAll('.car-dots i')];
+ const go=d=>tr.scrollBy({left:d*tr.clientWidth,behavior:'smooth'});
+ c.querySelector('.car-prev').onclick=()=>go(-1);c.querySelector('.car-next').onclick=()=>go(1);
+ tr.onkeydown=e=>{if(e.key==='ArrowRight'){e.preventDefault();go(1)}if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}};
+ tr.onscroll=()=>{const i=Math.round(tr.scrollLeft/Math.max(1,tr.clientWidth));dots.forEach((d,j)=>d.classList.toggle('on',i===j))};
+})}
 drawRooms();
-$('amen').innerHTML=AMEN.map(a=>`<div class="am">${ic(a[0])}<h3>${a[1]}</h3><p>${a[2]}</p></div>`).join('');
-$('gal').innerHTML=GALLERY.map(g=>`<figure><img src="${g[0]}" alt="${esc(g[1])}" loading="lazy" width="900" height="675"><figcaption>${esc(g[1])}</figcaption></figure>`).join('');
-$('places').innerHTML=PLACES.map(p=>`<div class="pl"><h3>${p[0]}</h3><p>${p[1]}</p></div>`).join('');
+$('amen').innerHTML=AMEN.map(a=>`<div class="am"><span class="ico">${icon(a[0])}</span><div><h3>${esc(a[1])}</h3><p>${esc(a[2])}</p></div></div>`).join('');
+const BENTO=7;
+$('gal').innerHTML=GALLERY.slice(0,BENTO).map((g,i)=>`<button type="button" class="${g[2]}" data-g="${i}" aria-label="Ampliar: ${esc(g[1])}"><img src="${IMG}${g[0]}.jpg" alt="${esc(g[1])}" loading="lazy">${i===BENTO-1&&GALLERY.length>BENTO?`<span class="more">+${GALLERY.length-BENTO+1} fotos</span>`:`<span class="cap">${esc(g[1])}</span>`}</button>`).join('');
+const mlinks=p=>`<div class="mlinks">${p.maps.map(m=>`<a class="mlink" href="${MAPS(m[1])}" target="_blank" rel="noopener">${icon('i-pin')}${esc(m[0])}</a>`).join('')}</div>`;
+const _pl=PLACES.map((p,i)=>p.near?`<div class="pl feat rv${p.img?' has-img':''}">${p.img?`<button type="button" class="pl-ph feat-ph" data-pimg="${i}" aria-label="Ampliar foto: ${esc(p.cap||p.n)}"><img src="${IMG}${p.img}.jpg" alt="${esc(p.alt||p.n)}" loading="lazy" width="900" height="870"></button>`:''}<span class="n">0${i+1}</span><div><span class="near">${icon('i-pin')}${esc(p.near)}</span><h3>${esc(p.n)}</h3><p>${esc(p.d)}</p></div><a class="btn b-glass" href="${MAPS(p.maps[0][1])}" target="_blank" rel="noopener">${icon('i-pin')}Cómo llegar</a></div>`:`<div class="pl rv${p.img?' has-img':''}">${p.img?`<button type="button" class="pl-ph" data-pimg="${i}" aria-label="Ampliar foto: ${esc(p.cap||p.n)}"><img src="${IMG}${p.img}.jpg" alt="${esc(p.alt||p.n)}" loading="lazy" width="900" height="674">${p.cap?`<span>${esc(p.cap)}</span>`:''}</button>`:''}<span class="n">0${i+1}</span><h3>${esc(p.n)}</h3><p>${esc(p.d)}</p>${mlinks(p)}</div>`);$('place-feat').innerHTML=_pl.filter((h,i)=>PLACES[i].near).join('');$('places').innerHTML=_pl.filter((h,i)=>!PLACES[i].near).join('');
 $('yr').textContent=new Date().getFullYear();
+document.querySelector('#zona').addEventListener('click',e=>{const b=e.target.closest('[data-pimg]');if(b){const q=PLACES[+b.dataset.pimg];lbOpen([[q.img,q.cap||q.n]],0)}});
 
-/* galería */
-const gal=$('gal');
-const step=d=>{const f=gal.querySelector('figure');gal.scrollBy({left:d*((f?f.offsetWidth:300)+14),behavior:'smooth'})};
-$('prev').addEventListener('click',()=>step(-1));$('next').addEventListener('click',()=>step(1));
-gal.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();step(1)}if(e.key==='ArrowLeft'){e.preventDefault();step(-1)}});
+/* visor de fotos */
+let LB=[],LBi=0,lbLast=null;
+const lb=$('lb'),lbImg=$('lb-img');
+function lbShow(i){LBi=(i+LB.length)%LB.length;const g=LB[LBi];lbImg.classList.add('fade');
+ const im=new Image();im.onload=im.onerror=()=>{lbImg.src=im.src;lbImg.alt=g[1];lbImg.classList.remove('fade')};im.src=IMG+g[0]+'.jpg';
+ $('lb-cap').textContent=g[1];$('lb-count').textContent=`${LBi+1} / ${LB.length}`;}
+function lbOpen(list,i){LB=list;lbLast=document.activeElement;lb.hidden=false;document.body.style.overflow='hidden';lbShow(i);$('lb-x').focus()}
+function lbClose(){lb.hidden=true;document.body.style.overflow='';if(lbLast)lbLast.focus()}
+$('lb-x').onclick=lbClose;$('lb-prev').onclick=()=>lbShow(LBi-1);$('lb-next').onclick=()=>lbShow(LBi+1);
+lb.addEventListener('click',e=>{if(e.target===lb||e.target.id==='lb-stage')lbClose()});
+document.addEventListener('keydown',e=>{if(lb.hidden)return;if(e.key==='Escape')lbClose();if(e.key==='ArrowRight')lbShow(LBi+1);if(e.key==='ArrowLeft')lbShow(LBi-1)});
+let tx=null;$('lb-stage').addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+$('lb-stage').addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>45)lbShow(LBi+(dx<0?1:-1));tx=null});
+$('gal').addEventListener('click',e=>{const b=e.target.closest('[data-g]');if(b)lbOpen(GALLERY,+b.dataset.g)});
+$('gal-all').onclick=()=>lbOpen(GALLERY,0);
+$('rooms').addEventListener('click',e=>{const p=e.target.closest('[data-photos]'),im=e.target.closest('[data-lb]');
+ if(p)lbOpen(TYPES[p.dataset.photos].imgs,0);else if(im)lbOpen(TYPES[im.dataset.lb].imgs,+im.dataset.i)});
 
 /* disponibilidad: disponibilidad.json */
 let AV={ocupadas:{},reservas:[]},AVfile=null,avState='loading';
@@ -534,9 +1040,10 @@ function drawCal(el,popup){
  let months='';
  for(let m=0;m<mc;m++){
   const first=new Date(t0.getFullYear(),t0.getMonth()+S.off+m,1,12);
-  const lead=(first.getDay()+6)%7,days=new Date(first.getFullYear(),first.getMonth()+1,0).getDate();
+  let d0=1;if(first.getFullYear()===t0.getFullYear()&&first.getMonth()===t0.getMonth())d0=Math.max(1,t0.getDate()-(t0.getDay()+6)%7);
+  const lead=(new Date(first.getFullYear(),first.getMonth(),d0,12).getDay()+6)%7,days=new Date(first.getFullYear(),first.getMonth()+1,0).getDate();
   let cells='<span></span>'.repeat(lead);
-  for(let d=1;d<=days;d++){
+  for(let d=d0;d<=days;d++){
    const k=key(new Date(first.getFullYear(),first.getMonth(),d,12));
    const fr=free(S.type,k),isFull=fr<S.rooms;
    let on=k>=TODAY&&!isFull,c='d',lab=fmtL(k);
@@ -560,7 +1067,7 @@ function drawCal(el,popup){
  if(avState==='loading')res='<div class="c-res wait">Cargando disponibilidad…</div>';
  else if(st&&st.ok){
   const mx=Math.min(st.mf,TYPES[S.type].total);
-  res=`<div class="c-res ok"><div>✓ Disponible · ${st.mf===1?'queda 1 habitación':`quedan ${st.mf} habitaciones`}<span class="tot">${money(st.total)}</span><span class="det">${money(TYPES[S.type].price)} × ${n} noche${n>1?'s':''}${S.rooms>1?` × ${S.rooms} habitaciones`:''}</span></div><div class="stp" aria-label="Número de habitaciones"><span>Habitaciones</span><button type="button" data-rm="-1" aria-label="Una habitación menos" ${S.rooms<=1?'disabled':''}>−</button><b>${S.rooms}</b><button type="button" data-rm="1" aria-label="Una habitación más" ${S.rooms>=mx?'disabled':''}>+</button></div></div>`;
+  res=`<div class="c-res ok"><div>✓ Disponible · ${st.mf===1?'queda 1 habitación':`quedan ${st.mf} habitaciones`}<span class="tot">${money(st.total)}</span><span class="det">${money(TYPES[S.type].price)} × ${n} noche${n>1?'s':''}${S.rooms>1?` × ${S.rooms} habitaciones`:''}</span><span class="dep">Anticipo para confirmar (30%): <b>${money(dep(st.total))}</b></span></div><div class="stp" aria-label="Número de habitaciones"><span>Habitaciones</span><button type="button" data-rm="-1" aria-label="Una habitación menos" ${S.rooms<=1?'disabled':''}>−</button><b>${S.rooms}</b><button type="button" data-rm="1" aria-label="Una habitación más" ${S.rooms>=mx?'disabled':''}>+</button></div></div>`;
  }else if(st&&st.ok===false)res=`<div class="c-res no">✕ No hay ${S.rooms>1?S.rooms+' habitaciones':'habitación'} de ${TYPES[S.type].short.toLowerCase()} libre${S.rooms>1?'s':''} en esas fechas. Prueba otras fechas u otro tipo.</div>`;
  else if(st)res=`<div class="c-res wait"><div>No pudimos cargar la disponibilidad; el hotel te la confirmará.<span class="tot">${money(st.total)}</span><span class="det">${money(TYPES[S.type].price)} × ${n} noche${n>1?'s':''}</span></div></div>`;
  const tbtn=Object.entries(TYPES).map(([k,t])=>`<button type="button" data-type="${k}" aria-pressed="${S.type===k}">${t.short}<small>${money(t.price)} / noche</small></button>`).join('');
@@ -576,7 +1083,7 @@ function render(){
  qRes.className='qres'+(st&&st.ok?' ok':st&&st.ok===false?' no':'');
  qRes.textContent=!st?'':st.ok?`✓ Disponible · ${st.n} noche${st.n>1?'s':''} · ${money(st.total)}`:st.ok===false?'✕ Sin disponibilidad en esas fechas para este tipo':`${st.n} noche${st.n>1?'s':''} · ${money(st.total)}`;
  if(!$('panel').hidden)drawAdmin();
- updSteps();
+ updSteps();updAvail();
 }
 function bindCal(el,popup){
  cals.push([el,popup]);
@@ -628,7 +1135,7 @@ function updSteps(){
  const txt=[
   d1?`${T.name} · ${money(T.price)} por noche${S.rooms>1?` · ${S.rooms} habitaciones`:''}`:'Una cama (RD$1,500) o dos camas (RD$2,000) por noche.',
   !S.in?'Toca tu llegada y tu salida en el calendario.':!S.out?`Llegada el ${fmt(S.in)}: ahora toca la salida.`:st.ok===false?'Sin disponibilidad en esas fechas: prueba otras u otro tipo.':`${fmt(S.in)} → ${fmt(S.out)} · ${st.n} noche${st.n>1?'s':''} · ${money(st.total)}`,
-  d3?'¡Enviada! El hotel te confirmará por WhatsApp.':!d2?'El mensaje se escribe solo y el hotel te la confirma.':!name||telDigits($('b-tel').value).length<10?'Escribe tu nombre y tu WhatsApp, y envía.':'Todo listo: pulsa «Enviar reserva por WhatsApp».'
+  d3?`¡Enviada! Último paso: transferencia del 30% (${money(dep(st.total))}).`:!d2?'El mensaje se escribe solo. Para confirmar, transfieres el 30%.':!name||telDigits($('b-tel').value).length<10?'Escribe tu nombre y tu WhatsApp, y envía.':`Todo listo. Anticipo para confirmar: ${money(dep(st.total))} (30%).`
  ];
  [1,2,3].forEach(i=>{const li=$('st'+i);li.className=done[i-1]?'done':act===i-1?'active':'todo';if(i===2&&st&&st.ok===false)li.classList.add('bad');setTxt($('sd'+i),txt[i-1]);
   $('mprog').querySelector(`[data-go="${i}"]`).className=done[i-1]?'done':act===i-1?'active':''});
@@ -652,6 +1159,7 @@ $('qf').addEventListener('submit',e=>{e.preventDefault();if(!S.in||!S.out){openP
 $('rooms').addEventListener('click',e=>{const a=e.target.closest('[data-room]');if(a){S.type=a.dataset.room;S.rooms=1;S.typeChosen=true;render()}});
 
 /* mensaje */
+const DEP=.30,dep=t=>Math.round(t*DEP);
 const SITE_URL=(window.claude&&window.claude.use)?'https://claude.ai/artifact/UpTYjf8upUfLoEm41sEvxP':(location.origin+location.pathname).replace(/index\.html$/,'');
 const telDigits=v=>{let d=String(v||'').replace(/\D/g,'');if(d.length===10&&/^(809|829|849)/.test(d))d='1'+d;return d};
 const buildMsg=()=>{
@@ -664,8 +1172,9 @@ const buildMsg=()=>{
  let m=`Hola, Hotel Las Cañitas. Quiero reservar:\n\n• Nombre: ${n}\n`;
  m+=`• WhatsApp: +${tel}\n`;
  m+=`• Habitación: ${S.rooms} × ${T.name}\n• Llegada: ${fmtL(S.in)}\n• Salida: ${fmtL(S.out)} (${st.n} noche${st.n>1?'s':''})\n• Personas: ${$('b-p').value}\n• Total: ${money(st.total)} (${money(T.price)} × ${st.n} noche${st.n>1?'s':''}${S.rooms>1?` × ${S.rooms} hab.`:''})\n• Código de reserva: ${mkCode()}\n`;
+ m+=`• Anticipo para confirmar (30%): ${money(dep(st.total))}\n`;
  if($('b-note').value.trim())m+=`• Comentarios: ${$('b-note').value.trim()}\n`;
- m+=st.ok?`\nEn la web aparece disponible. ¿Me confirman la reserva? Gracias.`:'\n¿Me confirman si hay disponibilidad? Gracias.';
+ m+=st.ok?`\nEn la web aparece disponible. Entiendo que, para confirmar mi visita, debo hacer una transferencia del 30% (${money(dep(st.total))}). ¿Me envían los datos para la transferencia? Gracias.`:`\n¿Me confirman si hay disponibilidad? Entiendo que para confirmar debo transferir el 30% (${money(dep(st.total))}). Gracias.`;
  m+=`\n\n(Para el hotel, confirmar con un toque: ${SITE_URL}#${mkCode()}-${tel})`;
  return [m,''];
 };
@@ -674,10 +1183,19 @@ $('bf').addEventListener('submit',e=>{
  const url=`https://wa.me/${PHONE}?text=${encodeURIComponent(m)}`;sentSig=sig();updSteps();
  $('out').className='out full on';$('out').textContent='Tu solicitud:\n\n'+m+'\n\nSe está abriendo WhatsApp. Si no se abre, cópiala y envíala al 809-817-0798, o llama al 829-814-4348.';
  const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();
+ showSent(status(),url);
 });
+function showSent(st,url){const T=TYPES[S.type],d=dep(st.total);
+ $('sent-card').innerHTML=`<div class="cf-h"><div><h3 id="sent-t">¡Solicitud enviada!</h3><p class="cf-code">${esc(mkCode())}</p></div><button type="button" class="c-close" data-x aria-label="Cerrar">✕</button></div>
+ <div class="last"><span class="last-k">Último paso para confirmar tu visita</span><p>Haz una <b>transferencia del 30%</b> del precio total:</p><span class="last-amt">${money(d)}</span><span class="last-of">30% de ${money(st.total)} · ${S.rooms} × ${esc(T.short.toLowerCase())} · ${st.n} noche${st.n>1?'s':''}</span><p class="last-why">Este anticipo nos permite guardar tu habitación y evitar cancelaciones de última hora. El hotel te enviará por WhatsApp los datos para la transferencia. Gracias.</p></div>
+ <ol class="steps cfs" style="--prog:.5"><li class="done"><div class="stb"><span class="sn"><i>1</i><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="stx"><b>Solicitud enviada</b><span class="sd">Por WhatsApp al hotel.</span></span></div></li><li class="active"><div class="stb"><span class="sn"><i>2</i></span><span class="stx"><b>Transferencia del 30%: ${money(d)}</b><span class="sd">Con los datos que te enviará el hotel.</span></span></div></li><li class="todo"><div class="stb"><span class="sn"><i>3</i></span><span class="stx"><b>Visita confirmada</b><span class="sd">Recibirás la confirmación con tu código de reserva.</span></span></div></li></ol>
+ <div class="cf-foot"><a class="btn b-wa" href="${url}" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Abrir WhatsApp otra vez</a><button type="button" class="btn b-red" data-x>Entendido</button></div>`;
+ $('sent').hidden=false;document.body.style.overflow='hidden';setTimeout(()=>{const b=$('sent-card').querySelector('[data-x].btn');if(b)b.focus()},50)}
+$('sent').addEventListener('click',e=>{if(e.target===$('sent')||e.target.closest('[data-x]')){$('sent').hidden=true;document.body.style.overflow=''}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('sent').hidden){$('sent').hidden=true;document.body.style.overflow=''}});
 $('copy').addEventListener('click',async()=>{const [m,er]=buildMsg();$('err').textContent=er;if(!m)return;
  $('out').className='out full on';$('out').textContent=m;
- try{await navigator.clipboard.writeText(m);$('copy').textContent='¡Copiada!';setTimeout(()=>$('copy').textContent='Copiar solicitud',2000)}catch(x){$('err').textContent='No se pudo copiar automáticamente; selecciona el texto de abajo.'}});
+ try{await navigator.clipboard.writeText(m);$('copy').textContent='¡Copiada!';toast('Solicitud copiada');setTimeout(()=>$('copy').textContent='Copiar solicitud',2000)}catch(x){$('err').textContent='No se pudo copiar automáticamente; selecciona el texto de abajo.'}});
 
 /* panel del hotel (#panel-hotel) */
 const A={off:0,sel:TODAY},DRAFT='lc-disponibilidad-borrador';
@@ -787,7 +1305,7 @@ function refreshConf(){
  if(!dbAdmin)s2=`<span class="sd">Este enlace es para el hotel. Ábrelo con la cuenta del hotel en claude.ai para confirmar con un toque.</span>`;
  else if(reg)s2=`<span class="sd">${DB?'Confirmada. Ya aparece como ocupada en la web.':'Confirmada en este navegador. Para que la vean los clientes, abre el panel, pulsa «Copiar datos» y pégalos en disponibilidad.json en GitHub.'}</span>`;
  else if(bad)s2=`<span class="sd">No se puede confirmar: no hay sitio suficiente.</span>`;
- else s2=`<span class="sd">Un toque y esas noches dejan de estar disponibles.</span><button type="button" class="btn b-red" id="cf-ok" ${loading?'disabled':''}>✓ Confirmar reserva</button>`;
+ else s2=`<span class="sd">Confirma cuando recibas la transferencia del 30% (${money(dep(nn*r.n*T.price))}). Un toque y esas noches dejan de estar disponibles.</span><button type="button" class="btn b-red" id="cf-ok" ${loading?'disabled':''}>✓ Confirmar reserva</button>`;
  if(!dbAdmin)s3=`<span class="sd">El hotel te avisará por WhatsApp.</span>`;
  else if(bad)s3=`<span class="sd">Avísale con un mensaje ya escrito.</span>${waBtn(false,'Avisar que no hay sitio')}`;
  else if(reg)s3=`<span class="sd">${d3?'Aviso enviado. ':''}${tel?`WhatsApp del cliente: +${esc(tel)}`:'El cliente no dejó WhatsApp: copia el mensaje y respóndele en su chat.'}</span>${waBtn(true,d3?'Volver a avisar':'Avisar al cliente por WhatsApp')}`;
@@ -838,6 +1356,97 @@ const route=()=>{
 };
 addEventListener('hashchange',route);
 
+/* ===== experiencia de uso ===== */
+const HTML=document.documentElement,hdr=$('hdr');
+let toastT=null;
+function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('on'),msg.length>70?6000:2600)}
+function updAvail(){
+ for(const k in TYPES){const el=$('av-'+k);if(!el)continue;
+  if(avState!=='ok'){el.textContent='';continue}
+  const fr=free(k,TODAY);el.className='avail'+(fr<=0?' full':fr===1?' low':'');
+  el.innerHTML='<i></i>'+(fr<=0?'Completo esta noche':fr===1?'Queda 1 esta noche':`Disponible esta noche · quedan ${fr}`)}
+}
+/* apertura */
+(()=>{const intro=$('intro');if(!intro)return;
+ if(HTML.classList.contains('nointro')){intro.remove();return}
+ let done=false;const end=()=>{if(done)return;done=true;intro.classList.add('out');HTML.classList.add('ready');try{sessionStorage.setItem('lc-intro','1')}catch(x){}setTimeout(()=>intro.remove(),1150)};
+ setTimeout(end,1900);intro.addEventListener('click',end);addEventListener('keydown',end,{once:true});
+})();
+/* cabecera, parallax y botón arriba */
+const heroBg=document.querySelector('.hero .bg'),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let ticking=false;
+function onScroll(){const y=scrollY;
+ hdr.classList.toggle('solid',y>40||links.classList.contains('open'));
+ $('totop').classList.toggle('on',y>innerHeight*1.2);
+ if(!reduce&&heroBg&&y<innerHeight*1.2)heroBg.style.transform=`translate3d(0,${(y*.28).toFixed(1)}px,0)`;
+ ticking=false}
+addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});onScroll();
+$('totop').onclick=()=>scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+menu.addEventListener('click',()=>{hdr.classList.toggle('mo',links.classList.contains('open'));onScroll();document.body.style.overflow=links.classList.contains('open')?'hidden':''});
+links.addEventListener('click',()=>{hdr.classList.remove('mo');document.body.style.overflow='';setTimeout(onScroll,0)});
+/* sección activa en el menú */
+const navA=[...links.querySelectorAll('a')];
+const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)navA.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))})},{rootMargin:'-45% 0px -50% 0px'});
+navA.forEach(a=>{const s=document.querySelector(a.getAttribute('href'));if(s)spy.observe(s)});
+/* aparición al hacer scroll */
+const rvObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rvObs.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+document.querySelectorAll('.rv:not(.in)').forEach(el=>rvObs.observe(el));
+/* el formulario recuerda tus datos */
+const FORM='lc-formulario';
+try{const f=JSON.parse(localStorage.getItem(FORM)||'null');if(f){if(f.n)$('b-name').value=f.n;if(f.t)$('b-tel').value=f.t;if(f.p)$('b-p').value=f.p}}catch(x){}
+const saveForm=()=>{try{localStorage.setItem(FORM,JSON.stringify({n:$('b-name').value,t:$('b-tel').value,p:$('b-p').value}))}catch(x){}};
+['b-name','b-tel','b-p'].forEach(id=>$(id).addEventListener('input',saveForm));
+$('rooms').addEventListener('click',e=>{const a=e.target.closest('[data-room]');if(a)toast(`${TYPES[a.dataset.room].name} seleccionada`)});
+
+/* ===== editor de textos (#editar-textos) ===== */
+const EDIT=['.hero-in .chip','.hero-in h1','.hero-in .sub','#hotel .kicker','#hotel h2','#hotel .lead','.stat b','.stat span','.collage .tag b','.collage .tag span',
+ '#habitaciones .kicker','#habitaciones h2','#habitaciones .lead','.room h3','.room .txt','#comodidades .kicker','#comodidades h2','.am h3','.am p',
+ '#galeria .kicker','#galeria h2','.bento .cap','#zona .kicker','#zona h2','#zona .lead','.pl h3','.pl p','#reservar .book>div>.kicker','#reservar .book>div>h2','#reservar .book>div>.lead','.callbox>p',
+ '#preguntas .kicker','#preguntas h2','#preguntas .lead','.faq summary>span','.faq .ans','#contacto .kicker','#contacto h2','#contacto .cta p','.ft p'];
+const OKTAG=/^(EM|I|B|STRONG|BR|A)$/;
+const canEditEl=el=>[...el.querySelectorAll('*')].every(c=>OKTAG.test(c.tagName));
+function cleanHTML(h){const d=document.createElement('div');d.innerHTML=String(h);
+ [...d.querySelectorAll('*')].reverse().forEach(c=>{if(!OKTAG.test(c.tagName))c.replaceWith(document.createTextNode(c.textContent));else{const h=c.tagName==='A'?c.getAttribute('href'):null;[...c.attributes].forEach(a=>c.removeAttribute(a.name));if(h&&/^(#[A-Za-z][\w-]*|https:\/\/)/.test(h)){c.setAttribute('href',h);c.className='inlink';if(h[0]!=='#'){c.target='_blank';c.rel='noopener'}}else if(c.tagName==='A')c.replaceWith(document.createTextNode(c.textContent))}});
+ return d.innerHTML.replace(/&nbsp;/g,' ').trim()}
+const cleanMap=o=>{const r={};if(o&&typeof o==='object')for(const k in o)if(typeof o[k]==='string'&&k.length<120)r[k]=cleanHTML(o[k]);return r};
+let TXT={},pubTxt={},editing=false,TDB=null;
+const TDRAFT='lc-textos-borrador';
+function txtEls(){const out=[];EDIT.forEach(s=>document.querySelectorAll(s).forEach((el,j)=>{if(el.closest('#panel,#conf,#lb,.cal'))return;if(!el.dataset.orig&&!canEditEl(el))return;out.push([s+' #'+j,el])}));return out}
+function applyTexts(){txtEls().forEach(([k,el])=>{if(el.dataset.orig===undefined)el.dataset.orig=el.innerHTML.trim();
+ const v=TXT[k];const want=v!=null?v:el.dataset.orig;if(el.innerHTML!==want&&document.activeElement!==el)el.innerHTML=want;
+ el.dataset.t=k;el.classList.toggle('chg',editing&&TXT[k]!=null&&TXT[k]!==pubTxt[k]);if(editing)el.contentEditable='true';else el.removeAttribute('contenteditable')});
+ if(editing)updBar()}
+const changed=()=>Object.keys(TXT).filter(k=>TXT[k]!==pubTxt[k]).length+Object.keys(pubTxt).filter(k=>!(k in TXT)).length;
+function updBar(){const n=changed();$('e-count').textContent=n?`${n} ${n===1?'texto cambiado':'textos cambiados'} sin guardar`:'Toca cualquier texto con borde para cambiarlo.';$('e-save').disabled=!n;
+ $('e-save').textContent=TDB?'Publicar':'Copiar textos'}
+function startEdit(){if(editing)return;editing=true;HTML.classList.add('editing');
+ try{const d=JSON.parse(localStorage.getItem(TDRAFT)||'null');if(d)TXT=cleanMap(d)}catch(x){}
+ document.querySelectorAll('.faq details').forEach(d=>d.open=true);document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+ links.classList.remove('open');hdr.classList.remove('mo');$('panel').hidden=true;$('ebar').hidden=false;applyTexts();toast('Modo edición activado')}
+function stopEdit(){editing=false;HTML.classList.remove('editing');$('ebar').hidden=true;TXT=Object.assign({},pubTxt);applyTexts();
+ if(location.hash==='#editar-textos'){try{history.replaceState(null,'',location.pathname+location.search)}catch(x){location.hash=''}}}
+document.addEventListener('input',e=>{if(!editing)return;const el=e.target.closest&&e.target.closest('[data-t]');if(!el)return;
+ const v=cleanHTML(el.innerHTML);if(v===el.dataset.orig&&pubTxt[el.dataset.t]==null)delete TXT[el.dataset.t];else TXT[el.dataset.t]=v;
+ el.classList.toggle('chg',TXT[el.dataset.t]!==pubTxt[el.dataset.t]);try{localStorage.setItem(TDRAFT,JSON.stringify(TXT))}catch(x){}updBar()});
+document.addEventListener('keydown',e=>{if(!editing||!e.target.closest||!e.target.closest('[data-t]'))return;
+ if(e.key==='Enter'){e.preventDefault();document.execCommand('insertLineBreak')}if(e.key==='Escape')e.target.blur()},true);
+document.addEventListener('paste',e=>{if(!editing||!e.target.closest||!e.target.closest('[data-t]'))return;e.preventDefault();document.execCommand('insertText',false,(e.clipboardData||window.clipboardData).getData('text/plain'))},true);
+document.addEventListener('click',e=>{if(!editing||e.target.closest('#ebar'))return;const t=e.target.closest('[data-t]');
+ if(t||e.target.closest('summary')){e.preventDefault();if(t)t.focus()}else if(e.target.closest('a[href]')&&!e.target.closest('#lb')){e.preventDefault();toast('En modo edición los enlaces están desactivados')}},true);
+$('e-exit').onclick=()=>{if(changed()&&!TDB){toast('Tus cambios siguen guardados en este navegador')}stopEdit()};
+$('e-undo').onclick=()=>{TXT=Object.assign({},pubTxt);try{localStorage.removeItem(TDRAFT)}catch(x){}document.querySelectorAll('[data-t]').forEach(el=>el.innerHTML=TXT[el.dataset.t]!=null?TXT[el.dataset.t]:el.dataset.orig);applyTexts();toast('Cambios deshechos')};
+$('e-save').onclick=async()=>{const json=JSON.stringify(TXT,null,1);
+ if(TDB){try{await TDB.doc('pub/textos').set({t:Object.assign({},TXT)});pubTxt=Object.assign({},TXT);try{localStorage.removeItem(TDRAFT)}catch(x){}stopEdit();toast('Guardado. Para que lo vea todo el mundo con el enlace público, escríbele a Claude «pasa los textos».')}catch(x){toast('No se pudo publicar. Inténtalo de nuevo.')}return}
+ try{await navigator.clipboard.writeText(json);toast('Copiado. Pégalo en el archivo textos.json de GitHub y pulsa Commit.')}catch(x){$('e-json').value=json;$('e-json').hidden=false;$('e-json').select();toast('Copia el texto seleccionado')}};
+const txtRoute=()=>{if(location.hash==='#editar-textos')startEdit()};
+addEventListener('hashchange',txtRoute);
+fetch('textos.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(j&&!Object.keys(pubTxt).length){pubTxt=cleanMap(j);if(!editing)TXT=Object.assign({},pubTxt);applyTexts()}}).catch(()=>{});
+(async()=>{if(!(window.claude&&window.claude.use))return;let db=null,u=null;try{[db,u]=await Promise.all([window.claude.use('db'),window.claude.use('user')])}catch(x){}if(!db)return;
+ db.doc('pub/textos').onSnapshot(sn=>{const d=sn.exists?sn.data():null;if(d&&d.t){pubTxt=cleanMap(d.t);if(!editing)TXT=Object.assign({},pubTxt);applyTexts()}},()=>{});
+ let ce=false;try{ce=u?!!(await u.canEdit()):false}catch(x){}if(ce){TDB=db;$('e-btn').hidden=false;if(editing)updBar()}})();
+$('e-btn').onclick=startEdit;$('adm-edit').onclick=startEdit;
+applyTexts();txtRoute();
+
 /* cargar disponibilidad */
 render();
 const avTimer=setTimeout(()=>{if(avState==='loading'){avState='error';render()}},10000);
@@ -848,7 +1457,7 @@ fetch('disponibilidad.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return
  for(const t in TYPES){if(h[t]){if(+h[t].total>0)TYPES[t].total=+h[t].total;if(+h[t].precio>0)TYPES[t].price=+h[t].precio}}
  AVfile={actualizado:String(j.actualizado||''),habitaciones:{una:{total:TYPES.una.total,precio:TYPES.una.price},dos:{total:TYPES.dos.total,precio:TYPES.dos.price}},ocupadas:(j.ocupadas&&typeof j.ocupadas==='object')?j.ocupadas:{},reservas:Array.isArray(j.reservas)?j.reservas.filter(r=>r&&TYPES[r.t]&&/^\d{4}-\d\d-\d\d$/.test(r.in)&&/^\d{4}-\d\d-\d\d$/.test(r.out)&&+r.n>0).map(r=>({c:String(r.c||''),t:r.t,in:r.in,out:r.out,n:+r.n})):[]};
  avState='ok';mergeAV();
- drawRooms();qType.innerHTML=Object.entries(TYPES).map(([k,t])=>`<option value="${k}">${t.short} · ${money(t.price)}</option>`).join('');
+ drawRooms();applyTexts();qType.innerHTML=Object.entries(TYPES).map(([k,t])=>`<option value="${k}">${t.short} · ${money(t.price)}</option>`).join('');
  route();render();
 }).catch(()=>{clearTimeout(avTimer);if(!dbData)avState='error';route();render()});
 initDb();
